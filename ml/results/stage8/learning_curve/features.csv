@@ -1,0 +1,9 @@
+history,fit,n_kept,dropped_constant
+history-600-540,0-80,39,chg_hunks_delete;chg_other_files
+history-600-540,0-161,39,chg_hunks_delete;chg_other_files
+history-600-540,0-242,39,chg_hunks_delete;chg_other_files
+history-600-540,0-323,40,chg_other_files
+"history (300, auxiliary)",0-44,39,chg_hunks_delete;chg_other_files
+"history (300, auxiliary)",0-89,39,chg_hunks_delete;chg_other_files
+"history (300, auxiliary)",0-134,40,chg_other_files
+"history (300, auxiliary)",0-179,40,chg_other_files

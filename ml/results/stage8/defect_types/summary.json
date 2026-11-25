@@ -1,0 +1,394 @@
+{
+  "experiment": "defect types (protocol p. 5.7), descriptive",
+  "min_group_for_conclusions": 5,
+  "first_exposures": {
+    "test": 39,
+    "val": 35
+  },
+  "overall_recall_first_rf_tau": {
+    "test": 0.7102564103,
+    "val": 0.9142857143
+  },
+  "groups": [
+    {
+      "range": "test",
+      "grouping": "mutator",
+      "group": "ArithmeticOperator",
+      "first_exposures": 3,
+      "recall_first_rf_tau": 0.9666666667,
+      "recall_first_combined_B": 0.9333333333,
+      "recall_first_covers_B": 0.8,
+      "small": true
+    },
+    {
+      "range": "test",
+      "grouping": "mutator",
+      "group": "BlockStatement",
+      "first_exposures": 1,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 1.0,
+      "small": true
+    },
+    {
+      "range": "test",
+      "grouping": "mutator",
+      "group": "BooleanLiteral",
+      "first_exposures": 2,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 1.0,
+      "small": true
+    },
+    {
+      "range": "test",
+      "grouping": "mutator",
+      "group": "ConditionalExpression",
+      "first_exposures": 7,
+      "recall_first_rf_tau": 0.6428571429,
+      "recall_first_combined_B": 0.8571428571,
+      "recall_first_covers_B": 0.9357142857,
+      "small": false
+    },
+    {
+      "range": "test",
+      "grouping": "mutator",
+      "group": "EqualityOperator",
+      "first_exposures": 6,
+      "recall_first_rf_tau": 0.6666666667,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 0.9916666667,
+      "small": false
+    },
+    {
+      "range": "test",
+      "grouping": "mutator",
+      "group": "LogicalOperator",
+      "first_exposures": 2,
+      "recall_first_rf_tau": 0.0,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 0.975,
+      "small": true
+    },
+    {
+      "range": "test",
+      "grouping": "mutator",
+      "group": "Regex",
+      "first_exposures": 1,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 1.0,
+      "small": true
+    },
+    {
+      "range": "test",
+      "grouping": "mutator",
+      "group": "StringLiteral",
+      "first_exposures": 8,
+      "recall_first_rf_tau": 0.875,
+      "recall_first_combined_B": 0.875,
+      "recall_first_covers_B": 0.93125,
+      "small": false
+    },
+    {
+      "range": "test",
+      "grouping": "mutator",
+      "group": "manual",
+      "first_exposures": 9,
+      "recall_first_rf_tau": 0.5888888889,
+      "recall_first_combined_B": 0.8888888889,
+      "recall_first_covers_B": 0.95,
+      "small": false
+    },
+    {
+      "range": "test",
+      "grouping": "module",
+      "group": "admin",
+      "first_exposures": 1,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 1.0,
+      "small": true
+    },
+    {
+      "range": "test",
+      "grouping": "module",
+      "group": "auth",
+      "first_exposures": 5,
+      "recall_first_rf_tau": 0.8,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 0.99,
+      "small": false
+    },
+    {
+      "range": "test",
+      "grouping": "module",
+      "group": "cart",
+      "first_exposures": 6,
+      "recall_first_rf_tau": 0.6666666667,
+      "recall_first_combined_B": 0.8333333333,
+      "recall_first_covers_B": 0.9,
+      "small": false
+    },
+    {
+      "range": "test",
+      "grouping": "module",
+      "group": "catalog",
+      "first_exposures": 9,
+      "recall_first_rf_tau": 0.7111111111,
+      "recall_first_combined_B": 0.8666666667,
+      "recall_first_covers_B": 0.9,
+      "small": false
+    },
+    {
+      "range": "test",
+      "grouping": "module",
+      "group": "checkout",
+      "first_exposures": 10,
+      "recall_first_rf_tau": 0.7,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 1.0,
+      "small": false
+    },
+    {
+      "range": "test",
+      "grouping": "module",
+      "group": "orders",
+      "first_exposures": 7,
+      "recall_first_rf_tau": 0.7142857143,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 0.9785714286,
+      "small": false
+    },
+    {
+      "range": "test",
+      "grouping": "module",
+      "group": "product",
+      "first_exposures": 1,
+      "recall_first_rf_tau": 0.3,
+      "recall_first_combined_B": 0.0,
+      "recall_first_covers_B": 0.55,
+      "small": true
+    },
+    {
+      "range": "test",
+      "grouping": "source",
+      "group": "manual",
+      "first_exposures": 9,
+      "recall_first_rf_tau": 0.5888888889,
+      "recall_first_combined_B": 0.8888888889,
+      "recall_first_covers_B": 0.95,
+      "small": false
+    },
+    {
+      "range": "test",
+      "grouping": "source",
+      "group": "mutant",
+      "first_exposures": 30,
+      "recall_first_rf_tau": 0.7466666667,
+      "recall_first_combined_B": 0.9266666667,
+      "recall_first_covers_B": 0.9433333333,
+      "small": false
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "mutator",
+      "group": "ArithmeticOperator",
+      "first_exposures": 1,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 1.0,
+      "small": true
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "mutator",
+      "group": "ArrayDeclaration",
+      "first_exposures": 1,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 1.0,
+      "small": true
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "mutator",
+      "group": "ArrowFunction",
+      "first_exposures": 1,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 1.0,
+      "small": true
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "mutator",
+      "group": "BooleanLiteral",
+      "first_exposures": 3,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 0.6666666667,
+      "recall_first_covers_B": 1.0,
+      "small": true
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "mutator",
+      "group": "CallExpression",
+      "first_exposures": 1,
+      "recall_first_rf_tau": 0.9,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 1.0,
+      "small": true
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "mutator",
+      "group": "ConditionalExpression",
+      "first_exposures": 5,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 0.98,
+      "small": false
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "mutator",
+      "group": "EqualityOperator",
+      "first_exposures": 6,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 0.8333333333,
+      "recall_first_covers_B": 0.95,
+      "small": false
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "mutator",
+      "group": "LogicalOperator",
+      "first_exposures": 1,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 0.65,
+      "small": true
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "mutator",
+      "group": "MethodExpression",
+      "first_exposures": 2,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 0.725,
+      "small": true
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "mutator",
+      "group": "Regex",
+      "first_exposures": 4,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 0.875,
+      "small": true
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "mutator",
+      "group": "StringLiteral",
+      "first_exposures": 10,
+      "recall_first_rf_tau": 0.71,
+      "recall_first_combined_B": 0.9,
+      "recall_first_covers_B": 0.83,
+      "small": false
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "module",
+      "group": "admin",
+      "first_exposures": 1,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 1.0,
+      "small": true
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "module",
+      "group": "auth",
+      "first_exposures": 9,
+      "recall_first_rf_tau": 0.7777777778,
+      "recall_first_combined_B": 0.7777777778,
+      "recall_first_covers_B": 0.8055555556,
+      "small": false
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "module",
+      "group": "cart",
+      "first_exposures": 3,
+      "recall_first_rf_tau": 0.9666666667,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 1.0,
+      "small": true
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "module",
+      "group": "catalog",
+      "first_exposures": 5,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 0.8,
+      "recall_first_covers_B": 0.81,
+      "small": false
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "module",
+      "group": "checkout",
+      "first_exposures": 12,
+      "recall_first_rf_tau": 0.925,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 0.9333333333,
+      "small": false
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "module",
+      "group": "orders",
+      "first_exposures": 2,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 1.0,
+      "small": true
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "module",
+      "group": "product",
+      "first_exposures": 2,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 1.0,
+      "small": true
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "module",
+      "group": "search",
+      "first_exposures": 1,
+      "recall_first_rf_tau": 1.0,
+      "recall_first_combined_B": 1.0,
+      "recall_first_covers_B": 1.0,
+      "small": true
+    },
+    {
+      "range": "val (in-sample)",
+      "grouping": "source",
+      "group": "mutant",
+      "first_exposures": 35,
+      "recall_first_rf_tau": 0.9142857143,
+      "recall_first_combined_B": 0.9142857143,
+      "recall_first_covers_B": 0.9,
+      "small": false
+    }
+  ]
+}

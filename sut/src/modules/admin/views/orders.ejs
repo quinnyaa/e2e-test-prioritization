@@ -1,0 +1,28 @@
+<%- include('../../../shared/views/header') %>
+<p><a href="/admin/products" data-testid="admin-back">&larr; Products</a></p>
+<h1>Manage orders</h1>
+<table data-testid="admin-orders-table">
+  <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Total</th><th>Status</th><th>Change status</th></tr></thead>
+  <tbody>
+  <% orders.forEach(function (o) { var next = allowedNextStatuses(o.status); %>
+    <tr data-testid="admin-order-row-<%= o.id %>">
+      <td><%= formatOrderNumber(o.id) %></td>
+      <td><%= o.customerEmail %></td>
+      <td><%= formatDate(o.createdAt) %></td>
+      <td><%= formatPrice(o.totalCents) %></td>
+      <td data-testid="admin-order-status" data-status="<%= o.status %>"><%= statusLabels[o.status] %></td>
+      <td>
+        <% if (next.length > 0) { %>
+          <form method="post" action="/admin/orders/<%= o.id %>/status" class="inline">
+            <select name="status" data-testid="admin-order-status-select">
+              <% next.forEach(function (s) { %><option value="<%= s %>"><%= statusLabels[s] %></option><% }) %>
+            </select>
+            <button type="submit" class="secondary" data-testid="admin-order-status-save">Update</button>
+          </form>
+        <% } else { %><span class="muted">—</span><% } %>
+      </td>
+    </tr>
+  <% }) %>
+  </tbody>
+</table>
+<%- include('../../../shared/views/footer') %>

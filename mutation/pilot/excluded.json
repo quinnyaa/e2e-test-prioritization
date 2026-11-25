@@ -1,0 +1,20 @@
+[
+  {
+    "id": "675",
+    "module": "cart",
+    "file": "src/modules/cart/service.ts",
+    "mutator": "BlockStatement",
+    "original": "{\n  getDb().prepare('DELETE FROM cart_items WHERE session_id = ?').run(sessionId);\n}",
+    "replacement": "{}",
+    "reason": "equivalent: cart/service.ts clearCart(): dead code (never called; checkout clears the cart inside its own transaction), so emptying its body changes nothing. Found after the pilot run; its run is kept in runs.jsonl but excluded from the analysis"
+  },
+  {
+    "id": "1252",
+    "module": "orders",
+    "file": "src/modules/orders/logic.ts",
+    "mutator": "ConditionalExpression",
+    "original": "typeof value === 'string'",
+    "replacement": "true",
+    "reason": "equivalent: isOrderStatus: `typeof value === 'string'` → `true`; ORDER_STATUSES.includes(value) is already false for any non-string, so the result never changes"
+  }
+]

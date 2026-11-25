@@ -1,0 +1,46 @@
+<%- include('../../../shared/views/header') %>
+<h1>Cart</h1>
+<% if (lines.length === 0) { %>
+  <p data-testid="cart-empty">Your cart is empty. <a href="/catalog">Continue shopping</a></p>
+<% } else { %>
+  <% issues.forEach(function (issue) { %>
+    <p class="error" data-testid="cart-stock-issue"><%= issue.message %></p>
+  <% }) %>
+  <table data-testid="cart-table">
+    <thead><tr><th>Product</th><th>Price</th><th>Quantity</th><th>Total</th><th></th></tr></thead>
+    <tbody>
+    <% lines.forEach(function (line) { %>
+      <tr data-testid="cart-line-<%= line.productId %>">
+        <td><a href="/products/<%= line.productId %>" data-testid="cart-line-name"><%= line.name %></a></td>
+        <td data-testid="cart-line-price"><%= formatPrice(line.priceCents) %></td>
+        <td>
+          <form method="post" action="/cart/update" class="inline" novalidate>
+            <input type="hidden" name="productId" value="<%= line.productId %>">
+            <input type="number" name="quantity" value="<%= line.quantity %>" min="0" max="<%= maxQuantity %>" size="3" data-testid="cart-qty-input" aria-label="Quantity">
+            <button type="submit" class="secondary" data-testid="cart-update">Update</button>
+          </form>
+        </td>
+        <td data-testid="cart-line-total"><%= formatPrice(lineTotal(line)) %></td>
+        <td>
+          <form method="post" action="/cart/remove" class="inline">
+            <input type="hidden" name="productId" value="<%= line.productId %>">
+            <button type="submit" class="secondary" data-testid="cart-remove">Remove</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+    </tbody>
+  </table>
+  <div class="summary">
+    <div><span>Items</span><span data-testid="cart-item-count"><%= itemCount %></span></div>
+    <div class="total"><span>Subtotal</span><span data-testid="cart-total"><%= formatPrice(subtotal) %></span></div>
+    <p>
+      <% if (canCheckout) { %>
+        <a href="/checkout" class="button" data-testid="cart-checkout">Proceed to checkout</a>
+      <% } else { %>
+        <button type="button" disabled data-testid="cart-checkout">Proceed to checkout</button>
+      <% } %>
+    </p>
+  </div>
+<% } %>
+<%- include('../../../shared/views/footer') %>

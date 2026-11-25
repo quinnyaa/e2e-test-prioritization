@@ -1,0 +1,11 @@
+--- a/src/modules/orders/views/list.ejs
++++ b/src/modules/orders/views/list.ejs
+@@ -11,7 +11,7 @@
+         <td><a href="/orders/<%= o.id %>" data-testid="order-link"><%= formatOrderNumber(o.id) %></a></td>
+         <td data-testid="order-date"><%= formatDate(o.createdAt) %></td>
+         <td data-testid="order-item-count"><%= o.itemCount %></td>
+-        <td data-testid="order-status" data-status="<%= o.status %>"><%= statusLabels[o.status] %></td>
++        <td data-testid="order-status" data-status="<%= o.status %>"><%= o.status %></td>
+         <td data-testid="order-total"><%= formatPrice(o.totalCents) %></td>
+       </tr>
+     <% }) %>

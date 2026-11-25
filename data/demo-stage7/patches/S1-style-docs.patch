@@ -1,0 +1,23 @@
+diff --git a/README.md b/README.md
+index bbf107c..250f2ae 100644
+--- a/README.md
++++ b/README.md
+@@ -162,3 +162,5 @@ Modules: `auth`, `catalog`, `product`, `search`, `cart`, `checkout`, `orders`, `
+ - Note: order matters: the first match wins.
+ 
+ - Note: edge case: empty input is handled by the caller.
++
++Demo build notes: header spacing adjusted.
+diff --git a/src/public/style.css b/src/public/style.css
+index 520194b..4b22c26 100644
+--- a/src/public/style.css
++++ b/src/public/style.css
+@@ -2,7 +2,7 @@
+ body { margin: 0; font-family: system-ui, sans-serif; color: #222; background: #fafafa; line-height: 1.4; }
+ a { color: #0b5cad; }
+ .container { max-width: 960px; margin: 0 auto; padding: 16px; }
+-.site-header { display: flex; flex-wrap: wrap; gap: 17px; align-items: center; justify-content: space-between; padding: 12px 16px; background: #fff; border-bottom: 1px solid #ddd; }
++.site-header { display: flex; flex-wrap: wrap; gap: 17px; align-items: center; justify-content: space-between; padding: 14px 16px; background: #fff; border-bottom: 1px solid #ddd; }
+ .logo { font-weight: 700; text-decoration: none; color: #222; }
+ .nav { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+ .nav form { margin: 0; }

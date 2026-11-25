@@ -1,0 +1,759 @@
+{
+  "repo": "./data/demo-stage7/repo",
+  "base": "84ad11ee15fb4dc24c8660ef1013628ddbe43634",
+  "head": "3740937e5414bd246e1a57002e64923531b2bef7",
+  "commit_index": 430,
+  "history": "./data/history-600",
+  "history_commits": 430,
+  "extra_runs": 0,
+  "method": "rf (seed 20261117, train commits [0, 324))",
+  "model_dir": "ml/models/rf",
+  "train_range": [
+    0,
+    324
+  ],
+  "production_model": false,
+  "policy": {
+    "name": "all",
+    "setting": null,
+    "source": "без відбору",
+    "text": "усі тести в порядку пріоритету (лише пріоритизація)"
+  },
+  "diff": {
+    "files": 3,
+    "lines_added": 4,
+    "lines_deleted": 2,
+    "paths": [
+      "README.md",
+      "src/modules/orders/logic.ts",
+      "src/public/style.css"
+    ]
+  },
+  "selected": {
+    "tests": 36,
+    "of": 36,
+    "pred_ms": 14684.213104950002,
+    "pred_full_ms": 14684.213104950002,
+    "pred_share": 1.0,
+    "ids": [
+      "E2E-02",
+      "CHK-07",
+      "ADM-04",
+      "ORD-01",
+      "ORD-03",
+      "ORD-02",
+      "CHK-01",
+      "CHK-04",
+      "E2E-01",
+      "CHK-03",
+      "CHK-05",
+      "CHK-02",
+      "CHK-06",
+      "CART-05",
+      "ADM-02",
+      "AUTH-01",
+      "ADM-03",
+      "ADM-01",
+      "AUTH-02",
+      "CAT-05",
+      "CART-03",
+      "CAT-03",
+      "CAT-04",
+      "AUTH-04",
+      "CAT-02",
+      "AUTH-03",
+      "CAT-01",
+      "CART-02",
+      "CART-01",
+      "PRD-01",
+      "SRCH-01",
+      "PRD-03",
+      "PRD-02",
+      "SRCH-03",
+      "SRCH-02",
+      "CART-04"
+    ]
+  },
+  "tests": [
+    {
+      "rank": 1,
+      "test_id": "E2E-02",
+      "module": "e2e",
+      "score": 0.6811201403258774,
+      "p": 0.23027939637601197,
+      "pred_ms": 841.9202128,
+      "selected": true,
+      "reasons": "covers ∩ діф: 1 ф.; падав 26 ком. тому; асоціація файл→тест 0.14",
+      "run": {
+        "status": "passed",
+        "durationMs": 704,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 2,
+      "test_id": "CHK-07",
+      "module": "checkout",
+      "score": 0.6203623915160135,
+      "p": 0.16665268361464905,
+      "pred_ms": 581.2131579,
+      "selected": true,
+      "reasons": "covers ∩ діф: 1 ф.; падав 68 ком. тому; асоціація файл→тест 0.09",
+      "run": {
+        "status": "passed",
+        "durationMs": 503,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 3,
+      "test_id": "ADM-04",
+      "module": "admin",
+      "score": 0.6114940218566106,
+      "p": 0.1586465554285607,
+      "pred_ms": 463.7753623,
+      "selected": true,
+      "reasons": "covers ∩ діф: 1 ф.; падав 26 ком. тому; асоціація файл→тест 0.14",
+      "run": {
+        "status": "passed",
+        "durationMs": 417,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 4,
+      "test_id": "ORD-01",
+      "module": "orders",
+      "score": 0.5920949706983811,
+      "p": 0.14222365966002956,
+      "pred_ms": 200.1853786,
+      "selected": true,
+      "reasons": "covers ∩ діф: 1 ф.; падав 68 ком. тому; асоціація файл→тест 0.11",
+      "run": {
+        "status": "failed",
+        "durationMs": 3173,
+        "flaky": false,
+        "confirmedFail": true,
+        "errorSnippet": "Error: expect(locator).toHaveText(expected) failed\n\nLocator: getByTestId('order-link')\nTimeout: 3000ms\n- Expected  - 1\n+ Received  + 1\n\n  Array [\n-   \"ORD-00005\",\n    \"ORD-00004\",\n+   \"ORD-00005\",\n    \"ORD-00003\",\n    \"ORD-00002\",\n    \"ORD-00001\",\n  ]\n\nCall log:\n  - Expect \"toHaveText\" getByTestId('order-link') with timeout 3000ms\n  - waiting for getByTestId('order-link')\n    10 × locator resolved…"
+      }
+    },
+    {
+      "rank": 5,
+      "test_id": "ORD-03",
+      "module": "orders",
+      "score": 0.5876848122287854,
+      "p": 0.1386939209932374,
+      "pred_ms": 396.012987,
+      "selected": true,
+      "reasons": "covers ∩ діф: 1 ф.; падав 68 ком. тому; асоціація файл→тест 0.06",
+      "run": {
+        "status": "passed",
+        "durationMs": 315,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 6,
+      "test_id": "ORD-02",
+      "module": "orders",
+      "score": 0.5765782926283239,
+      "p": 0.130129630454433,
+      "pred_ms": 358.0632319,
+      "selected": true,
+      "reasons": "covers ∩ діф: 1 ф.",
+      "run": {
+        "status": "passed",
+        "durationMs": 267,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 7,
+      "test_id": "CHK-01",
+      "module": "checkout",
+      "score": 0.42411856858947816,
+      "p": 0.051633417429218384,
+      "pred_ms": 468.8778409,
+      "selected": true,
+      "reasons": "падав 15 ком. тому; асоціація файл→тест 0.14",
+      "run": {
+        "status": "passed",
+        "durationMs": 412,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 8,
+      "test_id": "CHK-04",
+      "module": "checkout",
+      "score": 0.4035831807513725,
+      "p": 0.04535950629596121,
+      "pred_ms": 473.2222222,
+      "selected": true,
+      "reasons": "падав 35 ком. тому; асоціація файл→тест 0.14",
+      "run": {
+        "status": "passed",
+        "durationMs": 429,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 9,
+      "test_id": "E2E-01",
+      "module": "e2e",
+      "score": 0.3982207701864004,
+      "p": 0.043844716646256096,
+      "pred_ms": 897.3426966,
+      "selected": true,
+      "reasons": "модуль ∩ діф: 1 ф.; падав 10 ком. тому; асоціація файл→тест 0.23",
+      "run": {
+        "status": "passed",
+        "durationMs": 756,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 10,
+      "test_id": "CHK-03",
+      "module": "checkout",
+      "score": 0.3612976634292423,
+      "p": 0.03465463554106924,
+      "pred_ms": 417.4075,
+      "selected": true,
+      "reasons": "падав 35 ком. тому; асоціація файл→тест 0.09",
+      "run": {
+        "status": "passed",
+        "durationMs": 391,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 11,
+      "test_id": "CHK-05",
+      "module": "checkout",
+      "score": 0.34933497907751265,
+      "p": 0.0320971903838209,
+      "pred_ms": 488.3535354,
+      "selected": true,
+      "reasons": "падав 35 ком. тому; асоціація файл→тест 0.09",
+      "run": {
+        "status": "passed",
+        "durationMs": 431,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 12,
+      "test_id": "CHK-02",
+      "module": "checkout",
+      "score": 0.3493164434569768,
+      "p": 0.03209337293353292,
+      "pred_ms": 385.4447368,
+      "selected": true,
+      "reasons": "модуль ∩ діф: 1 ф.; падав 10 ком. тому; асоціація файл→тест 0.18",
+      "run": {
+        "status": "passed",
+        "durationMs": 346,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 13,
+      "test_id": "CHK-06",
+      "module": "checkout",
+      "score": 0.271010731545727,
+      "p": 0.019348016105435052,
+      "pred_ms": 343.8636364,
+      "selected": true,
+      "reasons": "падав 10 ком. тому; асоціація файл→тест 0.14",
+      "run": {
+        "status": "passed",
+        "durationMs": 317,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 14,
+      "test_id": "CART-05",
+      "module": "cart",
+      "score": 0.26151453998882085,
+      "p": 0.018188952868047992,
+      "pred_ms": 340.1538462,
+      "selected": true,
+      "reasons": "падав 32 ком. тому; асоціація файл→тест 0.09",
+      "run": {
+        "status": "passed",
+        "durationMs": 292,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 15,
+      "test_id": "ADM-02",
+      "module": "admin",
+      "score": 0.24429544356776142,
+      "p": 0.016258592599065865,
+      "pred_ms": 603.5158924,
+      "selected": true,
+      "reasons": "падав 71 ком. тому; асоціація файл→тест 0.06",
+      "run": {
+        "status": "passed",
+        "durationMs": 546,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 16,
+      "test_id": "AUTH-01",
+      "module": "auth",
+      "score": 0.2079610801300684,
+      "p": 0.012822775380790106,
+      "pred_ms": 568.5732648,
+      "selected": true,
+      "reasons": "падав 19 ком. тому; асоціація файл→тест 0.09",
+      "run": {
+        "status": "passed",
+        "durationMs": 515,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 17,
+      "test_id": "ADM-03",
+      "module": "admin",
+      "score": 0.20793385843415954,
+      "p": 0.012820491115086036,
+      "pred_ms": 576.5302663,
+      "selected": true,
+      "reasons": "падав 71 ком. тому; асоціація файл→тест 0.06",
+      "run": {
+        "status": "passed",
+        "durationMs": 508,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 18,
+      "test_id": "ADM-01",
+      "module": "admin",
+      "score": 0.1998058362322316,
+      "p": 0.012156103334673747,
+      "pred_ms": 434.5827338,
+      "selected": true,
+      "reasons": "падав 55 ком. тому; асоціація файл→тест 0.06",
+      "run": {
+        "status": "passed",
+        "durationMs": 415,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 19,
+      "test_id": "AUTH-02",
+      "module": "auth",
+      "score": 0.17379476924294862,
+      "p": 0.010250368885145257,
+      "pred_ms": 323.7809278,
+      "selected": true,
+      "reasons": "падав 18 ком. тому; асоціація файл→тест 0.06",
+      "run": {
+        "status": "passed",
+        "durationMs": 259,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 20,
+      "test_id": "CAT-05",
+      "module": "catalog",
+      "score": 0.17078664503368587,
+      "p": 0.010050005836199341,
+      "pred_ms": 485.754386,
+      "selected": true,
+      "reasons": "падав 29 ком. тому; асоціація файл→тест 0.09",
+      "run": {
+        "status": "passed",
+        "durationMs": 422,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 21,
+      "test_id": "CART-03",
+      "module": "cart",
+      "score": 0.14782888014329013,
+      "p": 0.0086433526170747,
+      "pred_ms": 594.2069825,
+      "selected": true,
+      "reasons": "падав 32 ком. тому; асоціація файл→тест 0.05",
+      "run": {
+        "status": "passed",
+        "durationMs": 557,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 22,
+      "test_id": "CAT-03",
+      "module": "catalog",
+      "score": 0.12072128889298678,
+      "p": 0.00723187759888036,
+      "pred_ms": 274.1926829,
+      "selected": true,
+      "reasons": "асоціація файл→тест 0.06",
+      "run": {
+        "status": "passed",
+        "durationMs": 235,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 23,
+      "test_id": "CAT-04",
+      "module": "catalog",
+      "score": 0.11168136371681835,
+      "p": 0.00681405694973912,
+      "pred_ms": 278.1133005,
+      "selected": true,
+      "reasons": "падав 12 ком. тому; асоціація файл→тест 0.09",
+      "run": {
+        "status": "passed",
+        "durationMs": 251,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 24,
+      "test_id": "AUTH-04",
+      "module": "auth",
+      "score": 0.09251652503063951,
+      "p": 0.006005912004683768,
+      "pred_ms": 298.2505967,
+      "selected": true,
+      "reasons": "падав 71 ком. тому",
+      "run": {
+        "status": "passed",
+        "durationMs": 267,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 25,
+      "test_id": "CAT-02",
+      "module": "catalog",
+      "score": 0.08706455455972963,
+      "p": 0.005793941115023854,
+      "pred_ms": 252.5454545,
+      "selected": true,
+      "reasons": "асоціація файл→тест 0.05",
+      "run": {
+        "status": "passed",
+        "durationMs": 212,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 26,
+      "test_id": "AUTH-03",
+      "module": "auth",
+      "score": 0.08696986375871874,
+      "p": 0.0057903260509153745,
+      "pred_ms": 506.4053398,
+      "selected": true,
+      "reasons": "падав 8 ком. тому; асоціація файл→тест 0.09",
+      "run": {
+        "status": "passed",
+        "durationMs": 476,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 27,
+      "test_id": "CAT-01",
+      "module": "catalog",
+      "score": 0.07506891202425664,
+      "p": 0.005353382008067655,
+      "pred_ms": 303.0437956,
+      "selected": true,
+      "reasons": "падав 12 ком. тому; асоціація файл→тест 0.06",
+      "run": {
+        "status": "passed",
+        "durationMs": 278,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 28,
+      "test_id": "CART-02",
+      "module": "cart",
+      "score": 0.07400743585726968,
+      "p": 0.005316040759336982,
+      "pred_ms": 811.4140436,
+      "selected": true,
+      "reasons": "падав 71 ком. тому; асоціація файл→тест 0.03",
+      "run": {
+        "status": "passed",
+        "durationMs": 682,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 29,
+      "test_id": "CART-01",
+      "module": "cart",
+      "score": 0.04596246561333073,
+      "p": 0.004418065987612386,
+      "pred_ms": 487.9479905,
+      "selected": true,
+      "reasons": "падав 71 ком. тому",
+      "run": {
+        "status": "passed",
+        "durationMs": 427,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 30,
+      "test_id": "PRD-01",
+      "module": "product",
+      "score": 0.04322442503384806,
+      "p": 0.00433893614541281,
+      "pred_ms": 211.2177033,
+      "selected": true,
+      "reasons": "падав 12 ком. тому",
+      "run": {
+        "status": "passed",
+        "durationMs": 155,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 31,
+      "test_id": "SRCH-01",
+      "module": "search",
+      "score": 0.04119351930972474,
+      "p": 0.004281155582729,
+      "pred_ms": 255.1536643,
+      "selected": true,
+      "reasons": "",
+      "run": {
+        "status": "passed",
+        "durationMs": 210,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 32,
+      "test_id": "PRD-03",
+      "module": "product",
+      "score": 0.04047028036573904,
+      "p": 0.004260764507520579,
+      "pred_ms": 182.9766355,
+      "selected": true,
+      "reasons": "падав 71 ком. тому",
+      "run": {
+        "status": "passed",
+        "durationMs": 130,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 33,
+      "test_id": "PRD-02",
+      "module": "product",
+      "score": 0.03103426462326659,
+      "p": 0.004003421087099937,
+      "pred_ms": 150.9952267,
+      "selected": true,
+      "reasons": "падав 71 ком. тому; асоціація файл→тест 0.03",
+      "run": {
+        "status": "passed",
+        "durationMs": 122,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 34,
+      "test_id": "SRCH-03",
+      "module": "search",
+      "score": 0.020551979329778054,
+      "p": 0.0037356576860074105,
+      "pred_ms": 87.67213115,
+      "selected": true,
+      "reasons": "",
+      "run": {
+        "status": "passed",
+        "durationMs": 75,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 35,
+      "test_id": "SRCH-02",
+      "module": "search",
+      "score": 0.020342948365663697,
+      "p": 0.003730503665964597,
+      "pred_ms": 222.3157895,
+      "selected": true,
+      "reasons": "падав 52 ком. тому",
+      "run": {
+        "status": "passed",
+        "durationMs": 187,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    },
+    {
+      "rank": 36,
+      "test_id": "CART-04",
+      "module": "cart",
+      "score": 0.0194639989115436,
+      "p": 0.003708909056930815,
+      "pred_ms": 119.1879518,
+      "selected": true,
+      "reasons": "падав 71 ком. тому",
+      "run": {
+        "status": "passed",
+        "durationMs": 102,
+        "flaky": false,
+        "confirmedFail": false,
+        "errorSnippet": null
+      }
+    }
+  ],
+  "timings": {
+    "import_s": 0.7235,
+    "history_replay_s": 0.0752,
+    "diff_s": 0.0232,
+    "features_s": 0.0023,
+    "model_load_s": 0.2185,
+    "predict_s": 0.0313
+  },
+  "run": {
+    "sut_dir": "./data/cache/sut/3740937e5414",
+    "build_ok": true,
+    "waves": [
+      {
+        "ids": [
+          "E2E-02",
+          "CHK-07",
+          "ADM-04",
+          "ORD-01",
+          "ORD-03",
+          "ORD-02",
+          "CHK-01",
+          "CHK-04",
+          "E2E-01",
+          "CHK-03",
+          "CHK-05",
+          "CHK-02",
+          "CHK-06",
+          "CART-05",
+          "ADM-02",
+          "AUTH-01",
+          "ADM-03",
+          "ADM-01",
+          "AUTH-02",
+          "CAT-05",
+          "CART-03",
+          "CAT-03",
+          "CAT-04",
+          "AUTH-04",
+          "CAT-02",
+          "AUTH-03",
+          "CAT-01",
+          "CART-02",
+          "CART-01",
+          "PRD-01",
+          "SRCH-01",
+          "PRD-03",
+          "PRD-02",
+          "SRCH-03",
+          "SRCH-02",
+          "CART-04"
+        ],
+        "wall_s": 6.935,
+        "rerun_s": 4.541
+      }
+    ],
+    "executed": 36,
+    "skipped_by_fail_fast": 0,
+    "confirmed_fail": [
+      "ORD-01"
+    ],
+    "flaky": [],
+    "tests_ms": 15784.0,
+    "wall_s": 6.935,
+    "rerun_s": 4.541,
+    "full_run": true,
+    "workers": 4,
+    "fail_fast": false
+  }
+}

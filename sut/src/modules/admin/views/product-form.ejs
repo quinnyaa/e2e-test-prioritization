@@ -1,0 +1,32 @@
+<%- include('../../../shared/views/header') %>
+<p><a href="/admin/products" data-testid="admin-back">&larr; Products</a></p>
+<h1><%= title %></h1>
+<form method="post" action="<%= action %>" class="form" data-testid="product-form" novalidate>
+  <label>Name
+    <input type="text" name="name" value="<%= values.name %>" data-testid="product-name-input">
+    <% if (errors.name) { %><span class="field-error" data-testid="product-name-error"><%= errors.name %></span><% } %>
+  </label>
+  <label>Description
+    <textarea name="description" rows="4" data-testid="product-description-input"><%= values.description %></textarea>
+    <% if (errors.description) { %><span class="field-error" data-testid="product-description-error"><%= errors.description %></span><% } %>
+  </label>
+  <label>Price ($)
+    <input type="text" name="price" value="<%= values.price %>" inputmode="decimal" data-testid="product-price-input">
+    <% if (errors.price) { %><span class="field-error" data-testid="product-price-error"><%= errors.price %></span><% } %>
+  </label>
+  <label>Stock
+    <input type="text" name="stock" value="<%= values.stock %>" inputmode="numeric" data-testid="product-stock-input">
+    <% if (errors.stock) { %><span class="field-error" data-testid="product-stock-error"><%= errors.stock %></span><% } %>
+  </label>
+  <label>Category
+    <select name="category" data-testid="product-category-select">
+      <option value="">— choose —</option>
+      <% categories.forEach(function (c) { %>
+        <option value="<%= c.slug %>" <%= values.category === c.slug ? 'selected' : '' %>><%= c.name %></option>
+      <% }) %>
+    </select>
+    <% if (errors.category) { %><span class="field-error" data-testid="product-category-error"><%= errors.category %></span><% } %>
+  </label>
+  <button type="submit" data-testid="product-save">Save</button>
+</form>
+<%- include('../../../shared/views/footer') %>

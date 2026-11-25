@@ -1,0 +1,17 @@
+<%- include('../../../shared/views/header') %>
+<p><a href="/catalog" data-testid="back-to-catalog">&larr; Catalog</a> /
+  <a href="/catalog?category=<%= product.categorySlug %>" data-testid="product-category"><%= product.categoryName %></a></p>
+<article class="card" data-testid="product-detail" data-product-id="<%= product.id %>">
+  <h1 data-testid="product-title"><%= product.name %></h1>
+  <p data-testid="product-description"><%= product.description %></p>
+  <p><strong data-testid="product-price"><%= formatPrice(product.priceCents) %></strong></p>
+  <p><span class="badge badge-<%= status %>" data-testid="product-stock" data-stock-status="<%= status %>"><%= label %></span></p>
+  <form method="post" action="/cart/add" data-testid="add-to-cart-form" novalidate>
+    <input type="hidden" name="productId" value="<%= product.id %>">
+    <label>Quantity
+      <input type="number" name="quantity" value="1" min="1" size="3" data-testid="quantity-input" <%= canAdd ? '' : 'disabled' %>>
+    </label>
+    <button type="submit" data-testid="add-to-cart" <%= canAdd ? '' : 'disabled' %>>Add to cart</button>
+  </form>
+</article>
+<%- include('../../../shared/views/footer') %>

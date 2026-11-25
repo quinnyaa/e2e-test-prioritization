@@ -1,0 +1,1606 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "./tests/node_modules/.bin/playwright",
+      "test",
+      "--grep",
+      "\\[CHK-01\\]|\\[CHK-04\\]|\\[E2E-01\\]|\\[CHK-02\\]|\\[CHK-07\\]|\\[CHK-05\\]|\\[CHK-03\\]|\\[CHK-06\\]|\\[E2E-02\\]|\\[ORD-03\\]|\\[ORD-01\\]"
+    ],
+    "configFile": "./tests/playwright.config.ts",
+    "rootDir": "./tests/specs",
+    "failOnFlakyTests": false,
+    "forbidOnly": true,
+    "fullyParallel": true,
+    "globalSetup": "./tests/global-setup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 600000,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "./tests/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "./tests/specs",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 15000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "null",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "./data/demo-stage7/runs/S3-MAN-09-checkout/selected/wave1-raw.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "checkout/checkout.spec.ts",
+      "file": "checkout/checkout.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "[CHK-01] validates every shipping field and accepts boundary values",
+          "ok": true,
+          "tags": [
+            "module:checkout",
+            "crit:medium"
+          ],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [
+                {
+                  "type": "covers",
+                  "description": "checkout/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 7,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 7,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/views/checkout.ejs",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 7,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 531,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T19:08:18.827Z",
+                  "annotations": [
+                    {
+                      "type": "covers",
+                      "description": "checkout/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 7,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 7,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/views/checkout.ejs",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 7,
+                        "column": 5
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "67cdc8a4402314feb5d5-d5c384166cb7a8c5cbcc",
+          "file": "checkout/checkout.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "[CHK-02] applies a percent promo code with rounding and keeps it on the order",
+          "ok": true,
+          "tags": [
+            "module:checkout",
+            "module:orders",
+            "crit:high"
+          ],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [
+                {
+                  "type": "covers",
+                  "description": "checkout/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 54,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 54,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/service.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 54,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/views/checkout.ejs",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 54,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "shared/money.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 54,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 426,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T19:08:18.828Z",
+                  "annotations": [
+                    {
+                      "type": "covers",
+                      "description": "checkout/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 54,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 54,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/service.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 54,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/views/checkout.ejs",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 54,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "shared/money.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 54,
+                        "column": 5
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "67cdc8a4402314feb5d5-085d9ad931c171af0569",
+          "file": "checkout/checkout.spec.ts",
+          "line": 54,
+          "column": 5
+        },
+        {
+          "title": "[CHK-03] applies fixed and free-shipping promo codes (free shipping is standard only)",
+          "ok": true,
+          "tags": [
+            "module:checkout",
+            "crit:high"
+          ],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [
+                {
+                  "type": "covers",
+                  "description": "checkout/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 86,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 86,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/service.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 86,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/views/checkout.ejs",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 86,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 444,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T19:08:18.827Z",
+                  "annotations": [
+                    {
+                      "type": "covers",
+                      "description": "checkout/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 86,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 86,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/service.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 86,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/views/checkout.ejs",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 86,
+                        "column": 5
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "67cdc8a4402314feb5d5-3fb5aaaf4b0cb53fb1a6",
+          "file": "checkout/checkout.spec.ts",
+          "line": 86,
+          "column": 5
+        },
+        {
+          "title": "[CHK-04] rejects expired, inactive and unknown codes and blocks the order",
+          "ok": true,
+          "tags": [
+            "module:checkout",
+            "crit:medium"
+          ],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [
+                {
+                  "type": "covers",
+                  "description": "checkout/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 115,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 115,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/service.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 115,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/views/checkout.ejs",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 115,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 494,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T19:08:18.827Z",
+                  "annotations": [
+                    {
+                      "type": "covers",
+                      "description": "checkout/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 115,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 115,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/service.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 115,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/views/checkout.ejs",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 115,
+                        "column": 5
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "67cdc8a4402314feb5d5-bbf3a90c15abca2b203c",
+          "file": "checkout/checkout.spec.ts",
+          "line": 115,
+          "column": 5
+        },
+        {
+          "title": "[CHK-05] accepts a promo code at exactly the minimum order and rejects it below",
+          "ok": true,
+          "tags": [
+            "module:checkout",
+            "crit:medium"
+          ],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [
+                {
+                  "type": "covers",
+                  "description": "checkout/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 150,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 150,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "shared/money.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 150,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 451,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T19:08:19.787Z",
+                  "annotations": [
+                    {
+                      "type": "covers",
+                      "description": "checkout/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 150,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 150,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "shared/money.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 150,
+                        "column": 5
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "67cdc8a4402314feb5d5-3f6e5f7830bddd30faaa",
+          "file": "checkout/checkout.spec.ts",
+          "line": 150,
+          "column": 5
+        },
+        {
+          "title": "[CHK-06] ships free from $50.00 after discount and always charges express",
+          "ok": true,
+          "tags": [
+            "module:checkout",
+            "crit:high"
+          ],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [
+                {
+                  "type": "covers",
+                  "description": "checkout/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 183,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 183,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/views/checkout.ejs",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 183,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 336,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T19:08:19.804Z",
+                  "annotations": [
+                    {
+                      "type": "covers",
+                      "description": "checkout/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 183,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 183,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/views/checkout.ejs",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 183,
+                        "column": 5
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "67cdc8a4402314feb5d5-ef5b802acc7f350783de",
+          "file": "checkout/checkout.spec.ts",
+          "line": 183,
+          "column": 5
+        },
+        {
+          "title": "[CHK-07] places an order, decreases stock and empties the cart",
+          "ok": true,
+          "tags": [
+            "module:checkout",
+            "module:cart",
+            "module:orders",
+            "module:product",
+            "crit:high"
+          ],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [
+                {
+                  "type": "covers",
+                  "description": "checkout/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 209,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 209,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/service.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 209,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/views/confirmation.ejs",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 209,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "orders/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 209,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "orders/views/detail.ejs",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 209,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "cart/service.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 209,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 532,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T19:08:19.857Z",
+                  "annotations": [
+                    {
+                      "type": "covers",
+                      "description": "checkout/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 209,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 209,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/service.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 209,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/views/confirmation.ejs",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 209,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "orders/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 209,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "orders/views/detail.ejs",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 209,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "cart/service.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 209,
+                        "column": 5
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "67cdc8a4402314feb5d5-2df0dc7390980ca19ca9",
+          "file": "checkout/checkout.spec.ts",
+          "line": 209,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/journeys.spec.ts",
+      "file": "e2e/journeys.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "[E2E-01] guest registers, finds a product, buys it with a promo code and sees it in the history",
+          "ok": true,
+          "tags": [
+            "module:auth",
+            "module:search",
+            "module:product",
+            "module:cart",
+            "module:checkout",
+            "module:orders",
+            "crit:high"
+          ],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [
+                {
+                  "type": "covers",
+                  "description": "auth/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 6,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "search/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 6,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "product/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 6,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "cart/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 6,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "cart/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 6,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 6,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 6,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/service.ts",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 6,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "orders/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 6,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "orders/views/list.ejs",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 6,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 806,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T19:08:19.897Z",
+                  "annotations": [
+                    {
+                      "type": "covers",
+                      "description": "auth/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 6,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "search/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 6,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "product/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 6,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "cart/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 6,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "cart/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 6,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 6,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 6,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/service.ts",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 6,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "orders/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 6,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "orders/views/list.ejs",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 6,
+                        "column": 5
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "98bb0b6bfb91f0327d90-c159e0a8a17760095c56",
+          "file": "e2e/journeys.spec.ts",
+          "line": 6,
+          "column": 5
+        },
+        {
+          "title": "[E2E-02] admin moves a new order through its statuses and the customer sees each change",
+          "ok": true,
+          "tags": [
+            "module:checkout",
+            "module:orders",
+            "module:admin",
+            "crit:high"
+          ],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [
+                {
+                  "type": "covers",
+                  "description": "checkout/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 78,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/service.ts",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 78,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "orders/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 78,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "orders/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 78,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "orders/service.ts",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 78,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "orders/views/list.ejs",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 78,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "orders/views/detail.ejs",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 78,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "admin/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 78,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "admin/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 78,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "admin/views/orders.ejs",
+                  "location": {
+                    "file": "./tests/specs/e2e/journeys.spec.ts",
+                    "line": 78,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 713,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T19:08:20.149Z",
+                  "annotations": [
+                    {
+                      "type": "covers",
+                      "description": "checkout/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 78,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/service.ts",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 78,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "orders/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 78,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "orders/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 78,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "orders/service.ts",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 78,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "orders/views/list.ejs",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 78,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "orders/views/detail.ejs",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 78,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "admin/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 78,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "admin/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 78,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "admin/views/orders.ejs",
+                      "location": {
+                        "file": "./tests/specs/e2e/journeys.spec.ts",
+                        "line": 78,
+                        "column": 5
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "98bb0b6bfb91f0327d90-ee289d87d41a58ed8aa1",
+          "file": "e2e/journeys.spec.ts",
+          "line": 78,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "orders/orders.spec.ts",
+      "file": "orders/orders.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "[ORD-01] lists the order history newest first, ties broken by id",
+          "ok": true,
+          "tags": [
+            "module:orders",
+            "crit:medium"
+          ],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [
+                {
+                  "type": "covers",
+                  "description": "orders/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/orders/orders.spec.ts",
+                    "line": 7,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "orders/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/orders/orders.spec.ts",
+                    "line": 7,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "orders/service.ts",
+                  "location": {
+                    "file": "./tests/specs/orders/orders.spec.ts",
+                    "line": 7,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "orders/views/list.ejs",
+                  "location": {
+                    "file": "./tests/specs/orders/orders.spec.ts",
+                    "line": 7,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "shared/clock.ts",
+                  "location": {
+                    "file": "./tests/specs/orders/orders.spec.ts",
+                    "line": 7,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 191,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T19:08:20.249Z",
+                  "annotations": [
+                    {
+                      "type": "covers",
+                      "description": "orders/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/orders/orders.spec.ts",
+                        "line": 7,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "orders/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/orders/orders.spec.ts",
+                        "line": 7,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "orders/service.ts",
+                      "location": {
+                        "file": "./tests/specs/orders/orders.spec.ts",
+                        "line": 7,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "orders/views/list.ejs",
+                      "location": {
+                        "file": "./tests/specs/orders/orders.spec.ts",
+                        "line": 7,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "shared/clock.ts",
+                      "location": {
+                        "file": "./tests/specs/orders/orders.spec.ts",
+                        "line": 7,
+                        "column": 5
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "059092f16ba0673f50b2-5a30e294aff3dfc126f8",
+          "file": "orders/orders.spec.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "[ORD-03] cancels a pending order and returns its items to stock",
+          "ok": true,
+          "tags": [
+            "module:orders",
+            "module:product",
+            "crit:high"
+          ],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [
+                {
+                  "type": "covers",
+                  "description": "orders/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/orders/orders.spec.ts",
+                    "line": 87,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "orders/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/orders/orders.spec.ts",
+                    "line": 87,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "orders/service.ts",
+                  "location": {
+                    "file": "./tests/specs/orders/orders.spec.ts",
+                    "line": 87,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "orders/views/detail.ejs",
+                  "location": {
+                    "file": "./tests/specs/orders/orders.spec.ts",
+                    "line": 87,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "product/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/orders/orders.spec.ts",
+                    "line": 87,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 3,
+                  "status": "passed",
+                  "duration": 328,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T19:08:20.397Z",
+                  "annotations": [
+                    {
+                      "type": "covers",
+                      "description": "orders/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/orders/orders.spec.ts",
+                        "line": 87,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "orders/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/orders/orders.spec.ts",
+                        "line": 87,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "orders/service.ts",
+                      "location": {
+                        "file": "./tests/specs/orders/orders.spec.ts",
+                        "line": 87,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "orders/views/detail.ejs",
+                      "location": {
+                        "file": "./tests/specs/orders/orders.spec.ts",
+                        "line": 87,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "product/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/orders/orders.spec.ts",
+                        "line": 87,
+                        "column": 5
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "059092f16ba0673f50b2-e4ad226dde28e5895a5c",
+          "file": "orders/orders.spec.ts",
+          "line": 87,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-20T19:08:18.466Z",
+    "duration": 2424.61,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,1786 @@
+{
+  "base": "84ad11ee15fb4dc24c8660ef1013628ddbe43634",
+  "base_index": 429,
+  "history": "data/history-600",
+  "history_commits": 430,
+  "model": "ml/models/rf (seed 20261117, train 0-323)",
+  "shas": {
+    "S1-style-docs": "31107787b4320ea207c1268624fabd9ee5e51c78",
+    "S2-MAN-03-cart": "59c6adf248f3294b68416874ca83f20f0150e819",
+    "S3-MAN-09-checkout": "c0df0c87005ad1ee928ec856b72d4cfaab595f2e",
+    "S4-MAN-13-catalog": "982ff238a6e792865c0ee06922dbc7a1b54849e3",
+    "S5-MAN-16-orders": "7be4bf9bd517feca7b8868444830e776aa79819e",
+    "S6-MAN-18-admin": "36d8cb29127e63d544d1829fad8360f8f2a2655f",
+    "S7-MAN-06-search-hang": "dee9d6a970e16381803f97e094bd135ccc188ff5",
+    "S8-MAN-16-plus-style": "3740937e5414bd246e1a57002e64923531b2bef7"
+  },
+  "scenarios": [
+    {
+      "name": "S1-style-docs",
+      "kind": "доброякісний",
+      "defect": null,
+      "title": "Стиль і документація: відступ у шапці сайту, рядок у README",
+      "head": "31107787b4320ea207c1268624fabd9ee5e51c78",
+      "diff": {
+        "files": 2,
+        "lines_added": 3,
+        "lines_deleted": 1,
+        "paths": [
+          "README.md",
+          "src/public/style.css"
+        ]
+      },
+      "truth": {
+        "confirmed_fail": [],
+        "flaky": [],
+        "build_ok": true,
+        "wall_s": 5.03,
+        "rerun_s": 0.0,
+        "tests_ms": 13282.0
+      },
+      "methods": {
+        "RF + τ (основна, H1)": {
+          "selected": 0,
+          "selected_ids": [],
+          "caught": [],
+          "detected": null,
+          "pred_share": 0.0,
+          "actual_share": 0.0,
+          "first_failing_rank": null
+        },
+        "RF + бюджет B": {
+          "selected": 6,
+          "selected_ids": [
+            "E2E-01",
+            "CHK-01",
+            "CHK-02",
+            "CHK-04",
+            "CHK-06",
+            "CHK-07"
+          ],
+          "caught": [],
+          "detected": null,
+          "pred_share": 0.21451365955307183,
+          "actual_share": 0.21435024845655776,
+          "first_failing_rank": null
+        },
+        "covers ∩ діф + бюджет B": {
+          "selected": 14,
+          "selected_ids": [
+            "CART-03",
+            "CHK-05",
+            "CAT-03",
+            "SRCH-01",
+            "PRD-03",
+            "CART-05",
+            "CHK-03",
+            "PRD-02",
+            "PRD-01",
+            "AUTH-02",
+            "ORD-03",
+            "CHK-01",
+            "CHK-06",
+            "CHK-07"
+          ],
+          "caught": [],
+          "detected": null,
+          "pred_share": 0.34243621301743027,
+          "actual_share": 0.33887968679415753,
+          "first_failing_rank": null
+        },
+        "комбінована евристика + бюджет B": {
+          "selected": 10,
+          "selected_ids": [
+            "AUTH-03",
+            "CHK-06",
+            "CHK-02",
+            "E2E-01",
+            "PRD-01",
+            "CAT-01",
+            "CAT-04",
+            "CHK-01",
+            "AUTH-02",
+            "AUTH-01"
+          ],
+          "caught": [],
+          "detected": null,
+          "pred_share": 0.2919232519892387,
+          "actual_share": 0.2905435928324048,
+          "first_failing_rank": null
+        }
+      },
+      "tool_run": {
+        "executed": 0,
+        "confirmed_fail": [],
+        "wall_s": 0,
+        "rerun_s": 0,
+        "tests_ms": 0.0,
+        "process_wall_s": 1.334,
+        "exit_code": 0
+      },
+      "full_process_wall_s": 6.473,
+      "top10": [
+        {
+          "rank": 1,
+          "test_id": "E2E-01",
+          "score": 0.12071247782913873,
+          "p": 0.007231458219377578,
+          "selected": false,
+          "reasons": "падав 10 ком. тому; асоціація файл→тест 0.23"
+        },
+        {
+          "rank": 2,
+          "test_id": "CHK-01",
+          "score": 0.12061713414584647,
+          "p": 0.007226921697497127,
+          "selected": false,
+          "reasons": "падав 15 ком. тому; асоціація файл→тест 0.14"
+        },
+        {
+          "rank": 3,
+          "test_id": "CHK-02",
+          "score": 0.11364799657387668,
+          "p": 0.006902864014221755,
+          "selected": false,
+          "reasons": "падав 10 ком. тому; асоціація файл→тест 0.18"
+        },
+        {
+          "rank": 4,
+          "test_id": "CHK-04",
+          "score": 0.11094915934615653,
+          "p": 0.0067812835295307195,
+          "selected": false,
+          "reasons": "падав 35 ком. тому; асоціація файл→тест 0.14"
+        },
+        {
+          "rank": 5,
+          "test_id": "CHK-06",
+          "score": 0.09565933681212285,
+          "p": 0.006131587610376063,
+          "selected": false,
+          "reasons": "падав 10 ком. тому; асоціація файл→тест 0.14"
+        },
+        {
+          "rank": 6,
+          "test_id": "CHK-07",
+          "score": 0.08369318476335305,
+          "p": 0.005666602383626362,
+          "selected": false,
+          "reasons": "падав 68 ком. тому; асоціація файл→тест 0.09"
+        },
+        {
+          "rank": 7,
+          "test_id": "E2E-02",
+          "score": 0.07814072867855176,
+          "p": 0.005462920488112316,
+          "selected": false,
+          "reasons": "падав 26 ком. тому; асоціація файл→тест 0.09"
+        },
+        {
+          "rank": 8,
+          "test_id": "CHK-03",
+          "score": 0.0664611155650437,
+          "p": 0.00505793643757458,
+          "selected": false,
+          "reasons": "падав 35 ком. тому; асоціація файл→тест 0.09"
+        },
+        {
+          "rank": 9,
+          "test_id": "CHK-05",
+          "score": 0.0629893333043147,
+          "p": 0.004943417413420269,
+          "selected": false,
+          "reasons": "падав 35 ком. тому; асоціація файл→тест 0.09"
+        },
+        {
+          "rank": 10,
+          "test_id": "ORD-01",
+          "score": 0.05392140558415011,
+          "p": 0.00465633147981326,
+          "selected": false,
+          "reasons": "падав 68 ком. тому; асоціація файл→тест 0.05"
+        }
+      ],
+      "cli_timings": {
+        "import_s": 0.711,
+        "history_replay_s": 0.075,
+        "diff_s": 0.0237,
+        "features_s": 0.0025,
+        "model_load_s": 0.205,
+        "predict_s": 0.0284
+      },
+      "rank_process_wall_s": 1.169
+    },
+    {
+      "name": "S2-MAN-03-cart",
+      "kind": "ручний баг",
+      "defect": "MAN-03",
+      "title": "Кошик більше не перевіряє залишок на складі (лише ліміт 10 на рядок)",
+      "head": "59c6adf248f3294b68416874ca83f20f0150e819",
+      "diff": {
+        "files": 1,
+        "lines_added": 0,
+        "lines_deleted": 4,
+        "paths": [
+          "src/modules/cart/logic.ts"
+        ]
+      },
+      "truth": {
+        "confirmed_fail": [
+          "CART-02"
+        ],
+        "flaky": [],
+        "build_ok": true,
+        "wall_s": 5.574,
+        "rerun_s": 4.684,
+        "tests_ms": 15437.0
+      },
+      "methods": {
+        "RF + τ (основна, H1)": {
+          "selected": 7,
+          "selected_ids": [
+            "CART-05",
+            "E2E-01",
+            "CART-03",
+            "CART-02",
+            "CART-04",
+            "PRD-02",
+            "CART-01"
+          ],
+          "caught": [
+            "CART-02"
+          ],
+          "detected": true,
+          "pred_share": 0.2316262174616255,
+          "actual_share": 0.3610805208265855,
+          "first_failing_rank": 4
+        },
+        "RF + бюджет B": {
+          "selected": 7,
+          "selected_ids": [
+            "CART-05",
+            "E2E-01",
+            "CART-03",
+            "CART-02",
+            "CART-04",
+            "PRD-02",
+            "CART-01"
+          ],
+          "caught": [
+            "CART-02"
+          ],
+          "detected": true,
+          "pred_share": 0.2316262174616255,
+          "actual_share": 0.3610805208265855,
+          "first_failing_rank": 4
+        },
+        "covers ∩ діф + бюджет B": {
+          "selected": 11,
+          "selected_ids": [
+            "CART-03",
+            "CART-05",
+            "PRD-02",
+            "CART-02",
+            "CART-01",
+            "E2E-01",
+            "CART-04",
+            "CHK-07",
+            "AUTH-04",
+            "CHK-05",
+            "CAT-03"
+          ],
+          "caught": [
+            "CART-02"
+          ],
+          "detected": true,
+          "pred_share": 0.34344766551364836,
+          "actual_share": 0.4547515709010818,
+          "first_failing_rank": 4
+        },
+        "комбінована евристика + бюджет B": {
+          "selected": 10,
+          "selected_ids": [
+            "E2E-01",
+            "CART-03",
+            "CART-05",
+            "PRD-02",
+            "CART-02",
+            "CART-01",
+            "CART-04",
+            "CHK-07",
+            "AUTH-04",
+            "AUTH-03"
+          ],
+          "caught": [
+            "CART-02"
+          ],
+          "detected": true,
+          "pred_share": 0.3260043829441755,
+          "actual_share": 0.4439334067500162,
+          "first_failing_rank": 5
+        }
+      },
+      "tool_run": {
+        "executed": 7,
+        "confirmed_fail": [
+          "CART-02"
+        ],
+        "wall_s": 4.869,
+        "rerun_s": 4.743,
+        "tests_ms": 6445.0,
+        "process_wall_s": 11.282,
+        "exit_code": 1
+      },
+      "full_process_wall_s": 11.931,
+      "top10": [
+        {
+          "rank": 1,
+          "test_id": "CART-05",
+          "score": 0.6370847107349161,
+          "p": 0.18262322675860082,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 32 ком. тому; асоціація файл→тест 0.17"
+        },
+        {
+          "rank": 2,
+          "test_id": "E2E-01",
+          "score": 0.6341826190234855,
+          "p": 0.17976876182350776,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 10 ком. тому; асоціація файл→тест 0.19"
+        },
+        {
+          "rank": 3,
+          "test_id": "CART-03",
+          "score": 0.6096784331358704,
+          "p": 0.1570465072098266,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 32 ком. тому; асоціація файл→тест 0.11"
+        },
+        {
+          "rank": 4,
+          "test_id": "CART-02",
+          "score": 0.6025257221354148,
+          "p": 0.15087048441627504,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 71 ком. тому; асоціація файл→тест 0.09"
+        },
+        {
+          "rank": 5,
+          "test_id": "CART-04",
+          "score": 0.5779691084397529,
+          "p": 0.13117693599081257,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 71 ком. тому; асоціація файл→тест 0.09"
+        },
+        {
+          "rank": 6,
+          "test_id": "PRD-02",
+          "score": 0.5219386283661214,
+          "p": 0.09431455820235703,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 71 ком. тому; асоціація файл→тест 0.05"
+        },
+        {
+          "rank": 7,
+          "test_id": "CART-01",
+          "score": 0.5218211042289393,
+          "p": 0.09424802500728346,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 71 ком. тому; асоціація файл→тест 0.05"
+        },
+        {
+          "rank": 8,
+          "test_id": "CHK-07",
+          "score": 0.412602094806402,
+          "p": 0.04802017770058193,
+          "selected": false,
+          "reasons": "модуль ∩ діф: 1 ф.; падав 68 ком. тому; асоціація файл→тест 0.14"
+        },
+        {
+          "rank": 9,
+          "test_id": "CHK-04",
+          "score": 0.39395081175481733,
+          "p": 0.042673166159354375,
+          "selected": false,
+          "reasons": "падав 35 ком. тому; асоціація файл→тест 0.16"
+        },
+        {
+          "rank": 10,
+          "test_id": "CHK-03",
+          "score": 0.39201711965403424,
+          "p": 0.042152510951603835,
+          "selected": false,
+          "reasons": "падав 35 ком. тому; асоціація файл→тест 0.12"
+        }
+      ],
+      "cli_timings": {
+        "import_s": 0.7207,
+        "history_replay_s": 0.0752,
+        "diff_s": 0.0233,
+        "features_s": 0.0023,
+        "model_load_s": 0.2118,
+        "predict_s": 0.0315
+      },
+      "rank_process_wall_s": 1.188
+    },
+    {
+      "name": "S3-MAN-09-checkout",
+      "kind": "ручний баг",
+      "defect": "MAN-09",
+      "title": "Промокод уже прострочений у момент закінчення терміну (>= замість >)",
+      "head": "c0df0c87005ad1ee928ec856b72d4cfaab595f2e",
+      "diff": {
+        "files": 1,
+        "lines_added": 1,
+        "lines_deleted": 1,
+        "paths": [
+          "src/modules/checkout/logic.ts"
+        ]
+      },
+      "truth": {
+        "confirmed_fail": [],
+        "flaky": [],
+        "build_ok": true,
+        "wall_s": 4.732,
+        "rerun_s": 0.0,
+        "tests_ms": 13318.0
+      },
+      "methods": {
+        "RF + τ (основна, H1)": {
+          "selected": 11,
+          "selected_ids": [
+            "CHK-01",
+            "CHK-04",
+            "E2E-01",
+            "CHK-02",
+            "CHK-07",
+            "CHK-05",
+            "CHK-03",
+            "CHK-06",
+            "E2E-02",
+            "ORD-03",
+            "ORD-01"
+          ],
+          "caught": [],
+          "detected": null,
+          "pred_share": 0.3741326733230289,
+          "actual_share": 0.3765580417480102,
+          "first_failing_rank": null
+        },
+        "RF + бюджет B": {
+          "selected": 6,
+          "selected_ids": [
+            "CHK-01",
+            "CHK-04",
+            "E2E-01",
+            "CHK-02",
+            "CHK-07",
+            "CHK-05"
+          ],
+          "caught": [],
+          "detected": null,
+          "pred_share": 0.22435347173553685,
+          "actual_share": 0.22570956600090103,
+          "first_failing_rank": null
+        },
+        "covers ∩ діф + бюджет B": {
+          "selected": 10,
+          "selected_ids": [
+            "CHK-05",
+            "CHK-03",
+            "CHK-01",
+            "CHK-06",
+            "CHK-07",
+            "CHK-04",
+            "CHK-02",
+            "E2E-01",
+            "CART-05",
+            "E2E-02"
+          ],
+          "caught": [],
+          "detected": null,
+          "pred_share": 0.35669595284165095,
+          "actual_share": 0.36026430394954195,
+          "first_failing_rank": null
+        },
+        "комбінована евристика + бюджет B": {
+          "selected": 9,
+          "selected_ids": [
+            "CHK-06",
+            "CHK-02",
+            "E2E-01",
+            "CHK-01",
+            "CHK-05",
+            "CHK-03",
+            "CHK-04",
+            "CHK-07",
+            "E2E-02"
+          ],
+          "caught": [],
+          "detected": null,
+          "pred_share": 0.33353135806432965,
+          "actual_share": 0.3372878810632227,
+          "first_failing_rank": null
+        }
+      },
+      "tool_run": {
+        "executed": 11,
+        "confirmed_fail": [],
+        "wall_s": 2.811,
+        "rerun_s": 0.0,
+        "tests_ms": 5252.0,
+        "process_wall_s": 4.453,
+        "exit_code": 0
+      },
+      "full_process_wall_s": 6.201,
+      "top10": [
+        {
+          "rank": 1,
+          "test_id": "CHK-01",
+          "score": 0.8702590479120985,
+          "p": 0.511796779063978,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 15 ком. тому; асоціація файл→тест 0.29"
+        },
+        {
+          "rank": 2,
+          "test_id": "CHK-04",
+          "score": 0.8610488149650483,
+          "p": 0.4965338035999064,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 35 ком. тому; асоціація файл→тест 0.18"
+        },
+        {
+          "rank": 3,
+          "test_id": "E2E-01",
+          "score": 0.8571200612579664,
+          "p": 0.49002347894079823,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 10 ком. тому; асоціація файл→тест 0.22"
+        },
+        {
+          "rank": 4,
+          "test_id": "CHK-02",
+          "score": 0.8357803578148804,
+          "p": 0.45477723400344405,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 10 ком. тому; асоціація файл→тест 0.16"
+        },
+        {
+          "rank": 5,
+          "test_id": "CHK-07",
+          "score": 0.8209196236040943,
+          "p": 0.43047617396934873,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 68 ком. тому; асоціація файл→тест 0.14"
+        },
+        {
+          "rank": 6,
+          "test_id": "CHK-05",
+          "score": 0.7999525456408582,
+          "p": 0.3967767391845219,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 35 ком. тому; асоціація файл→тест 0.07"
+        },
+        {
+          "rank": 7,
+          "test_id": "CHK-03",
+          "score": 0.7850282741584576,
+          "p": 0.37335353454481107,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 35 ком. тому; асоціація файл→тест 0.06"
+        },
+        {
+          "rank": 8,
+          "test_id": "CHK-06",
+          "score": 0.739063826802119,
+          "p": 0.30521494662932774,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 10 ком. тому; асоціація файл→тест 0.09"
+        },
+        {
+          "rank": 9,
+          "test_id": "E2E-02",
+          "score": 0.6440741414414616,
+          "p": 0.18964211124853328,
+          "selected": true,
+          "reasons": "модуль ∩ діф: 1 ф.; падав 26 ком. тому; асоціація файл→тест 0.15"
+        },
+        {
+          "rank": 10,
+          "test_id": "ORD-03",
+          "score": 0.5691942416652435,
+          "p": 0.12468786955403718,
+          "selected": true,
+          "reasons": "падав 68 ком. тому; асоціація файл→тест 0.13"
+        }
+      ],
+      "cli_timings": {
+        "import_s": 0.7143,
+        "history_replay_s": 0.0736,
+        "diff_s": 0.0265,
+        "features_s": 0.0024,
+        "model_load_s": 0.2109,
+        "predict_s": 0.0307
+      },
+      "rank_process_wall_s": 1.186
+    },
+    {
+      "name": "S4-MAN-13-catalog",
+      "kind": "ручний баг",
+      "defect": "MAN-13",
+      "title": "Фільтр ціни виключає товари з ціною, рівною максимуму (>= замість >)",
+      "head": "982ff238a6e792865c0ee06922dbc7a1b54849e3",
+      "diff": {
+        "files": 1,
+        "lines_added": 1,
+        "lines_deleted": 1,
+        "paths": [
+          "src/modules/catalog/logic.ts"
+        ]
+      },
+      "truth": {
+        "confirmed_fail": [
+          "CAT-02"
+        ],
+        "flaky": [],
+        "build_ok": true,
+        "wall_s": 5.904,
+        "rerun_s": 4.519,
+        "tests_ms": 15465.0
+      },
+      "methods": {
+        "RF + τ (основна, H1)": {
+          "selected": 8,
+          "selected_ids": [
+            "CAT-05",
+            "CAT-03",
+            "CAT-01",
+            "CAT-02",
+            "CAT-04",
+            "CHK-01",
+            "CHK-07",
+            "E2E-02"
+          ],
+          "caught": [
+            "CAT-02"
+          ],
+          "detected": true,
+          "pred_share": 0.23737471025430673,
+          "actual_share": 0.380472033624313,
+          "first_failing_rank": 4
+        },
+        "RF + бюджет B": {
+          "selected": 8,
+          "selected_ids": [
+            "CAT-05",
+            "CAT-03",
+            "CAT-01",
+            "CAT-02",
+            "CAT-04",
+            "CHK-01",
+            "CHK-07",
+            "E2E-02"
+          ],
+          "caught": [
+            "CAT-02"
+          ],
+          "detected": true,
+          "pred_share": 0.23737471025430673,
+          "actual_share": 0.380472033624313,
+          "first_failing_rank": 4
+        },
+        "covers ∩ діф + бюджет B": {
+          "selected": 15,
+          "selected_ids": [
+            "CAT-03",
+            "CAT-01",
+            "CAT-02",
+            "CAT-04",
+            "CAT-05",
+            "PRD-01",
+            "CART-03",
+            "CHK-05",
+            "SRCH-01",
+            "PRD-03",
+            "CART-05",
+            "CHK-03",
+            "PRD-02",
+            "AUTH-02",
+            "ORD-03"
+          ],
+          "caught": [
+            "CAT-02"
+          ],
+          "detected": true,
+          "pred_share": 0.3373628939319909,
+          "actual_share": 0.4693824765599741,
+          "first_failing_rank": 3
+        },
+        "комбінована евристика + бюджет B": {
+          "selected": 12,
+          "selected_ids": [
+            "CAT-01",
+            "CAT-04",
+            "CAT-05",
+            "CAT-03",
+            "CAT-02",
+            "PRD-01",
+            "AUTH-03",
+            "CHK-06",
+            "CHK-02",
+            "E2E-01",
+            "CHK-01",
+            "AUTH-02"
+          ],
+          "caught": [
+            "CAT-02"
+          ],
+          "detected": true,
+          "pred_share": 0.32215430730199196,
+          "actual_share": 0.4523116715163272,
+          "first_failing_rank": 5
+        }
+      },
+      "tool_run": {
+        "executed": 8,
+        "confirmed_fail": [
+          "CAT-02"
+        ],
+        "wall_s": 4.492,
+        "rerun_s": 4.526,
+        "tests_ms": 6130.0,
+        "process_wall_s": 10.49,
+        "exit_code": 1
+      },
+      "full_process_wall_s": 11.937,
+      "top10": [
+        {
+          "rank": 1,
+          "test_id": "CAT-05",
+          "score": 0.8023957600969416,
+          "p": 0.40065999109937445,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 29 ком. тому; асоціація файл→тест 0.16"
+        },
+        {
+          "rank": 2,
+          "test_id": "CAT-03",
+          "score": 0.7831326077767984,
+          "p": 0.37041790783696676,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; асоціація файл→тест 0.11"
+        },
+        {
+          "rank": 3,
+          "test_id": "CAT-01",
+          "score": 0.7807883503060915,
+          "p": 0.36680081519448593,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 12 ком. тому; асоціація файл→тест 0.09"
+        },
+        {
+          "rank": 4,
+          "test_id": "CAT-02",
+          "score": 0.7651095758800021,
+          "p": 0.343009523665084,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; асоціація файл→тест 0.08"
+        },
+        {
+          "rank": 5,
+          "test_id": "CAT-04",
+          "score": 0.7510888126128953,
+          "p": 0.32237808269366985,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 12 ком. тому; асоціація файл→тест 0.09"
+        },
+        {
+          "rank": 6,
+          "test_id": "CHK-01",
+          "score": 0.5237412431746005,
+          "p": 0.09534034478145648,
+          "selected": true,
+          "reasons": "падав 15 ком. тому; асоціація файл→тест 0.12"
+        },
+        {
+          "rank": 7,
+          "test_id": "CHK-07",
+          "score": 0.5234909535014666,
+          "p": 0.09519732183593682,
+          "selected": true,
+          "reasons": "падав 68 ком. тому; асоціація файл→тест 0.11"
+        },
+        {
+          "rank": 8,
+          "test_id": "E2E-02",
+          "score": 0.5126204360186608,
+          "p": 0.08916825390649497,
+          "selected": true,
+          "reasons": "падав 26 ком. тому; асоціація файл→тест 0.11"
+        },
+        {
+          "rank": 9,
+          "test_id": "E2E-01",
+          "score": 0.42803957633681533,
+          "p": 0.0529212639057338,
+          "selected": false,
+          "reasons": "падав 10 ком. тому; асоціація файл→тест 0.17"
+        },
+        {
+          "rank": 10,
+          "test_id": "AUTH-02",
+          "score": 0.3993383470694452,
+          "p": 0.04415637865238168,
+          "selected": false,
+          "reasons": "падав 18 ком. тому; асоціація файл→тест 0.13"
+        }
+      ],
+      "cli_timings": {
+        "import_s": 0.7234,
+        "history_replay_s": 0.077,
+        "diff_s": 0.023,
+        "features_s": 0.0023,
+        "model_load_s": 0.2187,
+        "predict_s": 0.0311
+      },
+      "rank_process_wall_s": 1.206
+    },
+    {
+      "name": "S5-MAN-16-orders",
+      "kind": "ручний баг",
+      "defect": "MAN-16",
+      "title": "Замовлення з однаковим часом сортуються від старшого id (a.id − b.id)",
+      "head": "7be4bf9bd517feca7b8868444830e776aa79819e",
+      "diff": {
+        "files": 1,
+        "lines_added": 1,
+        "lines_deleted": 1,
+        "paths": [
+          "src/modules/orders/logic.ts"
+        ]
+      },
+      "truth": {
+        "confirmed_fail": [
+          "ORD-01"
+        ],
+        "flaky": [],
+        "build_ok": true,
+        "wall_s": 7.019,
+        "rerun_s": 4.548,
+        "tests_ms": 16248.0
+      },
+      "methods": {
+        "RF + τ (основна, H1)": {
+          "selected": 6,
+          "selected_ids": [
+            "E2E-02",
+            "ORD-01",
+            "ADM-04",
+            "CHK-07",
+            "ORD-03",
+            "ORD-02"
+          ],
+          "caught": [
+            "ORD-01"
+          ],
+          "detected": true,
+          "pred_share": 0.1934846838706155,
+          "actual_share": 0.33677991137370755,
+          "first_failing_rank": 2
+        },
+        "RF + бюджет B": {
+          "selected": 7,
+          "selected_ids": [
+            "E2E-02",
+            "ORD-01",
+            "ADM-04",
+            "CHK-07",
+            "ORD-03",
+            "ORD-02",
+            "CHK-01"
+          ],
+          "caught": [
+            "ORD-01"
+          ],
+          "detected": true,
+          "pred_share": 0.2254154272852519,
+          "actual_share": 0.3630600689315608,
+          "first_failing_rank": 2
+        },
+        "covers ∩ діф + бюджет B": {
+          "selected": 10,
+          "selected_ids": [
+            "ORD-03",
+            "CHK-07",
+            "ORD-02",
+            "ORD-01",
+            "E2E-02",
+            "ADM-04",
+            "CHK-02",
+            "E2E-01",
+            "CART-03",
+            "CHK-05"
+          ],
+          "caught": [
+            "ORD-01"
+          ],
+          "detected": true,
+          "pred_share": 0.3545656988623312,
+          "actual_share": 0.4711349089118661,
+          "first_failing_rank": 4
+        },
+        "комбінована евристика + бюджет B": {
+          "selected": 10,
+          "selected_ids": [
+            "E2E-02",
+            "ADM-04",
+            "ORD-03",
+            "CHK-07",
+            "ORD-01",
+            "ORD-02",
+            "CHK-02",
+            "E2E-01",
+            "AUTH-03",
+            "CHK-06"
+          ],
+          "caught": [
+            "ORD-01"
+          ],
+          "detected": true,
+          "pred_share": 0.3387465643918777,
+          "actual_share": 0.45845642540620385,
+          "first_failing_rank": 5
+        }
+      },
+      "tool_run": {
+        "executed": 6,
+        "confirmed_fail": [
+          "ORD-01"
+        ],
+        "wall_s": 4.603,
+        "rerun_s": 4.549,
+        "tests_ms": 5695.0,
+        "process_wall_s": 10.853,
+        "exit_code": 1
+      },
+      "full_process_wall_s": 13.062,
+      "top10": [
+        {
+          "rank": 1,
+          "test_id": "E2E-02",
+          "score": 0.8523657576387806,
+          "p": 0.48214986782955277,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 26 ком. тому; асоціація файл→тест 0.14"
+        },
+        {
+          "rank": 2,
+          "test_id": "ORD-01",
+          "score": 0.7910192644408869,
+          "p": 0.38269180952215615,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 68 ком. тому; асоціація файл→тест 0.11"
+        },
+        {
+          "rank": 3,
+          "test_id": "ADM-04",
+          "score": 0.7894438195066359,
+          "p": 0.38022740974245145,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 26 ком. тому; асоціація файл→тест 0.14"
+        },
+        {
+          "rank": 4,
+          "test_id": "CHK-07",
+          "score": 0.7852732831068595,
+          "p": 0.3737336421204781,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 68 ком. тому; асоціація файл→тест 0.06"
+        },
+        {
+          "rank": 5,
+          "test_id": "ORD-03",
+          "score": 0.766098614607492,
+          "p": 0.34448868907618535,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 68 ком. тому; асоціація файл→тест 0.06"
+        },
+        {
+          "rank": 6,
+          "test_id": "ORD-02",
+          "score": 0.7402208910531509,
+          "p": 0.3068440681228396,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф."
+        },
+        {
+          "rank": 7,
+          "test_id": "CHK-01",
+          "score": 0.4345005714973684,
+          "p": 0.05510972092959216,
+          "selected": false,
+          "reasons": "падав 15 ком. тому; асоціація файл→тест 0.11"
+        },
+        {
+          "rank": 8,
+          "test_id": "E2E-01",
+          "score": 0.3578216885983451,
+          "p": 0.03389192161778461,
+          "selected": false,
+          "reasons": "модуль ∩ діф: 1 ф.; падав 10 ком. тому; асоціація файл→тест 0.09"
+        },
+        {
+          "rank": 9,
+          "test_id": "CHK-02",
+          "score": 0.2631780313641041,
+          "p": 0.01838694960255454,
+          "selected": false,
+          "reasons": "модуль ∩ діф: 1 ф.; падав 10 ком. тому; асоціація файл→тест 0.06"
+        },
+        {
+          "rank": 10,
+          "test_id": "CHK-04",
+          "score": 0.16833970302181064,
+          "p": 0.009889884923951535,
+          "selected": false,
+          "reasons": "падав 35 ком. тому; асоціація файл→тест 0.06"
+        }
+      ],
+      "cli_timings": {
+        "import_s": 0.7529,
+        "history_replay_s": 0.0782,
+        "diff_s": 0.026,
+        "features_s": 0.0026,
+        "model_load_s": 0.2283,
+        "predict_s": 0.0328
+      },
+      "rank_process_wall_s": 1.261
+    },
+    {
+      "name": "S6-MAN-18-admin",
+      "kind": "ручний баг",
+      "defect": "MAN-18",
+      "title": "Форма адміністратора приймає нульову ціну (< замість <=)",
+      "head": "36d8cb29127e63d544d1829fad8360f8f2a2655f",
+      "diff": {
+        "files": 1,
+        "lines_added": 1,
+        "lines_deleted": 1,
+        "paths": [
+          "src/modules/admin/logic.ts"
+        ]
+      },
+      "truth": {
+        "confirmed_fail": [
+          "ADM-02"
+        ],
+        "flaky": [],
+        "build_ok": true,
+        "wall_s": 5.846,
+        "rerun_s": 4.704,
+        "tests_ms": 15073.0
+      },
+      "methods": {
+        "RF + τ (основна, H1)": {
+          "selected": 5,
+          "selected_ids": [
+            "E2E-02",
+            "ADM-02",
+            "ADM-03",
+            "ADM-04",
+            "CHK-01"
+          ],
+          "caught": [
+            "ADM-02"
+          ],
+          "detected": true,
+          "pred_share": 0.20121061670672752,
+          "actual_share": 0.35998142373780934,
+          "first_failing_rank": 2
+        },
+        "RF + бюджет B": {
+          "selected": 6,
+          "selected_ids": [
+            "E2E-02",
+            "ADM-02",
+            "ADM-03",
+            "ADM-04",
+            "CHK-01",
+            "CART-05"
+          ],
+          "caught": [
+            "ADM-02"
+          ],
+          "detected": true,
+          "pred_share": 0.22437521148404896,
+          "actual_share": 0.3785576859284814,
+          "first_failing_rank": 2
+        },
+        "covers ∩ діф + бюджет B": {
+          "selected": 11,
+          "selected_ids": [
+            "ADM-03",
+            "ADM-02",
+            "E2E-02",
+            "ADM-04",
+            "ADM-01",
+            "CART-03",
+            "CHK-05",
+            "CAT-03",
+            "SRCH-01",
+            "PRD-03",
+            "CART-05"
+          ],
+          "caught": [
+            "ADM-02"
+          ],
+          "detected": true,
+          "pred_share": 0.3442718910620995,
+          "actual_share": 0.47867047037749616,
+          "first_failing_rank": 2
+        },
+        "комбінована евристика + бюджет B": {
+          "selected": 8,
+          "selected_ids": [
+            "E2E-02",
+            "ADM-04",
+            "ADM-03",
+            "ADM-02",
+            "ADM-01",
+            "AUTH-03",
+            "CHK-06",
+            "CHK-02"
+          ],
+          "caught": [
+            "ADM-02"
+          ],
+          "detected": true,
+          "pred_share": 0.2830276400169522,
+          "actual_share": 0.427585749353148,
+          "first_failing_rank": 4
+        }
+      },
+      "tool_run": {
+        "executed": 5,
+        "confirmed_fail": [
+          "ADM-02"
+        ],
+        "wall_s": 4.704,
+        "rerun_s": 4.724,
+        "tests_ms": 5460.0,
+        "process_wall_s": 11.14,
+        "exit_code": 1
+      },
+      "full_process_wall_s": 12.176,
+      "top10": [
+        {
+          "rank": 1,
+          "test_id": "E2E-02",
+          "score": 0.8461262474511607,
+          "p": 0.4718306526530856,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 26 ком. тому; асоціація файл→тест 0.11"
+        },
+        {
+          "rank": 2,
+          "test_id": "ADM-02",
+          "score": 0.8121391680992117,
+          "p": 0.41626616592392934,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 71 ком. тому; асоціація файл→тест 0.11"
+        },
+        {
+          "rank": 3,
+          "test_id": "ADM-03",
+          "score": 0.7912540314423262,
+          "p": 0.38305956566532157,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 71 ком. тому; асоціація файл→тест 0.07"
+        },
+        {
+          "rank": 4,
+          "test_id": "ADM-04",
+          "score": 0.7871573498714467,
+          "p": 0.3766617688240538,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 26 ком. тому; асоціація файл→тест 0.07"
+        },
+        {
+          "rank": 5,
+          "test_id": "CHK-01",
+          "score": 0.5223343268977481,
+          "p": 0.09453888193373106,
+          "selected": true,
+          "reasons": "падав 15 ком. тому; асоціація файл→тест 0.13"
+        },
+        {
+          "rank": 6,
+          "test_id": "CART-05",
+          "score": 0.42400886429760365,
+          "p": 0.05159781484070407,
+          "selected": false,
+          "reasons": "падав 32 ком. тому; асоціація файл→тест 0.13"
+        },
+        {
+          "rank": 7,
+          "test_id": "CAT-05",
+          "score": 0.37320685412330984,
+          "p": 0.03739520952044925,
+          "selected": false,
+          "reasons": "падав 29 ком. тому; асоціація файл→тест 0.15"
+        },
+        {
+          "rank": 8,
+          "test_id": "CHK-07",
+          "score": 0.32055894699291754,
+          "p": 0.026671163633276377,
+          "selected": false,
+          "reasons": "падав 68 ком. тому; асоціація файл→тест 0.09"
+        },
+        {
+          "rank": 9,
+          "test_id": "ORD-03",
+          "score": 0.3084536022873053,
+          "p": 0.024665053073271076,
+          "selected": false,
+          "reasons": "падав 68 ком. тому; асоціація файл→тест 0.09"
+        },
+        {
+          "rank": 10,
+          "test_id": "ADM-01",
+          "score": 0.27519196793082773,
+          "p": 0.019881038794574542,
+          "selected": false,
+          "reasons": "модуль ∩ діф: 1 ф.; падав 55 ком. тому; асоціація файл→тест 0.04"
+        }
+      ],
+      "cli_timings": {
+        "import_s": 0.7295,
+        "history_replay_s": 0.0742,
+        "diff_s": 0.0254,
+        "features_s": 0.0023,
+        "model_load_s": 0.2192,
+        "predict_s": 0.0306
+      },
+      "rank_process_wall_s": 1.226
+    },
+    {
+      "name": "S7-MAN-06-search-hang",
+      "kind": "ручний баг (зависання)",
+      "defect": "MAN-06",
+      "title": "Ранжування пошуку переписано циклом без інкремента: запит зависає",
+      "head": "dee9d6a970e16381803f97e094bd135ccc188ff5",
+      "diff": {
+        "files": 1,
+        "lines_added": 4,
+        "lines_deleted": 1,
+        "paths": [
+          "src/modules/search/logic.ts"
+        ]
+      },
+      "truth": {
+        "confirmed_fail": [
+          "E2E-01",
+          "SRCH-01"
+        ],
+        "flaky": [],
+        "build_ok": true,
+        "wall_s": 14.52,
+        "rerun_s": 11.854,
+        "tests_ms": 32192.0
+      },
+      "methods": {
+        "RF + τ (основна, H1)": {
+          "selected": 4,
+          "selected_ids": [
+            "E2E-01",
+            "SRCH-01",
+            "SRCH-02",
+            "SRCH-03"
+          ],
+          "caught": [
+            "E2E-01",
+            "SRCH-01"
+          ],
+          "detected": true,
+          "pred_share": 0.09959568627187801,
+          "actual_share": 0.6388543737574552,
+          "first_failing_rank": 1
+        },
+        "RF + бюджет B": {
+          "selected": 8,
+          "selected_ids": [
+            "E2E-01",
+            "SRCH-01",
+            "SRCH-02",
+            "SRCH-03",
+            "E2E-02",
+            "CHK-07",
+            "ORD-01",
+            "ORD-03"
+          ],
+          "caught": [
+            "E2E-01",
+            "SRCH-01"
+          ],
+          "detected": true,
+          "pred_share": 0.23711287713989188,
+          "actual_share": 0.691351888667992,
+          "first_failing_rank": 1
+        },
+        "covers ∩ діф + бюджет B": {
+          "selected": 14,
+          "selected_ids": [
+            "SRCH-01",
+            "SRCH-03",
+            "SRCH-02",
+            "E2E-01",
+            "CART-03",
+            "CHK-05",
+            "CAT-03",
+            "PRD-03",
+            "CART-05",
+            "CHK-03",
+            "PRD-02",
+            "PRD-01",
+            "AUTH-02",
+            "ORD-03"
+          ],
+          "caught": [
+            "E2E-01",
+            "SRCH-01"
+          ],
+          "detected": true,
+          "pred_share": 0.3297270527365099,
+          "actual_share": 0.727758449304175,
+          "first_failing_rank": 1
+        },
+        "комбінована евристика + бюджет B": {
+          "selected": 13,
+          "selected_ids": [
+            "E2E-01",
+            "SRCH-02",
+            "SRCH-01",
+            "SRCH-03",
+            "AUTH-03",
+            "CHK-06",
+            "CHK-02",
+            "PRD-01",
+            "CAT-01",
+            "CAT-04",
+            "CHK-01",
+            "AUTH-02",
+            "AUTH-01"
+          ],
+          "caught": [
+            "E2E-01",
+            "SRCH-01"
+          ],
+          "detected": true,
+          "pred_share": 0.33040958972561313,
+          "actual_share": 0.7327907554671969,
+          "first_failing_rank": 1
+        }
+      },
+      "tool_run": {
+        "executed": 4,
+        "confirmed_fail": [
+          "E2E-01",
+          "SRCH-01"
+        ],
+        "wall_s": 11.737,
+        "rerun_s": 11.838,
+        "tests_ms": 20826.0,
+        "process_wall_s": 25.272,
+        "exit_code": 1
+      },
+      "full_process_wall_s": 28.046,
+      "top10": [
+        {
+          "rank": 1,
+          "test_id": "E2E-01",
+          "score": 0.700890698512174,
+          "p": 0.25432785539752123,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 10 ком. тому; асоціація файл→тест 0.29"
+        },
+        {
+          "rank": 2,
+          "test_id": "SRCH-01",
+          "score": 0.5825991810582576,
+          "p": 0.13471511209558845,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; асоціація файл→тест 0.06"
+        },
+        {
+          "rank": 3,
+          "test_id": "SRCH-02",
+          "score": 0.5801533458138423,
+          "p": 0.13283613778414868,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 52 ком. тому; асоціація файл→тест 0.10"
+        },
+        {
+          "rank": 4,
+          "test_id": "SRCH-03",
+          "score": 0.5567619344689678,
+          "p": 0.1159669542143383,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; асоціація файл→тест 0.02"
+        },
+        {
+          "rank": 5,
+          "test_id": "E2E-02",
+          "score": 0.47319614592505455,
+          "p": 0.07009679187397658,
+          "selected": false,
+          "reasons": "падав 26 ком. тому; асоціація файл→тест 0.20"
+        },
+        {
+          "rank": 6,
+          "test_id": "CHK-07",
+          "score": 0.47081753375902397,
+          "p": 0.069075831804691,
+          "selected": false,
+          "reasons": "падав 68 ком. тому; асоціація файл→тест 0.18"
+        },
+        {
+          "rank": 7,
+          "test_id": "ORD-01",
+          "score": 0.45686600945649825,
+          "p": 0.06335995414419227,
+          "selected": false,
+          "reasons": "падав 68 ком. тому; асоціація файл→тест 0.16"
+        },
+        {
+          "rank": 8,
+          "test_id": "ORD-03",
+          "score": 0.4487615409880144,
+          "p": 0.06024514568706219,
+          "selected": false,
+          "reasons": "падав 68 ком. тому; асоціація файл→тест 0.18"
+        },
+        {
+          "rank": 9,
+          "test_id": "CHK-01",
+          "score": 0.4462644070146608,
+          "p": 0.0593146576664109,
+          "selected": false,
+          "reasons": "падав 15 ком. тому; асоціація файл→тест 0.27"
+        },
+        {
+          "rank": 10,
+          "test_id": "CHK-04",
+          "score": 0.4432567844589346,
+          "p": 0.058211828032042584,
+          "selected": false,
+          "reasons": "падав 35 ком. тому; асоціація файл→тест 0.18"
+        }
+      ],
+      "cli_timings": {
+        "import_s": 0.7202,
+        "history_replay_s": 0.0733,
+        "diff_s": 0.0249,
+        "features_s": 0.0025,
+        "model_load_s": 0.2172,
+        "predict_s": 0.0309
+      },
+      "rank_process_wall_s": 1.201
+    },
+    {
+      "name": "S8-MAN-16-plus-style",
+      "kind": "ручний баг + доброякісні правки",
+      "defect": "MAN-16",
+      "title": "Комбінований коміт: баг сортування замовлень разом зі стилем і документацією",
+      "head": "3740937e5414bd246e1a57002e64923531b2bef7",
+      "diff": {
+        "files": 3,
+        "lines_added": 4,
+        "lines_deleted": 2,
+        "paths": [
+          "README.md",
+          "src/modules/orders/logic.ts",
+          "src/public/style.css"
+        ]
+      },
+      "truth": {
+        "confirmed_fail": [
+          "ORD-01"
+        ],
+        "flaky": [],
+        "build_ok": true,
+        "wall_s": 6.935,
+        "rerun_s": 4.541,
+        "tests_ms": 15784.0
+      },
+      "methods": {
+        "RF + τ (основна, H1)": {
+          "selected": 6,
+          "selected_ids": [
+            "E2E-02",
+            "CHK-07",
+            "ADM-04",
+            "ORD-01",
+            "ORD-03",
+            "ORD-02"
+          ],
+          "caught": [
+            "ORD-01"
+          ],
+          "detected": true,
+          "pred_share": 0.1934846838706155,
+          "actual_share": 0.34078813988849466,
+          "first_failing_rank": 4
+        },
+        "RF + бюджет B": {
+          "selected": 7,
+          "selected_ids": [
+            "E2E-02",
+            "CHK-07",
+            "ADM-04",
+            "ORD-01",
+            "ORD-03",
+            "ORD-02",
+            "CHK-01"
+          ],
+          "caught": [
+            "ORD-01"
+          ],
+          "detected": true,
+          "pred_share": 0.2254154272852519,
+          "actual_share": 0.36689052204764316,
+          "first_failing_rank": 4
+        },
+        "covers ∩ діф + бюджет B": {
+          "selected": 10,
+          "selected_ids": [
+            "ORD-03",
+            "CHK-07",
+            "ORD-02",
+            "ORD-01",
+            "E2E-02",
+            "ADM-04",
+            "CHK-02",
+            "E2E-01",
+            "CART-03",
+            "CHK-05"
+          ],
+          "caught": [
+            "ORD-01"
+          ],
+          "detected": true,
+          "pred_share": 0.3545656988623312,
+          "actual_share": 0.4732007095793208,
+          "first_failing_rank": 4
+        },
+        "комбінована евристика + бюджет B": {
+          "selected": 10,
+          "selected_ids": [
+            "E2E-02",
+            "ADM-04",
+            "ORD-03",
+            "CHK-07",
+            "ORD-01",
+            "ORD-02",
+            "CHK-02",
+            "E2E-01",
+            "AUTH-03",
+            "CHK-06"
+          ],
+          "caught": [
+            "ORD-01"
+          ],
+          "detected": true,
+          "pred_share": 0.3387465643918777,
+          "actual_share": 0.46084642676127724,
+          "first_failing_rank": 5
+        }
+      },
+      "tool_run": {
+        "executed": 6,
+        "confirmed_fail": [
+          "ORD-01"
+        ],
+        "wall_s": 4.687,
+        "rerun_s": 4.546,
+        "tests_ms": 5679.0,
+        "process_wall_s": 10.965,
+        "exit_code": 1
+      },
+      "full_process_wall_s": 12.963,
+      "top10": [
+        {
+          "rank": 1,
+          "test_id": "E2E-02",
+          "score": 0.6811201403258774,
+          "p": 0.23027939637601197,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 26 ком. тому; асоціація файл→тест 0.14"
+        },
+        {
+          "rank": 2,
+          "test_id": "CHK-07",
+          "score": 0.6203623915160135,
+          "p": 0.16665268361464905,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 68 ком. тому; асоціація файл→тест 0.09"
+        },
+        {
+          "rank": 3,
+          "test_id": "ADM-04",
+          "score": 0.6114940218566106,
+          "p": 0.1586465554285607,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 26 ком. тому; асоціація файл→тест 0.14"
+        },
+        {
+          "rank": 4,
+          "test_id": "ORD-01",
+          "score": 0.5920949706983811,
+          "p": 0.14222365966002956,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 68 ком. тому; асоціація файл→тест 0.11"
+        },
+        {
+          "rank": 5,
+          "test_id": "ORD-03",
+          "score": 0.5876848122287854,
+          "p": 0.1386939209932374,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф.; падав 68 ком. тому; асоціація файл→тест 0.06"
+        },
+        {
+          "rank": 6,
+          "test_id": "ORD-02",
+          "score": 0.5765782926283239,
+          "p": 0.130129630454433,
+          "selected": true,
+          "reasons": "covers ∩ діф: 1 ф."
+        },
+        {
+          "rank": 7,
+          "test_id": "CHK-01",
+          "score": 0.42411856858947816,
+          "p": 0.051633417429218384,
+          "selected": false,
+          "reasons": "падав 15 ком. тому; асоціація файл→тест 0.14"
+        },
+        {
+          "rank": 8,
+          "test_id": "CHK-04",
+          "score": 0.4035831807513725,
+          "p": 0.04535950629596121,
+          "selected": false,
+          "reasons": "падав 35 ком. тому; асоціація файл→тест 0.14"
+        },
+        {
+          "rank": 9,
+          "test_id": "E2E-01",
+          "score": 0.3982207701864004,
+          "p": 0.043844716646256096,
+          "selected": false,
+          "reasons": "модуль ∩ діф: 1 ф.; падав 10 ком. тому; асоціація файл→тест 0.23"
+        },
+        {
+          "rank": 10,
+          "test_id": "CHK-03",
+          "score": 0.3612976634292423,
+          "p": 0.03465463554106924,
+          "selected": false,
+          "reasons": "падав 35 ком. тому; асоціація файл→тест 0.09"
+        }
+      ],
+      "cli_timings": {
+        "import_s": 0.8895,
+        "history_replay_s": 0.0768,
+        "diff_s": 0.0247,
+        "features_s": 0.0023,
+        "model_load_s": 0.2345,
+        "predict_s": 0.0359
+      },
+      "rank_process_wall_s": 1.397
+    }
+  ],
+  "waves": {
+    "scenario": "S4-MAN-13-catalog",
+    "waves_run": 2,
+    "executed": 6,
+    "confirmed_fail": [
+      "CAT-02"
+    ],
+    "wall_s": 5.939,
+    "rerun_s": 4.504,
+    "process_wall_s": 12.146,
+    "exit_code": 1,
+    "wave_ids": [
+      [
+        "CAT-05",
+        "CAT-03",
+        "CAT-01"
+      ],
+      [
+        "CAT-02",
+        "CAT-04",
+        "CHK-01"
+      ]
+    ]
+  },
+  "overhead": {
+    "reps": 3,
+    "rank_process_wall_s_median": 1.195,
+    "cli_timings_median": {
+      "import_s": 0.723,
+      "history_replay_s": 0.074,
+      "diff_s": 0.023,
+      "features_s": 0.002,
+      "model_load_s": 0.216,
+      "predict_s": 0.031
+    },
+    "one_test_wall_s_median": 1.443,
+    "one_test_ms_median": 373.0,
+    "one_test": "CHK-01",
+    "full_wall_s_median": 4.689,
+    "full_tests_ms_median": 13179.0,
+    "raw": {
+      "one": [
+        {
+          "wall_s": 1.443,
+          "tests_ms": 371.0,
+          "test": "CHK-01"
+        },
+        {
+          "wall_s": 1.441,
+          "tests_ms": 373.0,
+          "test": "CHK-01"
+        },
+        {
+          "wall_s": 1.481,
+          "tests_ms": 377.0,
+          "test": "CHK-01"
+        }
+      ],
+      "full": [
+        {
+          "wall_s": 4.686,
+          "tests_ms": 13179.0
+        },
+        {
+          "wall_s": 4.738,
+          "tests_ms": 13249.0
+        },
+        {
+          "wall_s": 4.689,
+          "tests_ms": 13135.0
+        }
+      ],
+      "rank_wall_s": [
+        1.18950970901642,
+        1.2024864580016583,
+        1.1947028749855235
+      ]
+    }
+  },
+  "demo_seconds": 266.8
+}

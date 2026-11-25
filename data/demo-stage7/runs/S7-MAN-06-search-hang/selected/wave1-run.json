@@ -1,0 +1,53 @@
+{
+  "runId": "wave1",
+  "sutCommit": "dee9d6a970e16381803f97e094bd135ccc188ff5",
+  "sutDir": "./data/cache/sut/dee9d6a970e1",
+  "startedAt": "2026-11-20T19:09:56.162Z",
+  "buildOk": true,
+  "buildError": null,
+  "totalDurationMs": 11353,
+  "tests": [
+    {
+      "id": "E2E-01",
+      "status": "failed",
+      "durationMs": 10329,
+      "errorSnippet": "TimeoutError: locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for getByTestId('search-submit')\n    - locator resolved to <button type=\"submit\" data-testid=\"search-submit\">Search</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - per…",
+      "flaky": false,
+      "confirmedFail": true,
+      "rerunStatuses": [
+        "failed",
+        "failed"
+      ]
+    },
+    {
+      "id": "SRCH-01",
+      "status": "failed",
+      "durationMs": 10135,
+      "errorSnippet": "TimeoutError: locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for getByTestId('search-submit')\n    - locator resolved to <button type=\"submit\" data-testid=\"search-submit\">Search</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - per…",
+      "flaky": false,
+      "confirmedFail": true,
+      "rerunStatuses": [
+        "failed",
+        "failed"
+      ]
+    },
+    {
+      "id": "SRCH-02",
+      "status": "passed",
+      "durationMs": 240,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "SRCH-03",
+      "status": "passed",
+      "durationMs": 122,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    }
+  ]
+}

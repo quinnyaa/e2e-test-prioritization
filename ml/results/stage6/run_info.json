@@ -1,0 +1,36 @@
+{
+  "finished": "2026-11-20T15:47:20+00:00",
+  "elapsed_seconds": 73.5,
+  "seed": 20261117,
+  "seeds": [
+    20261117,
+    20261118,
+    20261119,
+    20261120,
+    20261121,
+    20261122,
+    20261123,
+    20261124,
+    20261125,
+    20261126
+  ],
+  "n_perm": 20,
+  "n_perm_random": 200,
+  "main_family": "rf",
+  "combined_variant": "comb_last_cov_mod_recent",
+  "chosen_policy": "budget",
+  "chosen_ranking": "p",
+  "dataset": "data/dataset/history-600-540",
+  "dataset_csv_sha256": "e8b125ef79db7b6c2fb5b4593e7766526f19bc8f87ef264f9bce8ff13b80e385",
+  "meta_json_sha256": "189e062a32b062ca3afd098da0fcc44e9bcf312ae75351c4763a919e263a9179",
+  "splits_json_sha256": "6371a06753b47e12458413b6674167c67881a42588c1b0bbba65a7153dd9722d",
+  "versions": {
+    "python": "3.13.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "lightgbm": "4.7.0",
+    "joblib": "1.6.0",
+    "platform": "Darwin 27.0.0 arm64"
+  }
+}

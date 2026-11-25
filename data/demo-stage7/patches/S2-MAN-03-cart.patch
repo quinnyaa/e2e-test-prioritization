@@ -1,0 +1,14 @@
+diff --git a/src/modules/cart/logic.ts b/src/modules/cart/logic.ts
+index 4c74be4..9ef2d2d 100644
+--- a/src/modules/cart/logic.ts
++++ b/src/modules/cart/logic.ts
+@@ -39,10 +39,6 @@ export function validateAddQuantity(requested: number | null, inCart: number, st
+   if (total > MAX_QUANTITY_PER_LINE) {
+     return { ok: false, error: `You can add at most ${MAX_QUANTITY_PER_LINE} items of one product` };
+   }
+-  if (total > stock) {
+-    const noteValue = inCart > 0 ? ` (${inCart} already in your cart)` : '';
+-    return { ok: false, error: `Only ${stock} item${stock === 1 ? '' : 's'} available${noteValue}` };
+-  }
+   return { ok: true, quantity: total };
+ }

@@ -1,0 +1,55 @@
+{
+  "started": "2026-11-22T20:49:37+00:00",
+  "finished": "2026-11-22T20:50:33+00:00",
+  "elapsed_seconds": 56.8,
+  "command": "ml/.venv/bin/python ml/exp_closed_loop.py",
+  "seeds": [
+    20261117,
+    20261118,
+    20261119,
+    20261120,
+    20261121,
+    20261122,
+    20261123,
+    20261124,
+    20261125,
+    20261126
+  ],
+  "inputs_sha256": {
+    "data/dataset/history-600-540/dataset.csv": "e8b125ef79db7b6c2fb5b4593e7766526f19bc8f87ef264f9bce8ff13b80e385",
+    "data/dataset/history-600-540/meta.json": "189e062a32b062ca3afd098da0fcc44e9bcf312ae75351c4763a919e263a9179",
+    "data/dataset/history-600-540/splits.json": "6371a06753b47e12458413b6674167c67881a42588c1b0bbba65a7153dd9722d",
+    "data/dataset/history-600-540/positives.csv": "e6d0d80226bbf0b065055bdd1e7bcfe916c08598a13a0e0df0a823340e3c2498",
+    "data/dataset/history-600-540/defects.csv": "c9418beb07a1be41dd5e3dbaec77425a368ab71a3b732d9669d50f46167a6efc",
+    "ml/models/rf/model_card.json": "ea86abf4e26d2be32dcc96cc5e58d10c3cb480c9177b0a99320868f9d96d6dea",
+    "ml/exp_closed_loop.py": "d1a8ef7dc70dcc7e4c6dfad8bb39a8ca2e5d3b29e75330bd9d15086ef20c3415",
+    "ml/exp_common.py": "4d494f1a19510a630056ad672c992f88deab1e9b89f3ff2b2c283938ae9327da",
+    "data/history-600/runs.jsonl": "b271510d6c6e7cd22aeb773c75f4ed62682765afb807e1cc3823d0dd7e93d452",
+    "ml/results/stage8/main/h1.json": "1f9bccfa145959594c7075f30e1f3c44e2a6e8dcab19186b469eade6b75ed6ac",
+    "ml/replay.py": "dd0422c5345adceebf9dde0d74a8a9d7fb9623a8da43d1500f6805d6bdbf09bf",
+    "ml/models/rf/model.joblib": "b299f8c63274d6a8baf6b0cd809cb35ce476eabf01adc4a3b04dd1d115eff53b",
+    "ml/models/rf/seeds/seed-20261118.joblib": "20abb6c3e6f80ca495ce5f17b4774cd5356f71430022aa138d0cf81131274373",
+    "ml/models/rf/seeds/seed-20261119.joblib": "5a6ccf6b50cbb9b53ed3946e86bc11b7e81232ed39c5deb502c1d306388f7c42",
+    "ml/models/rf/seeds/seed-20261120.joblib": "c65fd7d1a4f9879fdfb45b8c64d785935d55cb6583000e0a121b44ecdbca3f5a",
+    "ml/models/rf/seeds/seed-20261121.joblib": "b0c644f828c2df66942e8ff49284d579d97d6ee186b5ffcb6a599f7a464379d8",
+    "ml/models/rf/seeds/seed-20261122.joblib": "a704f09f271d651f576cb4b219aa891573d97f5d6db507113a790653d0b7218d",
+    "ml/models/rf/seeds/seed-20261123.joblib": "434c2268257aee21192c2cf570c3ed977860395cc247cd30cc85710c9a439c6a",
+    "ml/models/rf/seeds/seed-20261124.joblib": "0b9bb026ac2ed61977959e88b82c8f0b5eca379ba4c521b959889c505bd9e234",
+    "ml/models/rf/seeds/seed-20261125.joblib": "e517a6817749c49542d6e59ffee1ef8057ce6f3947003c78850a09507d5acc20",
+    "ml/models/rf/seeds/seed-20261126.joblib": "a20c81123b7471a6ae7af177dcc72542ce9bb1d5c89744292f9ab6d17bdd8e1d"
+  },
+  "versions": {
+    "python": "3.13.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "lightgbm": "4.7.0",
+    "joblib": "1.6.0",
+    "platform": "Darwin 27.2.0 arm64",
+    "scipy": "1.18.1"
+  },
+  "machine": {
+    "processor": "arm",
+    "machine": "arm64"
+  }
+}

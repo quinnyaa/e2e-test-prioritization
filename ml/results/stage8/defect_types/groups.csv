@@ -1,0 +1,39 @@
+range,grouping,group,first_exposures,recall_first_rf_tau,recall_first_combined_B,recall_first_covers_B,small
+test,mutator,ArithmeticOperator,3,0.966667,0.933333,0.800000,True
+test,mutator,BlockStatement,1,1.000000,1.000000,1.000000,True
+test,mutator,BooleanLiteral,2,1.000000,1.000000,1.000000,True
+test,mutator,ConditionalExpression,7,0.642857,0.857143,0.935714,False
+test,mutator,EqualityOperator,6,0.666667,1.000000,0.991667,False
+test,mutator,LogicalOperator,2,0.000000,1.000000,0.975000,True
+test,mutator,Regex,1,1.000000,1.000000,1.000000,True
+test,mutator,StringLiteral,8,0.875000,0.875000,0.931250,False
+test,mutator,manual,9,0.588889,0.888889,0.950000,False
+test,module,admin,1,1.000000,1.000000,1.000000,True
+test,module,auth,5,0.800000,1.000000,0.990000,False
+test,module,cart,6,0.666667,0.833333,0.900000,False
+test,module,catalog,9,0.711111,0.866667,0.900000,False
+test,module,checkout,10,0.700000,1.000000,1.000000,False
+test,module,orders,7,0.714286,1.000000,0.978571,False
+test,module,product,1,0.300000,0.000000,0.550000,True
+test,source,manual,9,0.588889,0.888889,0.950000,False
+test,source,mutant,30,0.746667,0.926667,0.943333,False
+val (in-sample),mutator,ArithmeticOperator,1,1.000000,1.000000,1.000000,True
+val (in-sample),mutator,ArrayDeclaration,1,1.000000,1.000000,1.000000,True
+val (in-sample),mutator,ArrowFunction,1,1.000000,1.000000,1.000000,True
+val (in-sample),mutator,BooleanLiteral,3,1.000000,0.666667,1.000000,True
+val (in-sample),mutator,CallExpression,1,0.900000,1.000000,1.000000,True
+val (in-sample),mutator,ConditionalExpression,5,1.000000,1.000000,0.980000,False
+val (in-sample),mutator,EqualityOperator,6,1.000000,0.833333,0.950000,False
+val (in-sample),mutator,LogicalOperator,1,1.000000,1.000000,0.650000,True
+val (in-sample),mutator,MethodExpression,2,1.000000,1.000000,0.725000,True
+val (in-sample),mutator,Regex,4,1.000000,1.000000,0.875000,True
+val (in-sample),mutator,StringLiteral,10,0.710000,0.900000,0.830000,False
+val (in-sample),module,admin,1,1.000000,1.000000,1.000000,True
+val (in-sample),module,auth,9,0.777778,0.777778,0.805556,False
+val (in-sample),module,cart,3,0.966667,1.000000,1.000000,True
+val (in-sample),module,catalog,5,1.000000,0.800000,0.810000,False
+val (in-sample),module,checkout,12,0.925000,1.000000,0.933333,False
+val (in-sample),module,orders,2,1.000000,1.000000,1.000000,True
+val (in-sample),module,product,2,1.000000,1.000000,1.000000,True
+val (in-sample),module,search,1,1.000000,1.000000,1.000000,True
+val (in-sample),source,mutant,35,0.914286,0.914286,0.900000,False

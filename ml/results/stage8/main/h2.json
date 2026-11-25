@@ -1,0 +1,21 @@
+{
+  "range": "test",
+  "in_sample": false,
+  "note": "test part (notes/stage8-protocol.md, p. 3)",
+  "rule": "H2 confirmed iff Wilcoxon p < 0.05 and median(RF - combined) > 0; APFD over red commits; RF = mean over 10 seeds",
+  "test": "scipy.stats.wilcoxon(rf, comb, zero_method='wilcox', alternative='two-sided', method='auto')",
+  "model": "rf",
+  "reference": "combined",
+  "metric": "apfd",
+  "n": 61,
+  "n_zero": 11,
+  "mean_diff": 0.01371291302302232,
+  "median_diff": 0.0,
+  "statistic": 402.5,
+  "p": 0.023067075016360968,
+  "mean_model": 0.8855512761626149,
+  "mean_reference": 0.8718383631395925,
+  "delta": 0.05589895189465197,
+  "magnitude": "negligible",
+  "confirmed": false
+}

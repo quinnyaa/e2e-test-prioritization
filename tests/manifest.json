@@ -1,0 +1,899 @@
+{
+  "generatedAt": "2026-10-21T09:12:58.599Z",
+  "testCount": 36,
+  "durations": {
+    "runs": 10,
+    "workers": 4,
+    "measuredAt": "2026-10-21T09:09:20.040Z"
+  },
+  "tests": [
+    {
+      "id": "ADM-01",
+      "title": "[ADM-01] sends guests to sign-in, forbids customers and lets admins in",
+      "file": "specs/admin/admin.spec.ts",
+      "modules": [
+        "admin",
+        "auth"
+      ],
+      "criticality": "high",
+      "covers": [
+        "shared/middleware.ts",
+        "shared/errors.ts",
+        "shared/views/error.ejs",
+        "admin/routes.ts",
+        "shared/views/header.ejs"
+      ],
+      "coversPaths": [
+        "src/shared/middleware.ts",
+        "src/shared/errors.ts",
+        "src/shared/views/error.ejs",
+        "src/modules/admin/routes.ts",
+        "src/shared/views/header.ejs"
+      ],
+      "avgDurationMs": 405,
+      "stdDurationMs": 44
+    },
+    {
+      "id": "ADM-02",
+      "title": "[ADM-02] validates the new product form at its bounds and creates the product",
+      "file": "specs/admin/admin.spec.ts",
+      "modules": [
+        "admin",
+        "product"
+      ],
+      "criticality": "medium",
+      "covers": [
+        "admin/logic.ts",
+        "admin/routes.ts",
+        "admin/service.ts",
+        "admin/views/product-form.ejs",
+        "shared/money.ts"
+      ],
+      "coversPaths": [
+        "src/modules/admin/logic.ts",
+        "src/modules/admin/routes.ts",
+        "src/modules/admin/service.ts",
+        "src/modules/admin/views/product-form.ejs",
+        "src/shared/money.ts"
+      ],
+      "avgDurationMs": 572,
+      "stdDurationMs": 51
+    },
+    {
+      "id": "ADM-03",
+      "title": "[ADM-03] edits a product to its lower bounds and deletes a product",
+      "file": "specs/admin/admin.spec.ts",
+      "modules": [
+        "admin",
+        "product"
+      ],
+      "criticality": "medium",
+      "covers": [
+        "admin/logic.ts",
+        "admin/routes.ts",
+        "admin/service.ts",
+        "admin/views/products.ejs",
+        "product/logic.ts"
+      ],
+      "coversPaths": [
+        "src/modules/admin/logic.ts",
+        "src/modules/admin/routes.ts",
+        "src/modules/admin/service.ts",
+        "src/modules/admin/views/products.ejs",
+        "src/modules/product/logic.ts"
+      ],
+      "avgDurationMs": 550,
+      "stdDurationMs": 51
+    },
+    {
+      "id": "ADM-04",
+      "title": "[ADM-04] allows only valid order status transitions",
+      "file": "specs/admin/admin.spec.ts",
+      "modules": [
+        "admin",
+        "orders"
+      ],
+      "criticality": "high",
+      "covers": [
+        "orders/logic.ts",
+        "orders/service.ts",
+        "admin/logic.ts",
+        "admin/routes.ts",
+        "admin/views/orders.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/orders/logic.ts",
+        "src/modules/orders/service.ts",
+        "src/modules/admin/logic.ts",
+        "src/modules/admin/routes.ts",
+        "src/modules/admin/views/orders.ejs"
+      ],
+      "avgDurationMs": 441,
+      "stdDurationMs": 49
+    },
+    {
+      "id": "AUTH-01",
+      "title": "[AUTH-01] registers a new customer with normalized name and email",
+      "file": "specs/auth/auth.spec.ts",
+      "modules": [
+        "auth"
+      ],
+      "criticality": "high",
+      "covers": [
+        "auth/logic.ts",
+        "auth/routes.ts",
+        "auth/service.ts",
+        "auth/views/register.ejs",
+        "shared/session.ts"
+      ],
+      "coversPaths": [
+        "src/modules/auth/logic.ts",
+        "src/modules/auth/routes.ts",
+        "src/modules/auth/service.ts",
+        "src/modules/auth/views/register.ejs",
+        "src/shared/session.ts"
+      ],
+      "avgDurationMs": 553,
+      "stdDurationMs": 40
+    },
+    {
+      "id": "AUTH-02",
+      "title": "[AUTH-02] shows registration errors for every invalid field and a taken email",
+      "file": "specs/auth/auth.spec.ts",
+      "modules": [
+        "auth"
+      ],
+      "criticality": "medium",
+      "covers": [
+        "auth/logic.ts",
+        "auth/routes.ts",
+        "auth/service.ts",
+        "auth/views/register.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/auth/logic.ts",
+        "src/modules/auth/routes.ts",
+        "src/modules/auth/service.ts",
+        "src/modules/auth/views/register.ejs"
+      ],
+      "avgDurationMs": 322,
+      "stdDurationMs": 40
+    },
+    {
+      "id": "AUTH-03",
+      "title": "[AUTH-03] rejects invalid credentials and returns to the requested page after sign-in",
+      "file": "specs/auth/auth.spec.ts",
+      "modules": [
+        "auth"
+      ],
+      "criticality": "high",
+      "covers": [
+        "auth/logic.ts",
+        "auth/routes.ts",
+        "auth/service.ts",
+        "auth/views/login.ejs",
+        "shared/middleware.ts",
+        "shared/password.ts"
+      ],
+      "coversPaths": [
+        "src/modules/auth/logic.ts",
+        "src/modules/auth/routes.ts",
+        "src/modules/auth/service.ts",
+        "src/modules/auth/views/login.ejs",
+        "src/shared/middleware.ts",
+        "src/shared/password.ts"
+      ],
+      "avgDurationMs": 514,
+      "stdDurationMs": 36
+    },
+    {
+      "id": "AUTH-04",
+      "title": "[AUTH-04] signs out and drops the cart of the session",
+      "file": "specs/auth/auth.spec.ts",
+      "modules": [
+        "auth",
+        "cart"
+      ],
+      "criticality": "medium",
+      "covers": [
+        "auth/routes.ts",
+        "shared/session.ts",
+        "shared/views/header.ejs",
+        "cart/routes.ts"
+      ],
+      "coversPaths": [
+        "src/modules/auth/routes.ts",
+        "src/shared/session.ts",
+        "src/shared/views/header.ejs",
+        "src/modules/cart/routes.ts"
+      ],
+      "avgDurationMs": 306,
+      "stdDurationMs": 39
+    },
+    {
+      "id": "CART-01",
+      "title": "[CART-01] adds products and updates the header counter",
+      "file": "specs/cart/cart.spec.ts",
+      "modules": [
+        "cart"
+      ],
+      "criticality": "high",
+      "covers": [
+        "cart/logic.ts",
+        "cart/routes.ts",
+        "cart/service.ts",
+        "cart/views/cart.ejs",
+        "shared/views/header.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/cart/logic.ts",
+        "src/modules/cart/routes.ts",
+        "src/modules/cart/service.ts",
+        "src/modules/cart/views/cart.ejs",
+        "src/shared/views/header.ejs"
+      ],
+      "avgDurationMs": 484,
+      "stdDurationMs": 39
+    },
+    {
+      "id": "CART-02",
+      "title": "[CART-02] enforces the per-line limit of 10 and the available stock",
+      "file": "specs/cart/cart.spec.ts",
+      "modules": [
+        "cart"
+      ],
+      "criticality": "high",
+      "covers": [
+        "cart/logic.ts",
+        "cart/routes.ts",
+        "cart/service.ts"
+      ],
+      "coversPaths": [
+        "src/modules/cart/logic.ts",
+        "src/modules/cart/routes.ts",
+        "src/modules/cart/service.ts"
+      ],
+      "avgDurationMs": 762,
+      "stdDurationMs": 60
+    },
+    {
+      "id": "CART-03",
+      "title": "[CART-03] updates quantities, removes a line at zero and rejects invalid values",
+      "file": "specs/cart/cart.spec.ts",
+      "modules": [
+        "cart"
+      ],
+      "criticality": "medium",
+      "covers": [
+        "cart/logic.ts",
+        "cart/routes.ts",
+        "cart/service.ts",
+        "cart/views/cart.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/cart/logic.ts",
+        "src/modules/cart/routes.ts",
+        "src/modules/cart/service.ts",
+        "src/modules/cart/views/cart.ejs"
+      ],
+      "avgDurationMs": 567,
+      "stdDurationMs": 29
+    },
+    {
+      "id": "CART-04",
+      "title": "[CART-04] calculates line totals and the cart subtotal",
+      "file": "specs/cart/cart.spec.ts",
+      "modules": [
+        "cart"
+      ],
+      "criticality": "high",
+      "covers": [
+        "cart/logic.ts",
+        "cart/routes.ts",
+        "cart/views/cart.ejs",
+        "shared/money.ts"
+      ],
+      "coversPaths": [
+        "src/modules/cart/logic.ts",
+        "src/modules/cart/routes.ts",
+        "src/modules/cart/views/cart.ejs",
+        "src/shared/money.ts"
+      ],
+      "avgDurationMs": 119,
+      "stdDurationMs": 12
+    },
+    {
+      "id": "CART-05",
+      "title": "[CART-05] warns about reduced stock and blocks checkout until the cart is fixed",
+      "file": "specs/cart/cart.spec.ts",
+      "modules": [
+        "cart",
+        "checkout"
+      ],
+      "criticality": "medium",
+      "covers": [
+        "cart/logic.ts",
+        "cart/routes.ts",
+        "cart/views/cart.ejs",
+        "checkout/routes.ts"
+      ],
+      "coversPaths": [
+        "src/modules/cart/logic.ts",
+        "src/modules/cart/routes.ts",
+        "src/modules/cart/views/cart.ejs",
+        "src/modules/checkout/routes.ts"
+      ],
+      "avgDurationMs": 321,
+      "stdDurationMs": 30
+    },
+    {
+      "id": "CAT-01",
+      "title": "[CAT-01] filters by category and stock availability",
+      "file": "specs/catalog/catalog.spec.ts",
+      "modules": [
+        "catalog"
+      ],
+      "criticality": "medium",
+      "covers": [
+        "catalog/logic.ts",
+        "catalog/routes.ts",
+        "catalog/service.ts",
+        "catalog/views/list.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/catalog/logic.ts",
+        "src/modules/catalog/routes.ts",
+        "src/modules/catalog/service.ts",
+        "src/modules/catalog/views/list.ejs"
+      ],
+      "avgDurationMs": 290,
+      "stdDurationMs": 15
+    },
+    {
+      "id": "CAT-02",
+      "title": "[CAT-02] includes products priced exactly at the range bounds",
+      "file": "specs/catalog/catalog.spec.ts",
+      "modules": [
+        "catalog"
+      ],
+      "criticality": "medium",
+      "covers": [
+        "catalog/logic.ts",
+        "catalog/routes.ts",
+        "catalog/views/list.ejs",
+        "shared/money.ts"
+      ],
+      "coversPaths": [
+        "src/modules/catalog/logic.ts",
+        "src/modules/catalog/routes.ts",
+        "src/modules/catalog/views/list.ejs",
+        "src/shared/money.ts"
+      ],
+      "avgDurationMs": 243,
+      "stdDurationMs": 31
+    },
+    {
+      "id": "CAT-03",
+      "title": "[CAT-03] reports invalid price filters and resets a reversed range",
+      "file": "specs/catalog/catalog.spec.ts",
+      "modules": [
+        "catalog"
+      ],
+      "criticality": "low",
+      "covers": [
+        "catalog/logic.ts",
+        "catalog/views/list.ejs",
+        "shared/money.ts"
+      ],
+      "coversPaths": [
+        "src/modules/catalog/logic.ts",
+        "src/modules/catalog/views/list.ejs",
+        "src/shared/money.ts"
+      ],
+      "avgDurationMs": 259,
+      "stdDurationMs": 21
+    },
+    {
+      "id": "CAT-04",
+      "title": "[CAT-04] sorts by price and breaks price ties by name",
+      "file": "specs/catalog/catalog.spec.ts",
+      "modules": [
+        "catalog"
+      ],
+      "criticality": "low",
+      "covers": [
+        "catalog/logic.ts",
+        "catalog/routes.ts",
+        "catalog/views/list.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/catalog/logic.ts",
+        "src/modules/catalog/routes.ts",
+        "src/modules/catalog/views/list.ejs"
+      ],
+      "avgDurationMs": 274,
+      "stdDurationMs": 19
+    },
+    {
+      "id": "CAT-05",
+      "title": "[CAT-05] paginates by 8 products and keeps filters in page links",
+      "file": "specs/catalog/catalog.spec.ts",
+      "modules": [
+        "catalog"
+      ],
+      "criticality": "low",
+      "covers": [
+        "catalog/logic.ts",
+        "catalog/routes.ts",
+        "catalog/views/list.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/catalog/logic.ts",
+        "src/modules/catalog/routes.ts",
+        "src/modules/catalog/views/list.ejs"
+      ],
+      "avgDurationMs": 469,
+      "stdDurationMs": 29
+    },
+    {
+      "id": "CHK-01",
+      "title": "[CHK-01] validates every shipping field and accepts boundary values",
+      "file": "specs/checkout/checkout.spec.ts",
+      "modules": [
+        "checkout"
+      ],
+      "criticality": "medium",
+      "covers": [
+        "checkout/logic.ts",
+        "checkout/routes.ts",
+        "checkout/views/checkout.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/checkout/logic.ts",
+        "src/modules/checkout/routes.ts",
+        "src/modules/checkout/views/checkout.ejs"
+      ],
+      "avgDurationMs": 457,
+      "stdDurationMs": 52
+    },
+    {
+      "id": "CHK-02",
+      "title": "[CHK-02] applies a percent promo code with rounding and keeps it on the order",
+      "file": "specs/checkout/checkout.spec.ts",
+      "modules": [
+        "checkout",
+        "orders"
+      ],
+      "criticality": "high",
+      "covers": [
+        "checkout/logic.ts",
+        "checkout/routes.ts",
+        "checkout/service.ts",
+        "checkout/views/checkout.ejs",
+        "shared/money.ts"
+      ],
+      "coversPaths": [
+        "src/modules/checkout/logic.ts",
+        "src/modules/checkout/routes.ts",
+        "src/modules/checkout/service.ts",
+        "src/modules/checkout/views/checkout.ejs",
+        "src/shared/money.ts"
+      ],
+      "avgDurationMs": 385,
+      "stdDurationMs": 52
+    },
+    {
+      "id": "CHK-03",
+      "title": "[CHK-03] applies fixed and free-shipping promo codes (free shipping is standard only)",
+      "file": "specs/checkout/checkout.spec.ts",
+      "modules": [
+        "checkout"
+      ],
+      "criticality": "high",
+      "covers": [
+        "checkout/logic.ts",
+        "checkout/routes.ts",
+        "checkout/service.ts",
+        "checkout/views/checkout.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/checkout/logic.ts",
+        "src/modules/checkout/routes.ts",
+        "src/modules/checkout/service.ts",
+        "src/modules/checkout/views/checkout.ejs"
+      ],
+      "avgDurationMs": 423,
+      "stdDurationMs": 35
+    },
+    {
+      "id": "CHK-04",
+      "title": "[CHK-04] rejects expired, inactive and unknown codes and blocks the order",
+      "file": "specs/checkout/checkout.spec.ts",
+      "modules": [
+        "checkout"
+      ],
+      "criticality": "medium",
+      "covers": [
+        "checkout/logic.ts",
+        "checkout/routes.ts",
+        "checkout/service.ts",
+        "checkout/views/checkout.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/checkout/logic.ts",
+        "src/modules/checkout/routes.ts",
+        "src/modules/checkout/service.ts",
+        "src/modules/checkout/views/checkout.ejs"
+      ],
+      "avgDurationMs": 482,
+      "stdDurationMs": 75
+    },
+    {
+      "id": "CHK-05",
+      "title": "[CHK-05] accepts a promo code at exactly the minimum order and rejects it below",
+      "file": "specs/checkout/checkout.spec.ts",
+      "modules": [
+        "checkout"
+      ],
+      "criticality": "medium",
+      "covers": [
+        "checkout/logic.ts",
+        "checkout/routes.ts",
+        "shared/money.ts"
+      ],
+      "coversPaths": [
+        "src/modules/checkout/logic.ts",
+        "src/modules/checkout/routes.ts",
+        "src/shared/money.ts"
+      ],
+      "avgDurationMs": 488,
+      "stdDurationMs": 49
+    },
+    {
+      "id": "CHK-06",
+      "title": "[CHK-06] ships free from $50.00 after discount and always charges express",
+      "file": "specs/checkout/checkout.spec.ts",
+      "modules": [
+        "checkout"
+      ],
+      "criticality": "high",
+      "covers": [
+        "checkout/logic.ts",
+        "checkout/routes.ts",
+        "checkout/views/checkout.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/checkout/logic.ts",
+        "src/modules/checkout/routes.ts",
+        "src/modules/checkout/views/checkout.ejs"
+      ],
+      "avgDurationMs": 352,
+      "stdDurationMs": 30
+    },
+    {
+      "id": "CHK-07",
+      "title": "[CHK-07] places an order, decreases stock and empties the cart",
+      "file": "specs/checkout/checkout.spec.ts",
+      "modules": [
+        "checkout",
+        "cart",
+        "orders",
+        "product"
+      ],
+      "criticality": "high",
+      "covers": [
+        "checkout/logic.ts",
+        "checkout/routes.ts",
+        "checkout/service.ts",
+        "checkout/views/confirmation.ejs",
+        "orders/logic.ts",
+        "orders/views/detail.ejs",
+        "cart/service.ts"
+      ],
+      "coversPaths": [
+        "src/modules/checkout/logic.ts",
+        "src/modules/checkout/routes.ts",
+        "src/modules/checkout/service.ts",
+        "src/modules/checkout/views/confirmation.ejs",
+        "src/modules/orders/logic.ts",
+        "src/modules/orders/views/detail.ejs",
+        "src/modules/cart/service.ts"
+      ],
+      "avgDurationMs": 558,
+      "stdDurationMs": 52
+    },
+    {
+      "id": "E2E-01",
+      "title": "[E2E-01] guest registers, finds a product, buys it with a promo code and sees it in the history",
+      "file": "specs/e2e/journeys.spec.ts",
+      "modules": [
+        "auth",
+        "search",
+        "product",
+        "cart",
+        "checkout",
+        "orders"
+      ],
+      "criticality": "high",
+      "covers": [
+        "auth/routes.ts",
+        "search/logic.ts",
+        "product/routes.ts",
+        "cart/logic.ts",
+        "cart/routes.ts",
+        "checkout/logic.ts",
+        "checkout/routes.ts",
+        "checkout/service.ts",
+        "orders/routes.ts",
+        "orders/views/list.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/auth/routes.ts",
+        "src/modules/search/logic.ts",
+        "src/modules/product/routes.ts",
+        "src/modules/cart/logic.ts",
+        "src/modules/cart/routes.ts",
+        "src/modules/checkout/logic.ts",
+        "src/modules/checkout/routes.ts",
+        "src/modules/checkout/service.ts",
+        "src/modules/orders/routes.ts",
+        "src/modules/orders/views/list.ejs"
+      ],
+      "avgDurationMs": 914,
+      "stdDurationMs": 172
+    },
+    {
+      "id": "E2E-02",
+      "title": "[E2E-02] admin moves a new order through its statuses and the customer sees each change",
+      "file": "specs/e2e/journeys.spec.ts",
+      "modules": [
+        "checkout",
+        "orders",
+        "admin"
+      ],
+      "criticality": "high",
+      "covers": [
+        "checkout/routes.ts",
+        "checkout/service.ts",
+        "orders/logic.ts",
+        "orders/routes.ts",
+        "orders/service.ts",
+        "orders/views/list.ejs",
+        "orders/views/detail.ejs",
+        "admin/logic.ts",
+        "admin/routes.ts",
+        "admin/views/orders.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/checkout/routes.ts",
+        "src/modules/checkout/service.ts",
+        "src/modules/orders/logic.ts",
+        "src/modules/orders/routes.ts",
+        "src/modules/orders/service.ts",
+        "src/modules/orders/views/list.ejs",
+        "src/modules/orders/views/detail.ejs",
+        "src/modules/admin/logic.ts",
+        "src/modules/admin/routes.ts",
+        "src/modules/admin/views/orders.ejs"
+      ],
+      "avgDurationMs": 845,
+      "stdDurationMs": 188
+    },
+    {
+      "id": "ORD-01",
+      "title": "[ORD-01] lists the order history newest first, ties broken by id",
+      "file": "specs/orders/orders.spec.ts",
+      "modules": [
+        "orders"
+      ],
+      "criticality": "medium",
+      "covers": [
+        "orders/logic.ts",
+        "orders/routes.ts",
+        "orders/service.ts",
+        "orders/views/list.ejs",
+        "shared/clock.ts"
+      ],
+      "coversPaths": [
+        "src/modules/orders/logic.ts",
+        "src/modules/orders/routes.ts",
+        "src/modules/orders/service.ts",
+        "src/modules/orders/views/list.ejs",
+        "src/shared/clock.ts"
+      ],
+      "avgDurationMs": 196,
+      "stdDurationMs": 27
+    },
+    {
+      "id": "ORD-02",
+      "title": "[ORD-02] shows order details with amounts and hides other customers’ orders",
+      "file": "specs/orders/orders.spec.ts",
+      "modules": [
+        "orders"
+      ],
+      "criticality": "medium",
+      "covers": [
+        "orders/logic.ts",
+        "orders/routes.ts",
+        "orders/service.ts",
+        "orders/views/detail.ejs",
+        "shared/money.ts"
+      ],
+      "coversPaths": [
+        "src/modules/orders/logic.ts",
+        "src/modules/orders/routes.ts",
+        "src/modules/orders/service.ts",
+        "src/modules/orders/views/detail.ejs",
+        "src/shared/money.ts"
+      ],
+      "avgDurationMs": 385,
+      "stdDurationMs": 162
+    },
+    {
+      "id": "ORD-03",
+      "title": "[ORD-03] cancels a pending order and returns its items to stock",
+      "file": "specs/orders/orders.spec.ts",
+      "modules": [
+        "orders",
+        "product"
+      ],
+      "criticality": "high",
+      "covers": [
+        "orders/logic.ts",
+        "orders/routes.ts",
+        "orders/service.ts",
+        "orders/views/detail.ejs",
+        "product/logic.ts"
+      ],
+      "coversPaths": [
+        "src/modules/orders/logic.ts",
+        "src/modules/orders/routes.ts",
+        "src/modules/orders/service.ts",
+        "src/modules/orders/views/detail.ejs",
+        "src/modules/product/logic.ts"
+      ],
+      "avgDurationMs": 406,
+      "stdDurationMs": 133
+    },
+    {
+      "id": "PRD-01",
+      "title": "[PRD-01] shows in-stock, low-stock and out-of-stock badges around the threshold of 5",
+      "file": "specs/product/product.spec.ts",
+      "modules": [
+        "product",
+        "catalog"
+      ],
+      "criticality": "medium",
+      "covers": [
+        "product/logic.ts",
+        "product/routes.ts",
+        "product/views/detail.ejs",
+        "catalog/views/product-card.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/product/logic.ts",
+        "src/modules/product/routes.ts",
+        "src/modules/product/views/detail.ejs",
+        "src/modules/catalog/views/product-card.ejs"
+      ],
+      "avgDurationMs": 199,
+      "stdDurationMs": 26
+    },
+    {
+      "id": "PRD-02",
+      "title": "[PRD-02] disables adding an out-of-stock product to the cart",
+      "file": "specs/product/product.spec.ts",
+      "modules": [
+        "product",
+        "cart"
+      ],
+      "criticality": "high",
+      "covers": [
+        "product/logic.ts",
+        "product/views/detail.ejs",
+        "cart/logic.ts",
+        "cart/routes.ts"
+      ],
+      "coversPaths": [
+        "src/modules/product/logic.ts",
+        "src/modules/product/views/detail.ejs",
+        "src/modules/cart/logic.ts",
+        "src/modules/cart/routes.ts"
+      ],
+      "avgDurationMs": 141,
+      "stdDurationMs": 8
+    },
+    {
+      "id": "PRD-03",
+      "title": "[PRD-03] shows product details and 404 for unknown or malformed ids",
+      "file": "specs/product/product.spec.ts",
+      "modules": [
+        "product"
+      ],
+      "criticality": "low",
+      "covers": [
+        "product/routes.ts",
+        "product/service.ts",
+        "product/views/detail.ejs",
+        "shared/params.ts",
+        "shared/errors.ts",
+        "shared/views/error.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/product/routes.ts",
+        "src/modules/product/service.ts",
+        "src/modules/product/views/detail.ejs",
+        "src/shared/params.ts",
+        "src/shared/errors.ts",
+        "src/shared/views/error.ejs"
+      ],
+      "avgDurationMs": 171,
+      "stdDurationMs": 13
+    },
+    {
+      "id": "SRCH-01",
+      "title": "[SRCH-01] ranks prefix matches before word matches before inner matches",
+      "file": "specs/search/search.spec.ts",
+      "modules": [
+        "search"
+      ],
+      "criticality": "medium",
+      "covers": [
+        "search/logic.ts",
+        "search/routes.ts",
+        "search/service.ts",
+        "search/views/results.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/search/logic.ts",
+        "src/modules/search/routes.ts",
+        "src/modules/search/service.ts",
+        "src/modules/search/views/results.ejs"
+      ],
+      "avgDurationMs": 227,
+      "stdDurationMs": 17
+    },
+    {
+      "id": "SRCH-02",
+      "title": "[SRCH-02] normalizes the query and requires at least 2 characters",
+      "file": "specs/search/search.spec.ts",
+      "modules": [
+        "search"
+      ],
+      "criticality": "low",
+      "covers": [
+        "search/logic.ts",
+        "search/routes.ts",
+        "search/views/results.ejs",
+        "shared/views/header.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/search/logic.ts",
+        "src/modules/search/routes.ts",
+        "src/modules/search/views/results.ejs",
+        "src/shared/views/header.ejs"
+      ],
+      "avgDurationMs": 205,
+      "stdDurationMs": 11
+    },
+    {
+      "id": "SRCH-03",
+      "title": "[SRCH-03] shows an empty result for a query without matches",
+      "file": "specs/search/search.spec.ts",
+      "modules": [
+        "search"
+      ],
+      "criticality": "low",
+      "covers": [
+        "search/logic.ts",
+        "search/views/results.ejs"
+      ],
+      "coversPaths": [
+        "src/modules/search/logic.ts",
+        "src/modules/search/views/results.ejs"
+      ],
+      "avgDurationMs": 89,
+      "stdDurationMs": 13
+    }
+  ]
+}

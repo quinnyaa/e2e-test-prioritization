@@ -1,0 +1,11 @@
+--- a/src/modules/checkout/logic.ts
++++ b/src/modules/checkout/logic.ts
+@@ -89,7 +89,7 @@
+       return {
+         ok: true,
+         code: promo.code,
+-        discountCents: Math.round((subtotalCents * promo.value) / 100),
++        discountCents: Math.floor((subtotalCents * promo.value) / 100),
+         freeShipping: false,
+       };
+     case 'fixed':

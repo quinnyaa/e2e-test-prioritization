@@ -1,0 +1,427 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "./tests/node_modules/.bin/playwright",
+      "test",
+      "--grep",
+      "\\[CAT-02\\]|\\[CAT-04\\]|\\[CHK-01\\]",
+      "-x"
+    ],
+    "configFile": "./tests/playwright.config.ts",
+    "rootDir": "./tests/specs",
+    "failOnFlakyTests": false,
+    "forbidOnly": true,
+    "fullyParallel": true,
+    "globalSetup": "./tests/global-setup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 600000,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 3
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "./tests/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "./tests/specs",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 15000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "null",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "./data/demo-stage7/runs/waves-S4/wave2-raw.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "catalog/catalog.spec.ts",
+      "file": "catalog/catalog.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "[CAT-02] includes products priced exactly at the range bounds",
+          "ok": false,
+          "tags": [
+            "module:catalog",
+            "crit:medium"
+          ],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [
+                {
+                  "type": "covers",
+                  "description": "catalog/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "line": 53,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "catalog/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "line": 53,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "catalog/views/list.ejs",
+                  "location": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "line": 53,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "shared/money.ts",
+                  "location": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "line": 53,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3154,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('catalog-count')\nExpected: \u001b[32m\"Found \u001b[7m4\u001b[27m products\"\u001b[39m\nReceived: \u001b[31m\"Found \u001b[7m3\u001b[27m products\"\u001b[39m\nTimeout:  3000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('catalog-count') with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('catalog-count')\u001b[22m\n\u001b[2m    10 × locator resolved to <p class=\"muted\" data-testid=\"catalog-count\">Found 3 products</p>\u001b[22m\n\u001b[2m       - unexpected value \"Found 3 products\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('catalog-count')\nExpected: \u001b[32m\"Found \u001b[7m4\u001b[27m products\"\u001b[39m\nReceived: \u001b[31m\"Found \u001b[7m3\u001b[27m products\"\u001b[39m\nTimeout:  3000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('catalog-count') with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('catalog-count')\u001b[22m\n\u001b[2m    10 × locator resolved to <p class=\"muted\" data-testid=\"catalog-count\">Found 3 products</p>\u001b[22m\n\u001b[2m       - unexpected value \"Found 3 products\"\u001b[22m\n\n    at ./tests/specs/catalog/catalog.spec.ts:67:53",
+                    "location": {
+                      "file": "./tests/specs/catalog/catalog.spec.ts",
+                      "column": 53,
+                      "line": 67
+                    },
+                    "snippet": "  65 |     await page.getByTestId('filter-apply').click();\n  66 |\n> 67 |     await expect(page.getByTestId('catalog-count')).toHaveText('Found 4 products');\n     |                                                     ^\n  68 |     const list = page.getByTestId('product-list');\n  69 |     await expect(list.getByTestId('product-name')).toHaveText([\n  70 |       'Resistance Bands',"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "column": 53,
+                        "line": 67
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('catalog-count')\nExpected: \u001b[32m\"Found \u001b[7m4\u001b[27m products\"\u001b[39m\nReceived: \u001b[31m\"Found \u001b[7m3\u001b[27m products\"\u001b[39m\nTimeout:  3000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('catalog-count') with timeout 3000ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('catalog-count')\u001b[22m\n\u001b[2m    10 × locator resolved to <p class=\"muted\" data-testid=\"catalog-count\">Found 3 products</p>\u001b[22m\n\u001b[2m       - unexpected value \"Found 3 products\"\u001b[22m\n\n\n  65 |     await page.getByTestId('filter-apply').click();\n  66 |\n> 67 |     await expect(page.getByTestId('catalog-count')).toHaveText('Found 4 products');\n     |                                                     ^\n  68 |     const list = page.getByTestId('product-list');\n  69 |     await expect(list.getByTestId('product-name')).toHaveText([\n  70 |       'Resistance Bands',\n    at ./tests/specs/catalog/catalog.spec.ts:67:53"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T19:11:19.881Z",
+                  "annotations": [
+                    {
+                      "type": "covers",
+                      "description": "catalog/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "line": 53,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "catalog/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "line": 53,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "catalog/views/list.ejs",
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "line": 53,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "shared/money.ts",
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "line": 53,
+                        "column": 5
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "./tests/test-results/catalog-catalog--CAT-02-in-6499a-exactly-at-the-range-bounds-chromium/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "column": 53,
+                    "line": 67
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "9e824e22e792bb79bfca-d0516f900a639d18b0b3",
+          "file": "catalog/catalog.spec.ts",
+          "line": 53,
+          "column": 5
+        },
+        {
+          "title": "[CAT-04] sorts by price and breaks price ties by name",
+          "ok": true,
+          "tags": [
+            "module:catalog",
+            "crit:low"
+          ],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [
+                {
+                  "type": "covers",
+                  "description": "catalog/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "line": 124,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "catalog/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "line": 124,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "catalog/views/list.ejs",
+                  "location": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "line": 124,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 266,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T19:11:19.879Z",
+                  "annotations": [
+                    {
+                      "type": "covers",
+                      "description": "catalog/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "line": 124,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "catalog/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "line": 124,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "catalog/views/list.ejs",
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "line": 124,
+                        "column": 5
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9e824e22e792bb79bfca-18d26f5881b7e64818c5",
+          "file": "catalog/catalog.spec.ts",
+          "line": 124,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "checkout/checkout.spec.ts",
+      "file": "checkout/checkout.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "[CHK-01] validates every shipping field and accepts boundary values",
+          "ok": true,
+          "tags": [
+            "module:checkout",
+            "crit:medium"
+          ],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [
+                {
+                  "type": "covers",
+                  "description": "checkout/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 7,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 7,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "checkout/views/checkout.ejs",
+                  "location": {
+                    "file": "./tests/specs/checkout/checkout.spec.ts",
+                    "line": 7,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 411,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T19:11:19.882Z",
+                  "annotations": [
+                    {
+                      "type": "covers",
+                      "description": "checkout/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 7,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 7,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "checkout/views/checkout.ejs",
+                      "location": {
+                        "file": "./tests/specs/checkout/checkout.spec.ts",
+                        "line": 7,
+                        "column": 5
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "67cdc8a4402314feb5d5-d5c384166cb7a8c5cbcc",
+          "file": "checkout/checkout.spec.ts",
+          "line": 7,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "Testing stopped early after 1 maximum allowed failures."
+    }
+  ],
+  "stats": {
+    "startTime": "2026-11-20T19:11:19.531Z",
+    "duration": 3954.5019999999995,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

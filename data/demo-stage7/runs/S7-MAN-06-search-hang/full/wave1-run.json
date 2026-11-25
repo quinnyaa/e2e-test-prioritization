@@ -1,0 +1,341 @@
+{
+  "runId": "wave1",
+  "sutCommit": "dee9d6a970e16381803f97e094bd135ccc188ff5",
+  "sutDir": "./data/cache/sut/dee9d6a970e1",
+  "startedAt": "2026-11-20T19:10:21.419Z",
+  "buildOk": true,
+  "buildError": null,
+  "totalDurationMs": 14135,
+  "tests": [
+    {
+      "id": "ADM-01",
+      "status": "passed",
+      "durationMs": 401,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "ADM-02",
+      "status": "passed",
+      "durationMs": 533,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "ADM-03",
+      "status": "passed",
+      "durationMs": 547,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "ADM-04",
+      "status": "passed",
+      "durationMs": 427,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "AUTH-01",
+      "status": "passed",
+      "durationMs": 493,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "AUTH-02",
+      "status": "passed",
+      "durationMs": 270,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "AUTH-03",
+      "status": "passed",
+      "durationMs": 478,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "AUTH-04",
+      "status": "passed",
+      "durationMs": 259,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CART-01",
+      "status": "passed",
+      "durationMs": 441,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CART-02",
+      "status": "passed",
+      "durationMs": 696,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CART-03",
+      "status": "passed",
+      "durationMs": 523,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CART-04",
+      "status": "passed",
+      "durationMs": 96,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CART-05",
+      "status": "passed",
+      "durationMs": 295,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CAT-01",
+      "status": "passed",
+      "durationMs": 289,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CAT-02",
+      "status": "passed",
+      "durationMs": 214,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CAT-03",
+      "status": "passed",
+      "durationMs": 249,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CAT-04",
+      "status": "passed",
+      "durationMs": 262,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CAT-05",
+      "status": "passed",
+      "durationMs": 441,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CHK-01",
+      "status": "passed",
+      "durationMs": 408,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CHK-02",
+      "status": "passed",
+      "durationMs": 345,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CHK-03",
+      "status": "passed",
+      "durationMs": 392,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CHK-04",
+      "status": "passed",
+      "durationMs": 433,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CHK-05",
+      "status": "passed",
+      "durationMs": 422,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CHK-06",
+      "status": "passed",
+      "durationMs": 322,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CHK-07",
+      "status": "passed",
+      "durationMs": 505,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "E2E-01",
+      "status": "failed",
+      "durationMs": 10266,
+      "errorSnippet": "TimeoutError: locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for getByTestId('search-submit')\n    - locator resolved to <button type=\"submit\" data-testid=\"search-submit\">Search</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - per…",
+      "flaky": false,
+      "confirmedFail": true,
+      "rerunStatuses": [
+        "failed",
+        "failed"
+      ]
+    },
+    {
+      "id": "E2E-02",
+      "status": "passed",
+      "durationMs": 688,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "ORD-01",
+      "status": "passed",
+      "durationMs": 190,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "ORD-02",
+      "status": "passed",
+      "durationMs": 296,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "ORD-03",
+      "status": "passed",
+      "durationMs": 307,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "PRD-01",
+      "status": "passed",
+      "durationMs": 157,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "PRD-02",
+      "status": "passed",
+      "durationMs": 118,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "PRD-03",
+      "status": "passed",
+      "durationMs": 129,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "SRCH-01",
+      "status": "failed",
+      "durationMs": 10071,
+      "errorSnippet": "TimeoutError: locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for getByTestId('search-submit')\n    - locator resolved to <button type=\"submit\" data-testid=\"search-submit\">Search</button>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - per…",
+      "flaky": false,
+      "confirmedFail": true,
+      "rerunStatuses": [
+        "failed",
+        "failed"
+      ]
+    },
+    {
+      "id": "SRCH-02",
+      "status": "passed",
+      "durationMs": 170,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "SRCH-03",
+      "status": "passed",
+      "durationMs": 59,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+diff --git a/src/modules/admin/logic.ts b/src/modules/admin/logic.ts
+index 891f422..826247a 100644
+--- a/src/modules/admin/logic.ts
++++ b/src/modules/admin/logic.ts
+@@ -53,7 +53,7 @@ export function validateProductInput(input: ProductInput, categorySlugs: string[
+   // Order matters: the first match wins
+   const priceCentsLocalLocal = parseMoney(input.price);
+   if (priceCentsLocalLocal === null) errorsAmount.price = 'Price must be a valid amount';
+-  else if (priceCentsLocalLocal <= 0) errorsAmount.price = 'Price must be greater than zero';
++  else if (priceCentsLocalLocal < 0) errorsAmount.price = 'Price must be greater than zero';
+   else if (priceCentsLocalLocal > MAX_PRICE_CENTS) errorsAmount.price = `Price must not exceed ${formatPrice(MAX_PRICE_CENTS)}`;
+ 
+   const stockRawValueResultAmountCurrent = input.stock.trim();

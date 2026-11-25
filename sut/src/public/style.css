@@ -1,0 +1,35 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; color: #222; background: #fafafa; line-height: 1.4; }
+a { color: #0b5cad; }
+.container { max-width: 960px; margin: 0 auto; padding: 16px; }
+.site-header { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding: 12px 16px; background: #fff; border-bottom: 1px solid #ddd; }
+.logo { font-weight: 700; text-decoration: none; color: #222; }
+.nav { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.nav form { margin: 0; }
+.site-footer { text-align: center; color: #888; font-size: 12px; padding: 24px 0; }
+.flash { padding: 8px 12px; margin-bottom: 12px; border-radius: 4px; }
+.flash-success { background: #e6f4ea; border: 1px solid #9ad3a8; }
+.flash-error { background: #fdecea; border: 1px solid #f1a7a0; }
+.error, .field-error { color: #b00020; font-size: 14px; }
+.muted { color: #777; }
+button, .button { padding: 6px 12px; border: 1px solid #0b5cad; background: #0b5cad; color: #fff; border-radius: 4px; cursor: pointer; font: inherit; text-decoration: none; display: inline-block; }
+button.secondary, .button.secondary { background: #fff; color: #0b5cad; }
+button:disabled { background: #aaa; border-color: #aaa; cursor: not-allowed; }
+input, select, textarea { font: inherit; padding: 4px 6px; }
+.form { display: grid; gap: 10px; max-width: 420px; }
+.form label { display: grid; gap: 4px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.card { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 12px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; margin-bottom: 12px; }
+.filters label { display: grid; gap: 2px; font-size: 14px; }
+.pagination { display: flex; gap: 8px; align-items: center; margin-top: 12px; }
+table { width: 100%; border-collapse: collapse; background: #fff; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #eee; }
+.summary { max-width: 360px; margin-left: auto; }
+.summary div { display: flex; justify-content: space-between; padding: 2px 0; }
+.summary .total { font-weight: 700; border-top: 1px solid #ccc; margin-top: 4px; padding-top: 4px; }
+.badge { display: inline-block; padding: 1px 6px; border-radius: 10px; font-size: 12px; background: #eee; }
+.badge-in_stock { background: #e6f4ea; }
+.badge-low_stock { background: #fff4d6; }
+.badge-out_of_stock { background: #fdecea; }
+.inline { display: inline; }

@@ -1,0 +1,11 @@
+--- a/src/modules/cart/views/cart.ejs
++++ b/src/modules/cart/views/cart.ejs
+@@ -20,7 +20,7 @@
+             <button type="submit" class="secondary" data-testid="cart-update">Update</button>
+           </form>
+         </td>
+-        <td data-testid="cart-line-total"><%= formatPrice(lineTotal(line)) %></td>
++        <td data-testid="cart-line-total"><%= formatPrice(line.priceCents) %></td>
+         <td>
+           <form method="post" action="/cart/remove" class="inline">
+             <input type="hidden" name="productId" value="<%= line.productId %>">

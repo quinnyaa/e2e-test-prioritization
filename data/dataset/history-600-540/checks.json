@@ -1,0 +1,334 @@
+{
+  "seed": 20261117,
+  "sklearn": "1.9.1",
+  "history": "data/history-600",
+  "whitelist": {
+    "ok": true,
+    "features": 43,
+    "nonFeatureColumns": [
+      "commit_index",
+      "sha",
+      "test_id",
+      "split",
+      "label",
+      "eval_duration_ms",
+      "eval_flaky"
+    ],
+    "forbiddenNameHits": []
+  },
+  "determinism": {
+    "ok": true,
+    "sha256": "e8b125ef79db7b6c2fb5b4593e7766526f19bc8f87ef264f9bce8ff13b80e385"
+  },
+  "prefix": {
+    "ok": true,
+    "cuts": [
+      {
+        "cut": 1,
+        "changedBefore": [],
+        "changedAtCutNonCi": [],
+        "changedAtCutCi": [
+          "ci_typecheck_ok",
+          "ci_unit_ok"
+        ],
+        "truncationDiff": []
+      },
+      {
+        "cut": 2,
+        "changedBefore": [],
+        "changedAtCutNonCi": [],
+        "changedAtCutCi": [
+          "ci_typecheck_ok",
+          "ci_unit_ok"
+        ],
+        "truncationDiff": []
+      },
+      {
+        "cut": 10,
+        "changedBefore": [],
+        "changedAtCutNonCi": [],
+        "changedAtCutCi": [
+          "ci_typecheck_ok"
+        ],
+        "truncationDiff": []
+      },
+      {
+        "cut": 93,
+        "changedBefore": [],
+        "changedAtCutNonCi": [],
+        "changedAtCutCi": [
+          "ci_unit_ok"
+        ],
+        "truncationDiff": []
+      },
+      {
+        "cut": 128,
+        "changedBefore": [],
+        "changedAtCutNonCi": [],
+        "changedAtCutCi": [
+          "ci_typecheck_ok"
+        ],
+        "truncationDiff": []
+      },
+      {
+        "cut": 135,
+        "changedBefore": [],
+        "changedAtCutNonCi": [],
+        "changedAtCutCi": [
+          "ci_typecheck_ok",
+          "ci_unit_ok"
+        ],
+        "truncationDiff": []
+      },
+      {
+        "cut": 138,
+        "changedBefore": [],
+        "changedAtCutNonCi": [],
+        "changedAtCutCi": [
+          "ci_typecheck_ok",
+          "ci_unit_ok"
+        ],
+        "truncationDiff": []
+      },
+      {
+        "cut": 323,
+        "changedBefore": [],
+        "changedAtCutNonCi": [],
+        "changedAtCutCi": [],
+        "truncationDiff": []
+      },
+      {
+        "cut": 324,
+        "changedBefore": [],
+        "changedAtCutNonCi": [],
+        "changedAtCutCi": [
+          "ci_typecheck_ok"
+        ],
+        "truncationDiff": []
+      },
+      {
+        "cut": 370,
+        "changedBefore": [],
+        "changedAtCutNonCi": [],
+        "changedAtCutCi": [
+          "ci_typecheck_ok"
+        ],
+        "truncationDiff": []
+      },
+      {
+        "cut": 428,
+        "changedBefore": [],
+        "changedAtCutNonCi": [],
+        "changedAtCutCi": [
+          "ci_typecheck_ok"
+        ],
+        "truncationDiff": []
+      },
+      {
+        "cut": 432,
+        "changedBefore": [],
+        "changedAtCutNonCi": [],
+        "changedAtCutCi": [
+          "ci_typecheck_ok"
+        ],
+        "truncationDiff": []
+      },
+      {
+        "cut": 539,
+        "changedBefore": [],
+        "changedAtCutNonCi": [],
+        "changedAtCutCi": [
+          "ci_typecheck_ok"
+        ],
+        "truncationDiff": []
+      }
+    ],
+    "note": "changedAtCutCi is expected to be non-empty: ci_ uses the current commit's unit/typecheck run"
+  },
+  "metadata": {
+    "ok": true,
+    "changedColumns": []
+  },
+  "attribution": {
+    "ok": true,
+    "missingSingleDefectRuns": [],
+    "unexplainedCommits": [],
+    "maskedCommits": [],
+    "note": "maskedCommits is informational: masking is a property of the data, not a dataset error"
+  },
+  "diffOnly": {
+    "features": [
+      "chg_files",
+      "chg_lines_added",
+      "chg_lines_deleted",
+      "chg_churn",
+      "chg_hunks",
+      "chg_hunks_modify",
+      "chg_hunks_add",
+      "chg_hunks_delete",
+      "chg_modules",
+      "chg_ts_files",
+      "chg_ejs_files",
+      "chg_css_files",
+      "chg_doc_files",
+      "chg_other_files",
+      "chg_shared_files",
+      "chg_infra_files"
+    ],
+    "trainCommits": 324,
+    "evalCommits": 216,
+    "targets": {
+      "introducesDefect/all": {
+        "positivesTrain": 114,
+        "positivesEval": 74,
+        "nEval": 216,
+        "logreg": {
+          "trainAuc": 0.76,
+          "evalAuc": 0.7066
+        },
+        "tree_d3": {
+          "trainAuc": 0.8068,
+          "evalAuc": 0.7476
+        },
+        "random_forest": {
+          "trainAuc": 0.9222,
+          "evalAuc": 0.8003
+        }
+      },
+      "introducesDefect/introVsBenign": {
+        "positivesTrain": 114,
+        "positivesEval": 74,
+        "nEval": 126,
+        "logreg": {
+          "trainAuc": 0.8998,
+          "evalAuc": 0.838
+        },
+        "tree_d3": {
+          "trainAuc": 0.9402,
+          "evalAuc": 0.8838
+        },
+        "random_forest": {
+          "trainAuc": 0.992,
+          "evalAuc": 0.9676
+        }
+      },
+      "hasOpenDefect/all": {
+        "positivesTrain": 180,
+        "positivesEval": 122,
+        "nEval": 216,
+        "logreg": {
+          "trainAuc": 0.6819,
+          "evalAuc": 0.5516
+        },
+        "tree_d3": {
+          "trainAuc": 0.7181,
+          "evalAuc": 0.6053
+        },
+        "random_forest": {
+          "trainAuc": 0.878,
+          "evalAuc": 0.6371
+        }
+      },
+      "hasFailingTest/all": {
+        "positivesTrain": 165,
+        "positivesEval": 104,
+        "nEval": 216,
+        "logreg": {
+          "trainAuc": 0.6659,
+          "evalAuc": 0.5455
+        },
+        "tree_d3": {
+          "trainAuc": 0.7012,
+          "evalAuc": 0.5799
+        },
+        "random_forest": {
+          "trainAuc": 0.869,
+          "evalAuc": 0.6133
+        }
+      }
+    },
+    "rules": {
+      "hasDeleteOnlyHunk": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 186,
+        "precision": 1.0
+      },
+      "hasModifyHunk": {
+        "tp": 186,
+        "fp": 205,
+        "fn": 2,
+        "precision": 0.4757
+      },
+      "hasDeletedLines": {
+        "tp": 188,
+        "fp": 205,
+        "fn": 0,
+        "precision": 0.4784
+      }
+    },
+    "introVsBenignBySubset": {
+      "allCommitFeatures": 0.9676,
+      "withoutHunkTypes": 0.9596,
+      "lineCountsOnly": 0.8932,
+      "deletedLinesOnly": 0.8293
+    },
+    "introducingCommits": 188,
+    "maxEvalAuc": 0.9676,
+    "ok": false
+  },
+  "newFailuresRowAuc": {
+    "evalRows": 7272,
+    "evalPositives": 246,
+    "chg_all": 0.7537,
+    "chg_overlap_only": 0.8162,
+    "chg_commit_only": 0.6473,
+    "hist": 0.7125
+  },
+  "univariateAucTrain": {
+    "hist_since_fail": 0.2316,
+    "ci_unit_ok": 0.253,
+    "hist_fail_last_1": 0.7414,
+    "hist_fail_last_3": 0.7295,
+    "hist_fail_last_5": 0.7154,
+    "hist_fail_last_10": 0.6921,
+    "hist_fail_last_20": 0.683,
+    "hist_fail_rate": 0.6759,
+    "hist_peer_fail_rate_1": 0.6418,
+    "hist_prev_commit_fails": 0.6393,
+    "hist_file_fail_rate": 0.6176,
+    "hist_file_fail_count": 0.6135,
+    "chg_cov_frac_diff": 0.6065,
+    "chg_cov_ts_files": 0.6002,
+    "hist_peer_fail_rate_5": 0.5999,
+    "meta_duration_mean": 0.5991,
+    "chg_mod_files": 0.5975,
+    "chg_cov_files": 0.5973,
+    "chg_cov_frac_test": 0.5954,
+    "chg_cov_churn": 0.5949,
+    "chg_same_module": 0.5946,
+    "chg_hunks_modify": 0.5507,
+    "chg_lines_deleted": 0.5494,
+    "hist_never_failed": 0.4536,
+    "meta_criticality": 0.5453,
+    "meta_n_modules": 0.545,
+    "chg_ts_files": 0.5345,
+    "chg_modules": 0.5343,
+    "meta_n_covers": 0.5272,
+    "chg_hunks": 0.5267,
+    "chg_ejs_files": 0.4747,
+    "chg_css_files": 0.4765,
+    "chg_infra_files": 0.4813,
+    "chg_files": 0.516,
+    "chg_lines_added": 0.4851,
+    "chg_doc_files": 0.4898,
+    "chg_shared_files": 0.494,
+    "chg_churn": 0.4986,
+    "chg_hunks_add": 0.4989,
+    "chg_hunks_delete": 0.5,
+    "chg_other_files": 0.5,
+    "ci_typecheck_ok": 0.5
+  },
+  "ok": true,
+  "diffOnlyAlarm": true
+}

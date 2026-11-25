@@ -1,0 +1,142 @@
+[
+  {
+    "id": "MAN-01",
+    "patch": "MAN-01.patch",
+    "file": "src/modules/checkout/logic.ts",
+    "description": "Free standard shipping threshold uses > instead of >= (an order of exactly $50.00 pays shipping)",
+    "origin": "stage 3, D1"
+  },
+  {
+    "id": "MAN-02",
+    "patch": "MAN-02.patch",
+    "file": "src/modules/checkout/logic.ts",
+    "description": "Percent promo discount is rounded down (Math.floor) instead of to the nearest cent",
+    "origin": "stage 3, D2"
+  },
+  {
+    "id": "MAN-03",
+    "patch": "MAN-03.patch",
+    "file": "src/modules/cart/logic.ts",
+    "description": "Adding to cart no longer checks the stock (only the per-line limit of 10)",
+    "origin": "stage 3, D3"
+  },
+  {
+    "id": "MAN-04",
+    "patch": "MAN-04.patch",
+    "file": "src/modules/product/logic.ts",
+    "description": "Low-stock threshold is exclusive: a stock of exactly 5 shows \"In stock\"",
+    "origin": "stage 3, D4"
+  },
+  {
+    "id": "MAN-05",
+    "patch": "MAN-05.patch",
+    "file": "src/modules/orders/logic.ts",
+    "description": "Order status transition shipped → cancelled is allowed",
+    "origin": "stage 3, D5"
+  },
+  {
+    "id": "MAN-06",
+    "patch": "MAN-06.patch",
+    "file": "src/modules/search/logic.ts",
+    "description": "Search ranking rewritten as a for loop without the increment: hangs for names whose first word does not match",
+    "origin": "stage 3, D6 (hanging defect)"
+  },
+  {
+    "id": "MAN-07",
+    "patch": "MAN-07.patch",
+    "file": "src/modules/cart/views/cart.ejs",
+    "description": "Cart view: line total shows the unit price (copy-paste from the price column)",
+    "origin": "pilot, EJS view"
+  },
+  {
+    "id": "MAN-08",
+    "patch": "MAN-08.patch",
+    "file": "src/modules/orders/views/detail.ejs",
+    "description": "Order detail view: total shows the subtotal (discount and shipping ignored)",
+    "origin": "pilot, EJS view"
+  },
+  {
+    "id": "MAN-09",
+    "patch": "MAN-09.patch",
+    "file": "src/modules/checkout/logic.ts",
+    "description": "A promo code is already expired at the exact moment of its expiry time (>= instead of >)",
+    "origin": "stage 4, new"
+  },
+  {
+    "id": "MAN-10",
+    "patch": "MAN-10.patch",
+    "file": "src/modules/checkout/logic.ts",
+    "description": "A promo code is rejected when the subtotal equals the minimum order exactly (<= instead of <)",
+    "origin": "stage 4, new"
+  },
+  {
+    "id": "MAN-11",
+    "patch": "MAN-11.patch",
+    "file": "src/modules/checkout/logic.ts",
+    "description": "Free-shipping threshold is checked against the subtotal instead of the amount after the discount",
+    "origin": "stage 4, new"
+  },
+  {
+    "id": "MAN-12",
+    "patch": "MAN-12.patch",
+    "file": "src/modules/cart/logic.ts",
+    "description": "Stock check ignores the items already in the cart (compares only the requested quantity)",
+    "origin": "stage 4, new"
+  },
+  {
+    "id": "MAN-13",
+    "patch": "MAN-13.patch",
+    "file": "src/modules/catalog/logic.ts",
+    "description": "Price filter excludes products priced exactly at the maximum (>= instead of >)",
+    "origin": "stage 4, new"
+  },
+  {
+    "id": "MAN-14",
+    "patch": "MAN-14.patch",
+    "file": "src/modules/catalog/logic.ts",
+    "description": "Page count is rounded down, so the last partial page is unreachable",
+    "origin": "stage 4, new"
+  },
+  {
+    "id": "MAN-15",
+    "patch": "MAN-15.patch",
+    "file": "src/modules/search/logic.ts",
+    "description": "Results with equal rank are no longer sorted alphabetically",
+    "origin": "stage 4, new"
+  },
+  {
+    "id": "MAN-16",
+    "patch": "MAN-16.patch",
+    "file": "src/modules/orders/logic.ts",
+    "description": "Orders created at the same time are listed oldest id first instead of newest first",
+    "origin": "stage 4, new"
+  },
+  {
+    "id": "MAN-17",
+    "patch": "MAN-17.patch",
+    "file": "src/modules/auth/logic.ts",
+    "description": "Open redirect: protocol-relative targets (//host) are accepted after login",
+    "origin": "stage 4, new"
+  },
+  {
+    "id": "MAN-18",
+    "patch": "MAN-18.patch",
+    "file": "src/modules/admin/logic.ts",
+    "description": "Admin product form accepts a price of zero (< instead of <=)",
+    "origin": "stage 4, new"
+  },
+  {
+    "id": "MAN-20",
+    "patch": "MAN-20.patch",
+    "file": "src/modules/catalog/views/list.ejs",
+    "description": "Catalog counter shows the number of products on the current page instead of the total",
+    "origin": "stage 4, new"
+  },
+  {
+    "id": "MAN-21",
+    "patch": "MAN-21.patch",
+    "file": "src/modules/orders/views/list.ejs",
+    "description": "Order history shows the raw status code instead of its label",
+    "origin": "stage 4, new"
+  }
+]

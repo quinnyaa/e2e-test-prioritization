@@ -1,0 +1,59 @@
+{
+  "runId": "wave1",
+  "sutCommit": "36d8cb29127e63d544d1829fad8360f8f2a2655f",
+  "sutDir": "./data/cache/sut/36d8cb29127e",
+  "startedAt": "2026-11-20T19:09:28.550Z",
+  "buildOk": true,
+  "buildError": null,
+  "totalDurationMs": 4314,
+  "tests": [
+    {
+      "id": "ADM-02",
+      "status": "failed",
+      "durationMs": 3402,
+      "errorSnippet": "Error: expect(locator).toHaveText(expected) failed\n\nLocator: getByTestId('product-price-error')\nExpected: \"Price must be greater than zero\"\nTimeout: 3000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toHaveText\" getByTestId('product-price-error') with timeout 3000ms\n  - waiting for getByTestId('product-price-error')\n\n\n  69 |     await page.getByTestId('product-category-select').selectOption…",
+      "flaky": false,
+      "confirmedFail": true,
+      "rerunStatuses": [
+        "failed",
+        "failed"
+      ]
+    },
+    {
+      "id": "ADM-03",
+      "status": "passed",
+      "durationMs": 514,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "ADM-04",
+      "status": "passed",
+      "durationMs": 403,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CHK-01",
+      "status": "passed",
+      "durationMs": 487,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "E2E-02",
+      "status": "passed",
+      "durationMs": 654,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    }
+  ]
+}

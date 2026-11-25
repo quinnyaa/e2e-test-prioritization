@@ -1,0 +1,14 @@
+--- a/src/modules/search/logic.ts
++++ b/src/modules/search/logic.ts
+@@ -27,7 +27,10 @@
+   const lowerName = name.toLowerCase();
+   const lowerQuery = query.toLowerCase();
+   if (lowerName.startsWith(lowerQuery)) return 0;
+-  if (lowerName.split(' ').some((word) => word.startsWith(lowerQuery))) return 1;
++  const words = lowerName.split(' ');
++  for (let i = 0; i < words.length; ) {
++    if (words[i].startsWith(lowerQuery)) return 1;
++  }
+   return 2;
+ }
+ 

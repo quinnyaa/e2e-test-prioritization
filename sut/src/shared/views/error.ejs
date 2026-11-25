@@ -1,0 +1,7 @@
+<%- include('header', { title: heading }) %>
+<section class="error-page" data-testid="<%= testId %>">
+  <h1 data-testid="error-heading"><%= heading %></h1>
+  <p data-testid="error-message"><%= message %></p>
+  <p><a href="/catalog" data-testid="error-back">Back to catalog</a></p>
+</section>
+<%- include('footer') %>

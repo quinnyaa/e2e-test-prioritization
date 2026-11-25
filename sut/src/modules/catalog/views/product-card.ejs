@@ -1,0 +1,7 @@
+<% var status = stockStatus(product.stock); %>
+<article class="card" data-testid="product-card-<%= product.id %>">
+  <h3><a href="/products/<%= product.id %>" data-testid="product-name"><%= product.name %></a></h3>
+  <div class="muted" data-testid="product-category"><%= product.categoryName %></div>
+  <div data-testid="product-price"><%= formatPrice(product.priceCents) %></div>
+  <span class="badge badge-<%= status %>" data-testid="product-stock" data-stock-status="<%= status %>"><%= stockLabel(product.stock) %></span>
+</article>

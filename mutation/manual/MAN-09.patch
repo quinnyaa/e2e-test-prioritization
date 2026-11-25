@@ -1,0 +1,11 @@
+--- a/src/modules/checkout/logic.ts
++++ b/src/modules/checkout/logic.ts
+@@ -78,7 +78,7 @@
+ ): PromoResult {
+   if (code === '') return NO_PROMO;
+   if (!promo || !promo.active) return { ok: false, error: 'Promo code not found' };
+-  if (promo.expiresAt !== null && now.getTime() > Date.parse(promo.expiresAt)) {
++  if (promo.expiresAt !== null && now.getTime() >= Date.parse(promo.expiresAt)) {
+     return { ok: false, error: 'Promo code has expired' };
+   }
+   if (subtotalCents < promo.minOrderCents) {

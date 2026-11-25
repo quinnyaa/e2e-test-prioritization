@@ -1,0 +1,14 @@
+node_modules/
+dist/
+build/
+coverage/
+.stryker-tmp/
+reports/
+test-results/
+playwright-report/
+.env
+.env.*
+.DS_Store
+.idea/
+.vscode/
+data/

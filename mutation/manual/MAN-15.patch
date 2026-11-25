@@ -1,0 +1,10 @@
+--- a/src/modules/search/logic.ts
++++ b/src/modules/search/logic.ts
+@@ -38,6 +38,6 @@
+ 
+   const items = products
+     .filter((p) => matchesQuery(p.name, query))
+-    .sort((a, b) => matchRank(a.name, query) - matchRank(b.name, query) || a.name.localeCompare(b.name, 'en'));
++    .sort((a, b) => matchRank(a.name, query) - matchRank(b.name, query));
+   return { status: 'ok', query, items };
+ }

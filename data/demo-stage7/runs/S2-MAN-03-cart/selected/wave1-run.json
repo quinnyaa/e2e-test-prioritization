@@ -1,0 +1,77 @@
+{
+  "runId": "wave1",
+  "sutCommit": "59c6adf248f3294b68416874ca83f20f0150e819",
+  "sutDir": "./data/cache/sut/59c6adf248f3",
+  "startedAt": "2026-11-20T19:07:51.083Z",
+  "buildOk": true,
+  "buildError": null,
+  "totalDurationMs": 4487,
+  "tests": [
+    {
+      "id": "CART-01",
+      "status": "passed",
+      "durationMs": 630,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CART-02",
+      "status": "failed",
+      "durationMs": 3579,
+      "errorSnippet": "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('flash-message')\nExpected: \"Only 3 items available\"\nReceived: \"Added 4 × Clean Code to cart\"\nTimeout:  3000ms\n\nCall log:\n  - Expect \"toHaveText\" getByTestId('flash-message') with timeout 3000ms\n  - waiting for getByTestId('flash-message')\n    10 × locator resolved to <div role=\"status\" class=\"flash flash-success\" data-testid…",
+      "flaky": false,
+      "confirmedFail": true,
+      "rerunStatuses": [
+        "failed",
+        "failed"
+      ]
+    },
+    {
+      "id": "CART-03",
+      "status": "passed",
+      "durationMs": 773,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CART-04",
+      "status": "passed",
+      "durationMs": 254,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CART-05",
+      "status": "passed",
+      "durationMs": 360,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "E2E-01",
+      "status": "passed",
+      "durationMs": 707,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "PRD-02",
+      "status": "passed",
+      "durationMs": 142,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    }
+  ]
+}

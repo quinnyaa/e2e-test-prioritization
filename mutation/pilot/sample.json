@@ -1,0 +1,2017 @@
+{
+  "seed": 20261021,
+  "size": 100,
+  "minPerModule": 5,
+  "quota": {
+    "product": 5,
+    "search": 5,
+    "auth": 16,
+    "catalog": 14,
+    "cart": 14,
+    "checkout": 24,
+    "orders": 7,
+    "admin": 15
+  },
+  "mutants": [
+    {
+      "id": "411",
+      "file": "src/modules/auth/routes.ts",
+      "module": "auth",
+      "mutator": "BlockStatement",
+      "line": 61,
+      "location": {
+        "end": {
+          "column": 2,
+          "line": 82
+        },
+        "start": {
+          "column": 44,
+          "line": 61
+        }
+      },
+      "original": "{\n  const input = {\n    name: field(req.body, 'name'),\n    email: field(req.body, 'email'),\n    password: field(req.body, 'password'),\n    confirmPassword: field(req.body, 'confirmPassword'),\n  };\n  const errors: Record<string, string> = validateRegistration(input);\n  if (!errors.email && emailExists(input.email)) errors.email = 'Email is already registered';\n  if (hasErrors(errors)) {\n    res.status(400).render('modules/auth/views/register', {\n      title: 'Create account',\n      values: { name: input.name, email: input.email },\n      errors,\n    });\n    return;\n  }\n  const userId = createUser(input.name, input.email, input.password);\n  setSessionUser(req, userId);\n  setFlash(req, 'success', `Welcome, ${input.name.trim()}! Your account has been created.`);\n  res.redirect('/catalog');\n}",
+      "replacement": "{}",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "349",
+      "file": "src/modules/auth/routes.ts",
+      "module": "auth",
+      "mutator": "EqualityOperator",
+      "line": 10,
+      "location": {
+        "end": {
+          "column": 35,
+          "line": 10
+        },
+        "start": {
+          "column": 10,
+          "line": 10
+        }
+      },
+      "original": "typeof value === 'string'",
+      "replacement": "typeof value !== 'string'",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "397",
+      "file": "src/modules/auth/routes.ts",
+      "module": "auth",
+      "mutator": "ConditionalExpression",
+      "line": 50,
+      "location": {
+        "end": {
+          "column": 15,
+          "line": 50
+        },
+        "start": {
+          "column": 7,
+          "line": 50
+        }
+      },
+      "original": "req.user",
+      "replacement": "true",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "294",
+      "file": "src/modules/auth/logic.ts",
+      "module": "auth",
+      "mutator": "LogicalOperator",
+      "line": 48,
+      "location": {
+        "end": {
+          "column": 57,
+          "line": 48
+        },
+        "start": {
+          "column": 7,
+          "line": 48
+        }
+      },
+      "original": "!/[A-Za-z]/.test(password) || !/\\d/.test(password)",
+      "replacement": "!/[A-Za-z]/.test(password) && !/\\d/.test(password)",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "342",
+      "file": "src/modules/auth/logic.ts",
+      "module": "auth",
+      "mutator": "MethodExpression",
+      "line": 80,
+      "location": {
+        "end": {
+          "column": 28,
+          "line": 80
+        },
+        "start": {
+          "column": 7,
+          "line": 80
+        }
+      },
+      "original": "next.startsWith('//')",
+      "replacement": "next.endsWith('//')",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "443",
+      "file": "src/modules/auth/routes.ts",
+      "module": "auth",
+      "mutator": "StringLiteral",
+      "line": 86,
+      "location": {
+        "end": {
+          "column": 54,
+          "line": 86
+        },
+        "start": {
+          "column": 28,
+          "line": 86
+        }
+      },
+      "original": "'You have been signed out'",
+      "replacement": "\"\"",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "275",
+      "file": "src/modules/auth/logic.ts",
+      "module": "auth",
+      "mutator": "StringLiteral",
+      "line": 40,
+      "location": {
+        "end": {
+          "column": 106,
+          "line": 40
+        },
+        "start": {
+          "column": 77,
+          "line": 40
+        }
+      },
+      "original": "'Enter a valid email address'",
+      "replacement": "\"\"",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "424",
+      "file": "src/modules/auth/routes.ts",
+      "module": "auth",
+      "mutator": "BlockStatement",
+      "line": 70,
+      "location": {
+        "end": {
+          "column": 4,
+          "line": 77
+        },
+        "start": {
+          "column": 26,
+          "line": 70
+        }
+      },
+      "original": "{\n    res.status(400).render('modules/auth/views/register', {\n      title: 'Create account',\n      values: { name: input.name, email: input.email },\n      errors,\n    });\n    return;\n  }",
+      "replacement": "{}",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "355",
+      "file": "src/modules/auth/routes.ts",
+      "module": "auth",
+      "mutator": "ConditionalExpression",
+      "line": 14,
+      "location": {
+        "end": {
+          "column": 15,
+          "line": 14
+        },
+        "start": {
+          "column": 7,
+          "line": 14
+        }
+      },
+      "original": "req.user",
+      "replacement": "true",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "383",
+      "file": "src/modules/auth/routes.ts",
+      "module": "auth",
+      "mutator": "BlockStatement",
+      "line": 35,
+      "location": {
+        "end": {
+          "column": 4,
+          "line": 43
+        },
+        "start": {
+          "column": 14,
+          "line": 35
+        }
+      },
+      "original": "{\n    res.status(400).render('modules/auth/views/login', {\n      title: 'Sign in',\n      values: { email: input.email },\n      errors,\n      next,\n    });\n    return;\n  }",
+      "replacement": "{}",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "261",
+      "file": "src/modules/auth/logic.ts",
+      "module": "auth",
+      "mutator": "StringLiteral",
+      "line": 33,
+      "location": {
+        "end": {
+          "column": 98,
+          "line": 33
+        },
+        "start": {
+          "column": 46,
+          "line": 33
+        }
+      },
+      "original": "`Name must be at most ${NAME_MAX_LENGTH} characters`",
+      "replacement": "``",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "292",
+      "file": "src/modules/auth/logic.ts",
+      "module": "auth",
+      "mutator": "ConditionalExpression",
+      "line": 48,
+      "location": {
+        "end": {
+          "column": 57,
+          "line": 48
+        },
+        "start": {
+          "column": 7,
+          "line": 48
+        }
+      },
+      "original": "!/[A-Za-z]/.test(password) || !/\\d/.test(password)",
+      "replacement": "true",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "409",
+      "file": "src/modules/auth/routes.ts",
+      "module": "auth",
+      "mutator": "CallExpression",
+      "line": 61,
+      "location": {
+        "end": {
+          "column": 4,
+          "line": 82
+        },
+        "start": {
+          "column": 1,
+          "line": 61
+        }
+      },
+      "original": "authRouter.post('/register', (req, res) => {\n  const input = {\n    name: field(req.body, 'name'),\n    email: field(req.body, 'email'),\n    password: field(req.body, 'password'),\n    confirmPassword: field(req.body, 'confirmPassword'),\n  };\n  const errors: Record<string, string> = validateRegistration(input);\n  if (!errors.email && emailExists(input.email)) errors.email = 'Email is already registered';\n  if (hasErrors(errors)) {\n    res.status(400).render('modules/auth/views/register', {\n      title: 'Create account',\n      values: { name: input.name, email: input.email },\n      errors,\n    });\n    return;\n  }\n  const userId = createUser(input.name, input.email, input.password);\n  setSessionUser(req, userId);\n  setFlash(req, 'success', `Welcome, ${input.name.trim()}! Your account has been created.`);\n  res.redirect('/catalog');\n});",
+      "replacement": ";",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "453",
+      "file": "src/modules/auth/service.ts",
+      "module": "auth",
+      "mutator": "MethodExpression",
+      "line": 18,
+      "location": {
+        "end": {
+          "column": 44,
+          "line": 18
+        },
+        "start": {
+          "column": 33,
+          "line": 18
+        }
+      },
+      "original": "name.trim()",
+      "replacement": "name",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "336",
+      "file": "src/modules/auth/logic.ts",
+      "module": "auth",
+      "mutator": "BooleanLiteral",
+      "line": 79,
+      "location": {
+        "end": {
+          "column": 56,
+          "line": 79
+        },
+        "start": {
+          "column": 35,
+          "line": 79
+        }
+      },
+      "original": "!next.startsWith('/')",
+      "replacement": "next.startsWith('/')",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "274",
+      "file": "src/modules/auth/logic.ts",
+      "module": "auth",
+      "mutator": "BooleanLiteral",
+      "line": 40,
+      "location": {
+        "end": {
+          "column": 68,
+          "line": 40
+        },
+        "start": {
+          "column": 42,
+          "line": 40
+        }
+      },
+      "original": "!EMAIL_PATTERN.test(value)",
+      "replacement": "EMAIL_PATTERN.test(value)",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "722",
+      "file": "src/modules/catalog/logic.ts",
+      "module": "catalog",
+      "mutator": "StringLiteral",
+      "line": 69,
+      "location": {
+        "end": {
+          "column": 98,
+          "line": 69
+        },
+        "start": {
+          "column": 60,
+          "line": 69
+        }
+      },
+      "original": "'Minimum price must be a valid amount'",
+      "replacement": "\"\"",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "686",
+      "file": "src/modules/catalog/logic.ts",
+      "module": "catalog",
+      "mutator": "EqualityOperator",
+      "line": 43,
+      "location": {
+        "end": {
+          "column": 35,
+          "line": 43
+        },
+        "start": {
+          "column": 10,
+          "line": 43
+        }
+      },
+      "original": "typeof value === 'string'",
+      "replacement": "typeof value !== 'string'",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "782",
+      "file": "src/modules/catalog/logic.ts",
+      "module": "catalog",
+      "mutator": "ConditionalExpression",
+      "line": 98,
+      "location": {
+        "end": {
+          "column": 39,
+          "line": 98
+        },
+        "start": {
+          "column": 9,
+          "line": 98
+        }
+      },
+      "original": "filters.maxPriceCents !== null",
+      "replacement": "true",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "730",
+      "file": "src/modules/catalog/logic.ts",
+      "module": "catalog",
+      "mutator": "EqualityOperator",
+      "line": 70,
+      "location": {
+        "end": {
+          "column": 46,
+          "line": 70
+        },
+        "start": {
+          "column": 24,
+          "line": 70
+        }
+      },
+      "original": "maxPriceCents === null",
+      "replacement": "maxPriceCents !== null",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "826",
+      "file": "src/modules/catalog/logic.ts",
+      "module": "catalog",
+      "mutator": "ArithmeticOperator",
+      "line": 127,
+      "location": {
+        "end": {
+          "column": 47,
+          "line": 127
+        },
+        "start": {
+          "column": 31,
+          "line": 127
+        }
+      },
+      "original": "start + pageSize",
+      "replacement": "start - pageSize",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "798",
+      "file": "src/modules/catalog/logic.ts",
+      "module": "catalog",
+      "mutator": "ConditionalExpression",
+      "line": 111,
+      "location": {
+        "end": {
+          "column": 81,
+          "line": 112
+        },
+        "start": {
+          "column": 5,
+          "line": 111
+        }
+      },
+      "original": "case 'price_asc':\n      return sorted.sort((a, b) => a.priceCents - b.priceCents || byName(a, b));",
+      "replacement": "case 'price_asc':",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "862",
+      "file": "src/modules/catalog/logic.ts",
+      "module": "catalog",
+      "mutator": "ConditionalExpression",
+      "line": 144,
+      "location": {
+        "end": {
+          "column": 15,
+          "line": 144
+        },
+        "start": {
+          "column": 7,
+          "line": 144
+        }
+      },
+      "original": "page > 1",
+      "replacement": "true",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "737",
+      "file": "src/modules/catalog/logic.ts",
+      "module": "catalog",
+      "mutator": "LogicalOperator",
+      "line": 71,
+      "location": {
+        "end": {
+          "column": 55,
+          "line": 71
+        },
+        "start": {
+          "column": 7,
+          "line": 71
+        }
+      },
+      "original": "minPriceCents !== null && maxPriceCents !== null",
+      "replacement": "minPriceCents !== null || maxPriceCents !== null",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "804",
+      "file": "src/modules/catalog/logic.ts",
+      "module": "catalog",
+      "mutator": "LogicalOperator",
+      "line": 112,
+      "location": {
+        "end": {
+          "column": 79,
+          "line": 112
+        },
+        "start": {
+          "column": 36,
+          "line": 112
+        }
+      },
+      "original": "a.priceCents - b.priceCents || byName(a, b)",
+      "replacement": "a.priceCents - b.priceCents && byName(a, b)",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "770",
+      "file": "src/modules/catalog/logic.ts",
+      "module": "catalog",
+      "mutator": "ConditionalExpression",
+      "line": 97,
+      "location": {
+        "end": {
+          "column": 79,
+          "line": 97
+        },
+        "start": {
+          "column": 9,
+          "line": 97
+        }
+      },
+      "original": "filters.minPriceCents !== null && p.priceCents < filters.minPriceCents",
+      "replacement": "true",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "743",
+      "file": "src/modules/catalog/logic.ts",
+      "module": "catalog",
+      "mutator": "EqualityOperator",
+      "line": 71,
+      "location": {
+        "end": {
+          "column": 88,
+          "line": 71
+        },
+        "start": {
+          "column": 59,
+          "line": 71
+        }
+      },
+      "original": "minPriceCents > maxPriceCents",
+      "replacement": "minPriceCents >= maxPriceCents",
+      "unitStatus": "Survived"
+    },
+    {
+      "id": "747",
+      "file": "src/modules/catalog/logic.ts",
+      "module": "catalog",
+      "mutator": "StringLiteral",
+      "line": 72,
+      "location": {
+        "end": {
+          "column": 69,
+          "line": 72
+        },
+        "start": {
+          "column": 17,
+          "line": 72
+        }
+      },
+      "original": "'Minimum price cannot be greater than maximum price'",
+      "replacement": "\"\"",
+      "unitStatus": "Survived"
+    },
+    {
+      "id": "867",
+      "file": "src/modules/catalog/logic.ts",
+      "module": "catalog",
+      "mutator": "StringLiteral",
+      "line": 144,
+      "location": {
+        "end": {
+          "column": 34,
+          "line": 144
+        },
+        "start": {
+          "column": 28,
+          "line": 144
+        }
+      },
+      "original": "'page'",
+      "replacement": "\"\"",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "873",
+      "file": "src/modules/catalog/routes.ts",
+      "module": "catalog",
+      "mutator": "ArrowFunction",
+      "line": 20,
+      "location": {
+        "end": {
+          "column": 33,
+          "line": 20
+        },
+        "start": {
+          "column": 20,
+          "line": 20
+        }
+      },
+      "original": "(c) => c.slug",
+      "replacement": "() => undefined",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "1362",
+      "file": "src/modules/product/logic.ts",
+      "module": "product",
+      "mutator": "StringLiteral",
+      "line": 25,
+      "location": {
+        "end": {
+          "column": 47,
+          "line": 25
+        },
+        "start": {
+          "column": 33,
+          "line": 25
+        }
+      },
+      "original": "'out_of_stock'",
+      "replacement": "\"\"",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1344",
+      "file": "src/modules/product/logic.ts",
+      "module": "product",
+      "mutator": "ConditionalExpression",
+      "line": 9,
+      "location": {
+        "end": {
+          "column": 35,
+          "line": 9
+        },
+        "start": {
+          "column": 7,
+          "line": 9
+        }
+      },
+      "original": "stock <= LOW_STOCK_THRESHOLD",
+      "replacement": "false",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1358",
+      "file": "src/modules/product/logic.ts",
+      "module": "product",
+      "mutator": "BlockStatement",
+      "line": 24,
+      "location": {
+        "end": {
+          "column": 2,
+          "line": 26
+        },
+        "start": {
+          "column": 54,
+          "line": 24
+        }
+      },
+      "original": "{\n  return stockStatus(stock) !== 'out_of_stock';\n}",
+      "replacement": "{}",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1361",
+      "file": "src/modules/product/logic.ts",
+      "module": "product",
+      "mutator": "EqualityOperator",
+      "line": 25,
+      "location": {
+        "end": {
+          "column": 47,
+          "line": 25
+        },
+        "start": {
+          "column": 10,
+          "line": 25
+        }
+      },
+      "original": "stockStatus(stock) !== 'out_of_stock'",
+      "replacement": "stockStatus(stock) === 'out_of_stock'",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1348",
+      "file": "src/modules/product/logic.ts",
+      "module": "product",
+      "mutator": "StringLiteral",
+      "line": 10,
+      "location": {
+        "end": {
+          "column": 20,
+          "line": 10
+        },
+        "start": {
+          "column": 10,
+          "line": 10
+        }
+      },
+      "original": "'in_stock'",
+      "replacement": "\"\"",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1383",
+      "file": "src/modules/search/logic.ts",
+      "module": "search",
+      "mutator": "StringLiteral",
+      "line": 17,
+      "location": {
+        "end": {
+          "column": 41,
+          "line": 17
+        },
+        "start": {
+          "column": 39,
+          "line": 17
+        }
+      },
+      "original": "''",
+      "replacement": "\"Stryker was here!\"",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1391",
+      "file": "src/modules/search/logic.ts",
+      "module": "search",
+      "mutator": "MethodExpression",
+      "line": 22,
+      "location": {
+        "end": {
+          "column": 57,
+          "line": 22
+        },
+        "start": {
+          "column": 38,
+          "line": 22
+        }
+      },
+      "original": "query.toLowerCase()",
+      "replacement": "query.toUpperCase()",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1408",
+      "file": "src/modules/search/logic.ts",
+      "module": "search",
+      "mutator": "StringLiteral",
+      "line": 36,
+      "location": {
+        "end": {
+          "column": 19,
+          "line": 36
+        },
+        "start": {
+          "column": 17,
+          "line": 36
+        }
+      },
+      "original": "''",
+      "replacement": "\"Stryker was here!\"",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1380",
+      "file": "src/modules/search/logic.ts",
+      "module": "search",
+      "mutator": "ConditionalExpression",
+      "line": 17,
+      "location": {
+        "end": {
+          "column": 30,
+          "line": 17
+        },
+        "start": {
+          "column": 7,
+          "line": 17
+        }
+      },
+      "original": "typeof raw !== 'string'",
+      "replacement": "false",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1382",
+      "file": "src/modules/search/logic.ts",
+      "module": "search",
+      "mutator": "StringLiteral",
+      "line": 17,
+      "location": {
+        "end": {
+          "column": 30,
+          "line": 17
+        },
+        "start": {
+          "column": 22,
+          "line": 17
+        }
+      },
+      "original": "'string'",
+      "replacement": "\"\"",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "465",
+      "file": "src/modules/cart/logic.ts",
+      "module": "cart",
+      "mutator": "EqualityOperator",
+      "line": 27,
+      "location": {
+        "end": {
+          "column": 30,
+          "line": 27
+        },
+        "start": {
+          "column": 7,
+          "line": 27
+        }
+      },
+      "original": "typeof raw !== 'string'",
+      "replacement": "typeof raw === 'string'",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "608",
+      "file": "src/modules/cart/routes.ts",
+      "module": "cart",
+      "mutator": "StringLiteral",
+      "line": 33,
+      "location": {
+        "end": {
+          "column": 23,
+          "line": 33
+        },
+        "start": {
+          "column": 16,
+          "line": 33
+        }
+      },
+      "original": "'/cart'",
+      "replacement": "\"\"",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "464",
+      "file": "src/modules/cart/logic.ts",
+      "module": "cart",
+      "mutator": "ConditionalExpression",
+      "line": 27,
+      "location": {
+        "end": {
+          "column": 30,
+          "line": 27
+        },
+        "start": {
+          "column": 7,
+          "line": 27
+        }
+      },
+      "original": "typeof raw !== 'string'",
+      "replacement": "false",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "636",
+      "file": "src/modules/cart/routes.ts",
+      "module": "cart",
+      "mutator": "BlockStatement",
+      "line": 63,
+      "location": {
+        "end": {
+          "column": 4,
+          "line": 65
+        },
+        "start": {
+          "column": 19,
+          "line": 63
+        }
+      },
+      "original": "{\n    setFlash(req, 'error', result.error);\n  }",
+      "replacement": "{}",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "664",
+      "file": "src/modules/cart/service.ts",
+      "module": "cart",
+      "mutator": "BlockStatement",
+      "line": 10,
+      "location": {
+        "end": {
+          "column": 2,
+          "line": 19
+        },
+        "start": {
+          "column": 61,
+          "line": 10
+        }
+      },
+      "original": "{\n  return getDb()\n    .prepare(\n      `SELECT ci.product_id AS productId, p.name, p.price_cents AS priceCents, ci.quantity, p.stock\n       FROM cart_items ci JOIN products p ON p.id = ci.product_id\n       WHERE ci.session_id = ?\n       ORDER BY ci.rowid`,\n    )\n    .all(sessionId) as CartLine[];\n}",
+      "replacement": "{}",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "534",
+      "file": "src/modules/cart/logic.ts",
+      "module": "cart",
+      "mutator": "ObjectLiteral",
+      "line": 51,
+      "location": {
+        "end": {
+          "column": 61,
+          "line": 51
+        },
+        "start": {
+          "column": 31,
+          "line": 51
+        }
+      },
+      "original": "{ ok: true, action: 'remove' }",
+      "replacement": "{}",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "539",
+      "file": "src/modules/cart/logic.ts",
+      "module": "cart",
+      "mutator": "EqualityOperator",
+      "line": 52,
+      "location": {
+        "end": {
+          "column": 40,
+          "line": 52
+        },
+        "start": {
+          "column": 7,
+          "line": 52
+        }
+      },
+      "original": "requested > MAX_QUANTITY_PER_LINE",
+      "replacement": "requested >= MAX_QUANTITY_PER_LINE",
+      "unitStatus": "Survived"
+    },
+    {
+      "id": "519",
+      "file": "src/modules/cart/logic.ts",
+      "module": "cart",
+      "mutator": "EqualityOperator",
+      "line": 43,
+      "location": {
+        "end": {
+          "column": 64,
+          "line": 43
+        },
+        "start": {
+          "column": 53,
+          "line": 43
+        }
+      },
+      "original": "stock === 1",
+      "replacement": "stock !== 1",
+      "unitStatus": "Survived"
+    },
+    {
+      "id": "543",
+      "file": "src/modules/cart/logic.ts",
+      "module": "cart",
+      "mutator": "BooleanLiteral",
+      "line": 53,
+      "location": {
+        "end": {
+          "column": 23,
+          "line": 53
+        },
+        "start": {
+          "column": 18,
+          "line": 53
+        }
+      },
+      "original": "false",
+      "replacement": "true",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "548",
+      "file": "src/modules/cart/logic.ts",
+      "module": "cart",
+      "mutator": "EqualityOperator",
+      "line": 55,
+      "location": {
+        "end": {
+          "column": 24,
+          "line": 55
+        },
+        "start": {
+          "column": 7,
+          "line": 55
+        }
+      },
+      "original": "requested > stock",
+      "replacement": "requested <= stock",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "579",
+      "file": "src/modules/cart/logic.ts",
+      "module": "cart",
+      "mutator": "ConditionalExpression",
+      "line": 77,
+      "location": {
+        "end": {
+          "column": 42,
+          "line": 77
+        },
+        "start": {
+          "column": 16,
+          "line": 77
+        }
+      },
+      "original": "line.quantity > line.stock",
+      "replacement": "true",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "530",
+      "file": "src/modules/cart/logic.ts",
+      "module": "cart",
+      "mutator": "StringLiteral",
+      "line": 50,
+      "location": {
+        "end": {
+          "column": 87,
+          "line": 50
+        },
+        "start": {
+          "column": 54,
+          "line": 50
+        }
+      },
+      "original": "'Quantity must be a whole number'",
+      "replacement": "\"\"",
+      "unitStatus": "Survived"
+    },
+    {
+      "id": "571",
+      "file": "src/modules/cart/logic.ts",
+      "module": "cart",
+      "mutator": "ConditionalExpression",
+      "line": 75,
+      "location": {
+        "end": {
+          "column": 24,
+          "line": 75
+        },
+        "start": {
+          "column": 9,
+          "line": 75
+        }
+      },
+      "original": "line.stock <= 0",
+      "replacement": "true",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "540",
+      "file": "src/modules/cart/logic.ts",
+      "module": "cart",
+      "mutator": "EqualityOperator",
+      "line": 52,
+      "location": {
+        "end": {
+          "column": 40,
+          "line": 52
+        },
+        "start": {
+          "column": 7,
+          "line": 52
+        }
+      },
+      "original": "requested > MAX_QUANTITY_PER_LINE",
+      "replacement": "requested <= MAX_QUANTITY_PER_LINE",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1020",
+      "file": "src/modules/checkout/logic.ts",
+      "module": "checkout",
+      "mutator": "StringLiteral",
+      "line": 133,
+      "location": {
+        "end": {
+          "column": 18,
+          "line": 133
+        },
+        "start": {
+          "column": 16,
+          "line": 133
+        }
+      },
+      "original": "''",
+      "replacement": "\"Stryker was here!\"",
+      "unitStatus": "Survived"
+    },
+    {
+      "id": "1003",
+      "file": "src/modules/checkout/logic.ts",
+      "module": "checkout",
+      "mutator": "EqualityOperator",
+      "line": 126,
+      "location": {
+        "end": {
+          "column": 56,
+          "line": 126
+        },
+        "start": {
+          "column": 35,
+          "line": 126
+        }
+      },
+      "original": "fullName.length > 100",
+      "replacement": "fullName.length <= 100",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1198",
+      "file": "src/modules/checkout/service.ts",
+      "module": "checkout",
+      "mutator": "BlockStatement",
+      "line": 41,
+      "location": {
+        "end": {
+          "column": 2,
+          "line": 52
+        },
+        "start": {
+          "column": 63,
+          "line": 41
+        }
+      },
+      "original": "{\n  const row = getDb().prepare('SELECT * FROM promo_codes WHERE code = ?').get(code) as PromoRow | undefined;\n  if (!row) return undefined;\n  return {\n    code: row.code,\n    type: row.type,\n    value: row.value,\n    minOrderCents: row.min_order_cents,\n    expiresAt: row.expires_at,\n    active: row.active === 1,\n  };\n}",
+      "replacement": "{}",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "1073",
+      "file": "src/modules/checkout/logic.ts",
+      "module": "checkout",
+      "mutator": "ArithmeticOperator",
+      "line": 152,
+      "location": {
+        "end": {
+          "column": 95,
+          "line": 152
+        },
+        "start": {
+          "column": 69,
+          "line": 152
+        }
+      },
+      "original": "line.stock - line.quantity",
+      "replacement": "line.stock + line.quantity",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1229",
+      "file": "src/modules/checkout/service.ts",
+      "module": "checkout",
+      "mutator": "BlockStatement",
+      "line": 99,
+      "location": {
+        "end": {
+          "column": 2,
+          "line": 103
+        },
+        "start": {
+          "column": 92,
+          "line": 99
+        }
+      },
+      "original": "{\n  return getDb()\n    .prepare('SELECT id, total_cents AS totalCents, status FROM orders WHERE id = ? AND user_id = ?')\n    .get(orderId, userId) as OrderSummary | undefined;\n}",
+      "replacement": "{}",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "1112",
+      "file": "src/modules/checkout/routes.ts",
+      "module": "checkout",
+      "mutator": "StringLiteral",
+      "line": 82,
+      "location": {
+        "end": {
+          "column": 62,
+          "line": 82
+        },
+        "start": {
+          "column": 29,
+          "line": 82
+        }
+      },
+      "original": "'modules/checkout/views/checkout'",
+      "replacement": "\"\"",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "1032",
+      "file": "src/modules/checkout/logic.ts",
+      "module": "checkout",
+      "mutator": "ConditionalExpression",
+      "line": 137,
+      "location": {
+        "end": {
+          "column": 24,
+          "line": 137
+        },
+        "start": {
+          "column": 7,
+          "line": 137
+        }
+      },
+      "original": "postalCode === ''",
+      "replacement": "true",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "903",
+      "file": "src/modules/checkout/logic.ts",
+      "module": "checkout",
+      "mutator": "BlockStatement",
+      "line": 69,
+      "location": {
+        "end": {
+          "column": 2,
+          "line": 71
+        },
+        "start": {
+          "column": 67,
+          "line": 69
+        }
+      },
+      "original": "{\n  return raw === 'express' ? 'express' : 'standard';\n}",
+      "replacement": "{}",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "1106",
+      "file": "src/modules/checkout/routes.ts",
+      "module": "checkout",
+      "mutator": "StringLiteral",
+      "line": 67,
+      "location": {
+        "end": {
+          "column": 26,
+          "line": 67
+        },
+        "start": {
+          "column": 19,
+          "line": 67
+        }
+      },
+      "original": "'error'",
+      "replacement": "\"\"",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "917",
+      "file": "src/modules/checkout/logic.ts",
+      "module": "checkout",
+      "mutator": "LogicalOperator",
+      "line": 80,
+      "location": {
+        "end": {
+          "column": 30,
+          "line": 80
+        },
+        "start": {
+          "column": 7,
+          "line": 80
+        }
+      },
+      "original": "!promo || !promo.active",
+      "replacement": "!promo && !promo.active",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "896",
+      "file": "src/modules/checkout/logic.ts",
+      "module": "checkout",
+      "mutator": "ConditionalExpression",
+      "line": 66,
+      "location": {
+        "end": {
+          "column": 33,
+          "line": 66
+        },
+        "start": {
+          "column": 10,
+          "line": 66
+        }
+      },
+      "original": "typeof raw === 'string'",
+      "replacement": "true",
+      "unitStatus": "Survived"
+    },
+    {
+      "id": "1031",
+      "file": "src/modules/checkout/logic.ts",
+      "module": "checkout",
+      "mutator": "MethodExpression",
+      "line": 136,
+      "location": {
+        "end": {
+          "column": 44,
+          "line": 136
+        },
+        "start": {
+          "column": 22,
+          "line": 136
+        }
+      },
+      "original": "form.postalCode.trim()",
+      "replacement": "form.postalCode",
+      "unitStatus": "Survived"
+    },
+    {
+      "id": "1189",
+      "file": "src/modules/checkout/routes.ts",
+      "module": "checkout",
+      "mutator": "BooleanLiteral",
+      "line": 150,
+      "location": {
+        "end": {
+          "column": 13,
+          "line": 150
+        },
+        "start": {
+          "column": 7,
+          "line": 150
+        }
+      },
+      "original": "!order",
+      "replacement": "order",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "1209",
+      "file": "src/modules/checkout/service.ts",
+      "module": "checkout",
+      "mutator": "ConditionalExpression",
+      "line": 59,
+      "location": {
+        "end": {
+          "column": 17,
+          "line": 59
+        },
+        "start": {
+          "column": 9,
+          "line": 59
+        }
+      },
+      "original": "!updates",
+      "replacement": "true",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "1122",
+      "file": "src/modules/checkout/routes.ts",
+      "module": "checkout",
+      "mutator": "ConditionalExpression",
+      "line": 96,
+      "location": {
+        "end": {
+          "column": 13,
+          "line": 96
+        },
+        "start": {
+          "column": 7,
+          "line": 96
+        }
+      },
+      "original": "!lines",
+      "replacement": "false",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "1058",
+      "file": "src/modules/checkout/logic.ts",
+      "module": "checkout",
+      "mutator": "StringLiteral",
+      "line": 142,
+      "location": {
+        "end": {
+          "column": 86,
+          "line": 142
+        },
+        "start": {
+          "column": 58,
+          "line": 142
+        }
+      },
+      "original": "'Enter a valid phone number'",
+      "replacement": "\"\"",
+      "unitStatus": "Survived"
+    },
+    {
+      "id": "1012",
+      "file": "src/modules/checkout/logic.ts",
+      "module": "checkout",
+      "mutator": "ConditionalExpression",
+      "line": 130,
+      "location": {
+        "end": {
+          "column": 30,
+          "line": 130
+        },
+        "start": {
+          "column": 12,
+          "line": 130
+        }
+      },
+      "original": "address.length < 5",
+      "replacement": "false",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "969",
+      "file": "src/modules/checkout/logic.ts",
+      "module": "checkout",
+      "mutator": "ConditionalExpression",
+      "line": 106,
+      "location": {
+        "end": {
+          "column": 71,
+          "line": 106
+        },
+        "start": {
+          "column": 7,
+          "line": 106
+        }
+      },
+      "original": "rate.freeFromCents !== null && amountCents >= rate.freeFromCents",
+      "replacement": "false",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "888",
+      "file": "src/modules/checkout/logic.ts",
+      "module": "checkout",
+      "mutator": "ObjectLiteral",
+      "line": 15,
+      "location": {
+        "end": {
+          "column": 82,
+          "line": 15
+        },
+        "start": {
+          "column": 13,
+          "line": 15
+        }
+      },
+      "original": "{ label: 'Standard (3–5 days)', costCents: 499, freeFromCents: 5000 }",
+      "replacement": "{}",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1089",
+      "file": "src/modules/checkout/routes.ts",
+      "module": "checkout",
+      "mutator": "StringLiteral",
+      "line": 50,
+      "location": {
+        "end": {
+          "column": 32,
+          "line": 50
+        },
+        "start": {
+          "column": 25,
+          "line": 50
+        }
+      },
+      "original": "'phone'",
+      "replacement": "\"\"",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "946",
+      "file": "src/modules/checkout/logic.ts",
+      "module": "checkout",
+      "mutator": "BooleanLiteral",
+      "line": 90,
+      "location": {
+        "end": {
+          "column": 17,
+          "line": 90
+        },
+        "start": {
+          "column": 13,
+          "line": 90
+        }
+      },
+      "original": "true",
+      "replacement": "false",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "934",
+      "file": "src/modules/checkout/logic.ts",
+      "module": "checkout",
+      "mutator": "StringLiteral",
+      "line": 82,
+      "location": {
+        "end": {
+          "column": 56,
+          "line": 82
+        },
+        "start": {
+          "column": 32,
+          "line": 82
+        }
+      },
+      "original": "'Promo code has expired'",
+      "replacement": "\"\"",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1022",
+      "file": "src/modules/checkout/logic.ts",
+      "module": "checkout",
+      "mutator": "BooleanLiteral",
+      "line": 134,
+      "location": {
+        "end": {
+          "column": 46,
+          "line": 134
+        },
+        "start": {
+          "column": 12,
+          "line": 134
+        }
+      },
+      "original": "!/^[\\p{L} .'-]{2,50}$/u.test(city)",
+      "replacement": "/^[\\p{L} .'-]{2,50}$/u.test(city)",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1102",
+      "file": "src/modules/checkout/routes.ts",
+      "module": "checkout",
+      "mutator": "EqualityOperator",
+      "line": 66,
+      "location": {
+        "end": {
+          "column": 40,
+          "line": 66
+        },
+        "start": {
+          "column": 7,
+          "line": 66
+        }
+      },
+      "original": "findStockIssues(lines).length > 0",
+      "replacement": "findStockIssues(lines).length >= 0",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "1241",
+      "file": "src/modules/orders/logic.ts",
+      "module": "orders",
+      "mutator": "ArrayDeclaration",
+      "line": 18,
+      "location": {
+        "end": {
+          "column": 33,
+          "line": 18
+        },
+        "start": {
+          "column": 9,
+          "line": 18
+        }
+      },
+      "original": "['shipped', 'cancelled']",
+      "replacement": "[]",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1309",
+      "file": "src/modules/orders/routes.ts",
+      "module": "orders",
+      "mutator": "StringLiteral",
+      "line": 43,
+      "location": {
+        "end": {
+          "column": 26,
+          "line": 43
+        },
+        "start": {
+          "column": 19,
+          "line": 43
+        }
+      },
+      "original": "'error'",
+      "replacement": "\"\"",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "1267",
+      "file": "src/modules/orders/logic.ts",
+      "module": "orders",
+      "mutator": "MethodExpression",
+      "line": 54,
+      "location": {
+        "end": {
+          "column": 91,
+          "line": 54
+        },
+        "start": {
+          "column": 10,
+          "line": 54
+        }
+      },
+      "original": "[...orders].sort((a, b) => b.createdAt.localeCompare(a.createdAt) || b.id - a.id)",
+      "replacement": "[...orders]",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1304",
+      "file": "src/modules/orders/routes.ts",
+      "module": "orders",
+      "mutator": "BooleanLiteral",
+      "line": 42,
+      "location": {
+        "end": {
+          "column": 39,
+          "line": 42
+        },
+        "start": {
+          "column": 7,
+          "line": 42
+        }
+      },
+      "original": "!canCustomerCancel(order.status)",
+      "replacement": "canCustomerCancel(order.status)",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "1280",
+      "file": "src/modules/orders/routes.ts",
+      "module": "orders",
+      "mutator": "ConditionalExpression",
+      "line": 16,
+      "location": {
+        "end": {
+          "column": 46,
+          "line": 16
+        },
+        "start": {
+          "column": 7,
+          "line": 16
+        }
+      },
+      "original": "!order || order.userId !== req.user!.id",
+      "replacement": "true",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "1239",
+      "file": "src/modules/orders/logic.ts",
+      "module": "orders",
+      "mutator": "StringLiteral",
+      "line": 17,
+      "location": {
+        "end": {
+          "column": 19,
+          "line": 17
+        },
+        "start": {
+          "column": 13,
+          "line": 17
+        }
+      },
+      "original": "'paid'",
+      "replacement": "\"\"",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "1319",
+      "file": "src/modules/orders/service.ts",
+      "module": "orders",
+      "mutator": "BlockStatement",
+      "line": 30,
+      "location": {
+        "end": {
+          "column": 2,
+          "line": 38
+        },
+        "start": {
+          "column": 65,
+          "line": 30
+        }
+      },
+      "original": "{\n  return getDb()\n    .prepare(\n      `SELECT o.id, o.status, o.total_cents AS totalCents, o.created_at AS createdAt,\n              (SELECT COALESCE(SUM(quantity), 0) FROM order_items WHERE order_id = o.id) AS itemCount\n       FROM orders o WHERE o.user_id = ?`,\n    )\n    .all(userId) as OrderListItem[];\n}",
+      "replacement": "{}",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "16",
+      "file": "src/modules/admin/logic.ts",
+      "module": "admin",
+      "mutator": "BlockStatement",
+      "line": 38,
+      "location": {
+        "end": {
+          "column": 4,
+          "line": 40
+        },
+        "start": {
+          "column": 92,
+          "line": 38
+        }
+      },
+      "original": "{\n    errors.name = `Name must be ${PRODUCT_NAME_MIN_LENGTH}–${PRODUCT_NAME_MAX_LENGTH} characters`;\n  }",
+      "replacement": "{}",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "60",
+      "file": "src/modules/admin/logic.ts",
+      "module": "admin",
+      "mutator": "ConditionalExpression",
+      "line": 59,
+      "location": {
+        "end": {
+          "column": 37,
+          "line": 59
+        },
+        "start": {
+          "column": 7,
+          "line": 59
+        }
+      },
+      "original": "Object.keys(errors).length > 0",
+      "replacement": "true",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "136",
+      "file": "src/modules/admin/routes.ts",
+      "module": "admin",
+      "mutator": "StringLiteral",
+      "line": 57,
+      "location": {
+        "end": {
+          "column": 53,
+          "line": 57
+        },
+        "start": {
+          "column": 51,
+          "line": 57
+        }
+      },
+      "original": "''",
+      "replacement": "\"Stryker was here!\"",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "69",
+      "file": "src/modules/admin/logic.ts",
+      "module": "admin",
+      "mutator": "BlockStatement",
+      "line": 63,
+      "location": {
+        "end": {
+          "column": 2,
+          "line": 69
+        },
+        "start": {
+          "column": 94,
+          "line": 63
+        }
+      },
+      "original": "{\n  if (!isOrderStatus(requested)) return { ok: false, error: 'Unknown order status' };\n  if (!canTransition(current, requested)) {\n    return { ok: false, error: `Cannot change status from ${STATUS_LABELS[current]} to ${STATUS_LABELS[requested]}` };\n  }\n  return { ok: true, status: requested };\n}",
+      "replacement": "{}",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "74",
+      "file": "src/modules/admin/logic.ts",
+      "module": "admin",
+      "mutator": "BooleanLiteral",
+      "line": 64,
+      "location": {
+        "end": {
+          "column": 52,
+          "line": 64
+        },
+        "start": {
+          "column": 47,
+          "line": 64
+        }
+      },
+      "original": "false",
+      "replacement": "true",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "22",
+      "file": "src/modules/admin/logic.ts",
+      "module": "admin",
+      "mutator": "StringLiteral",
+      "line": 43,
+      "location": {
+        "end": {
+          "column": 25,
+          "line": 43
+        },
+        "start": {
+          "column": 23,
+          "line": 43
+        }
+      },
+      "original": "''",
+      "replacement": "\"Stryker was here!\"",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "125",
+      "file": "src/modules/admin/routes.ts",
+      "module": "admin",
+      "mutator": "BlockStatement",
+      "line": 52,
+      "location": {
+        "end": {
+          "column": 2,
+          "line": 54
+        },
+        "start": {
+          "column": 51,
+          "line": 52
+        }
+      },
+      "original": "{\n  res.render('modules/admin/views/products', { title: 'Manage products', products: listAdminProducts() });\n}",
+      "replacement": "{}",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "71",
+      "file": "src/modules/admin/logic.ts",
+      "module": "admin",
+      "mutator": "ConditionalExpression",
+      "line": 64,
+      "location": {
+        "end": {
+          "column": 32,
+          "line": 64
+        },
+        "start": {
+          "column": 7,
+          "line": 64
+        }
+      },
+      "original": "!isOrderStatus(requested)",
+      "replacement": "true",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "2",
+      "file": "src/modules/admin/logic.ts",
+      "module": "admin",
+      "mutator": "ConditionalExpression",
+      "line": 37,
+      "location": {
+        "end": {
+          "column": 18,
+          "line": 37
+        },
+        "start": {
+          "column": 7,
+          "line": 37
+        }
+      },
+      "original": "name === ''",
+      "replacement": "true",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "180",
+      "file": "src/modules/admin/routes.ts",
+      "module": "admin",
+      "mutator": "StringLiteral",
+      "line": 102,
+      "location": {
+        "end": {
+          "column": 46,
+          "line": 102
+        },
+        "start": {
+          "column": 18,
+          "line": 102
+        }
+      },
+      "original": "'/admin/products/:id/delete'",
+      "replacement": "\"\"",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "37",
+      "file": "src/modules/admin/logic.ts",
+      "module": "admin",
+      "mutator": "EqualityOperator",
+      "line": 50,
+      "location": {
+        "end": {
+          "column": 27,
+          "line": 50
+        },
+        "start": {
+          "column": 12,
+          "line": 50
+        }
+      },
+      "original": "priceCents <= 0",
+      "replacement": "priceCents > 0",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "80",
+      "file": "src/modules/admin/logic.ts",
+      "module": "admin",
+      "mutator": "ObjectLiteral",
+      "line": 66,
+      "location": {
+        "end": {
+          "column": 118,
+          "line": 66
+        },
+        "start": {
+          "column": 12,
+          "line": 66
+        }
+      },
+      "original": "{ ok: false, error: `Cannot change status from ${STATUS_LABELS[current]} to ${STATUS_LABELS[requested]}` }",
+      "replacement": "{}",
+      "unitStatus": "Killed"
+    },
+    {
+      "id": "88",
+      "file": "src/modules/admin/routes.ts",
+      "module": "admin",
+      "mutator": "ArrowFunction",
+      "line": 23,
+      "location": {
+        "end": {
+          "column": 96,
+          "line": 23
+        },
+        "start": {
+          "column": 16,
+          "line": 23
+        }
+      },
+      "original": "(name: string) => (typeof body[name] === 'string' ? (body[name] as string) : '')",
+      "replacement": "() => undefined",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "160",
+      "file": "src/modules/admin/routes.ts",
+      "module": "admin",
+      "mutator": "StringLiteral",
+      "line": 77,
+      "location": {
+        "end": {
+          "column": 36,
+          "line": 77
+        },
+        "start": {
+          "column": 5,
+          "line": 77
+        }
+      },
+      "original": "`/admin/products/${product.id}`",
+      "replacement": "``",
+      "unitStatus": "NoCoverage"
+    },
+    {
+      "id": "192",
+      "file": "src/modules/admin/routes.ts",
+      "module": "admin",
+      "mutator": "StringLiteral",
+      "line": 110,
+      "location": {
+        "end": {
+          "column": 42,
+          "line": 110
+        },
+        "start": {
+          "column": 14,
+          "line": 110
+        }
+      },
+      "original": "'modules/admin/views/orders'",
+      "replacement": "\"\"",
+      "unitStatus": "NoCoverage"
+    }
+  ]
+}

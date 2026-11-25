@@ -1,0 +1,11 @@
+--- a/src/modules/checkout/logic.ts
++++ b/src/modules/checkout/logic.ts
+@@ -81,7 +81,7 @@
+   if (promo.expiresAt !== null && now.getTime() > Date.parse(promo.expiresAt)) {
+     return { ok: false, error: 'Promo code has expired' };
+   }
+-  if (subtotalCents < promo.minOrderCents) {
++  if (subtotalCents <= promo.minOrderCents) {
+     return { ok: false, error: `This code requires a minimum order of ${formatPrice(promo.minOrderCents)}` };
+   }
+   switch (promo.type) {

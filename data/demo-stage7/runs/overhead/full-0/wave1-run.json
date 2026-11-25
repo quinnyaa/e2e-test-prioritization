@@ -1,0 +1,335 @@
+{
+  "runId": "wave1",
+  "sutCommit": "84ad11ee15fb4dc24c8660ef1013628ddbe43634",
+  "sutDir": "./data/cache/sut/84ad11ee15fb",
+  "startedAt": "2026-11-20T19:11:34.102Z",
+  "buildOk": true,
+  "buildError": null,
+  "totalDurationMs": 4301,
+  "tests": [
+    {
+      "id": "ADM-01",
+      "status": "passed",
+      "durationMs": 427,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "ADM-02",
+      "status": "passed",
+      "durationMs": 571,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "ADM-03",
+      "status": "passed",
+      "durationMs": 532,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "ADM-04",
+      "status": "passed",
+      "durationMs": 428,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "AUTH-01",
+      "status": "passed",
+      "durationMs": 507,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "AUTH-02",
+      "status": "passed",
+      "durationMs": 269,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "AUTH-03",
+      "status": "passed",
+      "durationMs": 475,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "AUTH-04",
+      "status": "passed",
+      "durationMs": 255,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CART-01",
+      "status": "passed",
+      "durationMs": 447,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CART-02",
+      "status": "passed",
+      "durationMs": 704,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CART-03",
+      "status": "passed",
+      "durationMs": 566,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CART-04",
+      "status": "passed",
+      "durationMs": 97,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CART-05",
+      "status": "passed",
+      "durationMs": 281,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CAT-01",
+      "status": "passed",
+      "durationMs": 269,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CAT-02",
+      "status": "passed",
+      "durationMs": 216,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CAT-03",
+      "status": "passed",
+      "durationMs": 234,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CAT-04",
+      "status": "passed",
+      "durationMs": 252,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CAT-05",
+      "status": "passed",
+      "durationMs": 443,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CHK-01",
+      "status": "passed",
+      "durationMs": 416,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CHK-02",
+      "status": "passed",
+      "durationMs": 372,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CHK-03",
+      "status": "passed",
+      "durationMs": 393,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CHK-04",
+      "status": "passed",
+      "durationMs": 448,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CHK-05",
+      "status": "passed",
+      "durationMs": 456,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CHK-06",
+      "status": "passed",
+      "durationMs": 315,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CHK-07",
+      "status": "passed",
+      "durationMs": 499,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "E2E-01",
+      "status": "passed",
+      "durationMs": 819,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "E2E-02",
+      "status": "passed",
+      "durationMs": 730,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "ORD-01",
+      "status": "passed",
+      "durationMs": 173,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "ORD-02",
+      "status": "passed",
+      "durationMs": 312,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "ORD-03",
+      "status": "passed",
+      "durationMs": 320,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "PRD-01",
+      "status": "passed",
+      "durationMs": 160,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "PRD-02",
+      "status": "passed",
+      "durationMs": 132,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "PRD-03",
+      "status": "passed",
+      "durationMs": 149,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "SRCH-01",
+      "status": "passed",
+      "durationMs": 217,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "SRCH-02",
+      "status": "passed",
+      "durationMs": 208,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "SRCH-03",
+      "status": "passed",
+      "durationMs": 87,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    }
+  ]
+}

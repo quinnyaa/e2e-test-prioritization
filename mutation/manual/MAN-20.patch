@@ -1,0 +1,11 @@
+--- a/src/modules/catalog/views/list.ejs
++++ b/src/modules/catalog/views/list.ejs
+@@ -33,7 +33,7 @@
+   <p class="error" data-testid="filter-error"><%= e %></p>
+ <% }) %>
+ 
+-<p class="muted" data-testid="catalog-count">Found <%= page.totalItems %> product<%= page.totalItems === 1 ? '' : 's' %></p>
++<p class="muted" data-testid="catalog-count">Found <%= page.items.length %> product<%= page.items.length === 1 ? '' : 's' %></p>
+ 
+ <% if (page.items.length === 0) { %>
+   <p data-testid="catalog-empty">No products match the selected filters.</p>

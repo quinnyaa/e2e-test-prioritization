@@ -1,0 +1,53 @@
+<%- include('../../../shared/views/header') %>
+<h1>Catalog</h1>
+<form method="get" action="/catalog" class="filters" data-testid="catalog-filters" novalidate>
+  <label>Category
+    <select name="category" data-testid="filter-category">
+      <option value="">All categories</option>
+      <% categories.forEach(function (c) { %>
+        <option value="<%= c.slug %>" <%= filters.category === c.slug ? 'selected' : '' %>><%= c.name %></option>
+      <% }) %>
+    </select>
+  </label>
+  <label>Min price
+    <input type="text" name="min" size="6" inputmode="decimal" data-testid="filter-min-price"
+      value="<%= filters.minPriceCents !== null ? (filters.minPriceCents / 100).toFixed(2) : '' %>">
+  </label>
+  <label>Max price
+    <input type="text" name="max" size="6" inputmode="decimal" data-testid="filter-max-price"
+      value="<%= filters.maxPriceCents !== null ? (filters.maxPriceCents / 100).toFixed(2) : '' %>">
+  </label>
+  <label><span><input type="checkbox" name="inStock" value="1" data-testid="filter-in-stock" <%= filters.inStockOnly ? 'checked' : '' %>> In stock only</span></label>
+  <label>Sort by
+    <select name="sort" data-testid="sort-select">
+      <% sortOptions.forEach(function (o) { %>
+        <option value="<%= o.value %>" <%= filters.sort === o.value ? 'selected' : '' %>><%= o.label %></option>
+      <% }) %>
+    </select>
+  </label>
+  <button type="submit" data-testid="filter-apply">Apply</button>
+  <a href="/catalog" data-testid="filter-reset">Reset</a>
+</form>
+
+<% errors.forEach(function (e) { %>
+  <p class="error" data-testid="filter-error"><%= e %></p>
+<% }) %>
+
+<p class="muted" data-testid="catalog-count">Found <%= page.totalItems %> product<%= page.totalItems === 1 ? '' : 's' %></p>
+
+<% if (page.items.length === 0) { %>
+  <p data-testid="catalog-empty">No products match the selected filters.</p>
+<% } else { %>
+  <div class="grid" data-testid="product-list">
+    <% page.items.forEach(function (p) { %>
+      <%- include('product-card', { product: p }) %>
+    <% }) %>
+  </div>
+<% } %>
+
+<nav class="pagination" data-testid="pagination">
+  <% if (page.hasPrev) { %><a href="<%= pageUrl(page.page - 1) %>" data-testid="pagination-prev">&larr; Previous</a><% } %>
+  <span data-testid="pagination-info">Page <%= page.page %> of <%= page.totalPages %></span>
+  <% if (page.hasNext) { %><a href="<%= pageUrl(page.page + 1) %>" data-testid="pagination-next">Next &rarr;</a><% } %>
+</nav>
+<%- include('../../../shared/views/footer') %>

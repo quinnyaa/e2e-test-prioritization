@@ -1,0 +1,10 @@
+[
+  {
+    "id": "1252",
+    "reason": "isOrderStatus: `typeof value === 'string'` → `true`; ORDER_STATUSES.includes(value) is already false for any non-string, so the result never changes"
+  },
+  {
+    "id": "675",
+    "reason": "cart/service.ts clearCart(): dead code (never called; checkout clears the cart inside its own transaction), so emptying its body changes nothing. Found after the pilot run; its run is kept in runs.jsonl but excluded from the analysis"
+  }
+]

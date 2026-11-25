@@ -1,0 +1,385 @@
+{
+  "config": {
+    "argv": [
+      "/usr/local/bin/node",
+      "./tests/node_modules/.bin/playwright",
+      "test",
+      "--grep",
+      "\\[CAT-05\\]|\\[CAT-03\\]|\\[CAT-01\\]",
+      "-x"
+    ],
+    "configFile": "./tests/playwright.config.ts",
+    "rootDir": "./tests/specs",
+    "failOnFlakyTests": false,
+    "forbidOnly": true,
+    "fullyParallel": true,
+    "globalSetup": "./tests/global-setup.ts",
+    "globalTeardown": null,
+    "globalTimeout": 600000,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 3
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "./tests/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "./tests/specs",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 15000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "null",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "./data/demo-stage7/runs/waves-S4/wave1-raw.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "catalog/catalog.spec.ts",
+      "file": "catalog/catalog.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "[CAT-01] filters by category and stock availability",
+          "ok": true,
+          "tags": [
+            "module:catalog",
+            "crit:medium"
+          ],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [
+                {
+                  "type": "covers",
+                  "description": "catalog/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "line": 6,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "catalog/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "line": 6,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "catalog/service.ts",
+                  "location": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "line": 6,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "catalog/views/list.ejs",
+                  "location": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "line": 6,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 298,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T19:11:18.053Z",
+                  "annotations": [
+                    {
+                      "type": "covers",
+                      "description": "catalog/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "line": 6,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "catalog/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "line": 6,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "catalog/service.ts",
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "line": 6,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "catalog/views/list.ejs",
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "line": 6,
+                        "column": 5
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9e824e22e792bb79bfca-237f4af9b90f927da535",
+          "file": "catalog/catalog.spec.ts",
+          "line": 6,
+          "column": 5
+        },
+        {
+          "title": "[CAT-03] reports invalid price filters and resets a reversed range",
+          "ok": true,
+          "tags": [
+            "module:catalog",
+            "crit:low"
+          ],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [
+                {
+                  "type": "covers",
+                  "description": "catalog/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "line": 88,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "catalog/views/list.ejs",
+                  "location": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "line": 88,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "shared/money.ts",
+                  "location": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "line": 88,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 282,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T19:11:18.049Z",
+                  "annotations": [
+                    {
+                      "type": "covers",
+                      "description": "catalog/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "line": 88,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "catalog/views/list.ejs",
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "line": 88,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "shared/money.ts",
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "line": 88,
+                        "column": 5
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9e824e22e792bb79bfca-17d57563c24153083819",
+          "file": "catalog/catalog.spec.ts",
+          "line": 88,
+          "column": 5
+        },
+        {
+          "title": "[CAT-05] paginates by 8 products and keeps filters in page links",
+          "ok": true,
+          "tags": [
+            "module:catalog",
+            "crit:low"
+          ],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [
+                {
+                  "type": "covers",
+                  "description": "catalog/logic.ts",
+                  "location": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "line": 180,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "catalog/routes.ts",
+                  "location": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "line": 180,
+                    "column": 5
+                  }
+                },
+                {
+                  "type": "covers",
+                  "description": "catalog/views/list.ejs",
+                  "location": {
+                    "file": "./tests/specs/catalog/catalog.spec.ts",
+                    "line": 180,
+                    "column": 5
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 409,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-20T19:11:18.046Z",
+                  "annotations": [
+                    {
+                      "type": "covers",
+                      "description": "catalog/logic.ts",
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "line": 180,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "catalog/routes.ts",
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "line": 180,
+                        "column": 5
+                      }
+                    },
+                    {
+                      "type": "covers",
+                      "description": "catalog/views/list.ejs",
+                      "location": {
+                        "file": "./tests/specs/catalog/catalog.spec.ts",
+                        "line": 180,
+                        "column": 5
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9e824e22e792bb79bfca-08335b8409328102ea3b",
+          "file": "catalog/catalog.spec.ts",
+          "line": 180,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-20T19:11:17.696Z",
+    "duration": 1216.724,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

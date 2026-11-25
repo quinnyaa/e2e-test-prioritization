@@ -1,0 +1,61 @@
+<%- include('../../../shared/views/header') %>
+<h1>Checkout</h1>
+<% if (errors.form) { %><p class="error" data-testid="checkout-error"><%= errors.form %></p><% } %>
+<form method="post" action="/checkout" data-testid="checkout-form" novalidate>
+  <fieldset class="form">
+    <legend>Shipping address</legend>
+    <% [
+      ['fullName', 'Full name', 'shipping-full-name', 'name'],
+      ['address', 'Address', 'shipping-address', 'street-address'],
+      ['city', 'City', 'shipping-city', 'address-level2'],
+      ['postalCode', 'Postal code', 'shipping-postal-code', 'postal-code'],
+      ['phone', 'Phone', 'shipping-phone', 'tel'],
+    ].forEach(function (f) { %>
+      <label><%= f[1] %>
+        <input type="text" name="<%= f[0] %>" value="<%= state.shipping[f[0]] %>" data-testid="<%= f[2] %>" autocomplete="<%= f[3] %>">
+        <% if (errors[f[0]]) { %><span class="field-error" data-testid="<%= f[2] %>-error"><%= errors[f[0]] %></span><% } %>
+      </label>
+    <% }) %>
+  </fieldset>
+
+  <fieldset class="form">
+    <legend>Shipping method</legend>
+    <% methods.forEach(function (m) { %>
+      <label><span>
+        <input type="radio" name="shippingMethod" value="<%= m.value %>" data-testid="shipping-method-<%= m.value %>" <%= state.method === m.value ? 'checked' : '' %>>
+        <%= m.label %> — <%= formatPrice(m.costCents) %><%= m.freeFromCents !== null ? ', free from ' + formatPrice(m.freeFromCents) : '' %>
+      </span></label>
+    <% }) %>
+  </fieldset>
+
+  <fieldset class="form">
+    <legend>Promo code</legend>
+    <label>Code
+      <input type="text" name="promoCode" value="<%= state.promoCode %>" data-testid="promo-input">
+    </label>
+    <% if (promoApplied && !state.promo.ok) { %>
+      <span class="field-error" data-testid="promo-error"><%= state.promo.error %></span>
+    <% } else if (promoApplied && state.promo.ok && state.promo.code) { %>
+      <span data-testid="promo-success">Promo code <%= state.promo.code %> applied</span>
+    <% } %>
+    <button type="submit" class="secondary" formaction="/checkout/preview" data-testid="promo-apply">Apply code / update totals</button>
+  </fieldset>
+
+  <h2>Order summary</h2>
+  <table data-testid="checkout-lines">
+    <% lines.forEach(function (line) { %>
+      <tr data-testid="checkout-line-<%= line.productId %>">
+        <td><%= line.name %> × <%= line.quantity %></td>
+        <td><%= formatPrice(lineTotal(line)) %></td>
+      </tr>
+    <% }) %>
+  </table>
+  <div class="summary" data-testid="checkout-summary">
+    <div><span>Subtotal</span><span data-testid="summary-subtotal"><%= formatPrice(totals.subtotalCents) %></span></div>
+    <div><span>Discount</span><span data-testid="summary-discount">-<%= formatPrice(totals.discountCents) %></span></div>
+    <div><span>Shipping</span><span data-testid="summary-shipping"><%= totals.shippingCents === 0 ? 'Free' : formatPrice(totals.shippingCents) %></span></div>
+    <div class="total"><span>Total</span><span data-testid="summary-total"><%= formatPrice(totals.totalCents) %></span></div>
+    <p><button type="submit" data-testid="checkout-submit">Place order</button></p>
+  </div>
+</form>
+<%- include('../../../shared/views/footer') %>

@@ -1,0 +1,13 @@
+diff --git a/src/modules/checkout/logic.ts b/src/modules/checkout/logic.ts
+index a838711..737ab3c 100644
+--- a/src/modules/checkout/logic.ts
++++ b/src/modules/checkout/logic.ts
+@@ -82,7 +82,7 @@ export function evaluatePromo(
+   if (code === '') return NO_PROMO;
+   if (!promo || !promo.active) return { ok: false, error: 'Promo code not found' };
+   // Validated before this point
+-  if (promo.expiresAt !== null && now.getTime() > Date.parse(promo.expiresAt)) {
++  if (promo.expiresAt !== null && now.getTime() >= Date.parse(promo.expiresAt)) {
+     return { ok: false, error: 'Promo code has expired' };
+   }
+   if (subtotalCents < promo.minOrderCents) {

@@ -1,0 +1,21 @@
+<%- include('../../../shared/views/header') %>
+<h1>My orders</h1>
+<% if (orders.length === 0) { %>
+  <p data-testid="orders-empty">You have not placed any orders yet.</p>
+<% } else { %>
+  <table data-testid="orders-table">
+    <thead><tr><th>Order</th><th>Date</th><th>Items</th><th>Status</th><th>Total</th></tr></thead>
+    <tbody>
+    <% orders.forEach(function (o) { %>
+      <tr data-testid="order-row-<%= o.id %>">
+        <td><a href="/orders/<%= o.id %>" data-testid="order-link"><%= formatOrderNumber(o.id) %></a></td>
+        <td data-testid="order-date"><%= formatDate(o.createdAt) %></td>
+        <td data-testid="order-item-count"><%= o.itemCount %></td>
+        <td data-testid="order-status" data-status="<%= o.status %>"><%= statusLabels[o.status] %></td>
+        <td data-testid="order-total"><%= formatPrice(o.totalCents) %></td>
+      </tr>
+    <% }) %>
+    </tbody>
+  </table>
+<% } %>
+<%- include('../../../shared/views/footer') %>

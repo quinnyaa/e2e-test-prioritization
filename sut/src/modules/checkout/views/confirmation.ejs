@@ -1,0 +1,9 @@
+<%- include('../../../shared/views/header') %>
+<section data-testid="order-confirmation">
+  <h1>Order placed</h1>
+  <p>Your order number is <strong data-testid="order-number"><%= orderNumber %></strong>.</p>
+  <p>Total: <strong data-testid="order-total"><%= formatPrice(order.totalCents) %></strong></p>
+  <p>Status: <span data-testid="order-status"><%= statusLabel %></span></p>
+  <p><a href="/orders/<%= order.id %>" data-testid="view-order">View order</a> · <a href="/catalog" data-testid="continue-shopping">Continue shopping</a></p>
+</section>
+<%- include('../../../shared/views/footer') %>

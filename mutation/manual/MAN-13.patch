@@ -1,0 +1,11 @@
+--- a/src/modules/catalog/logic.ts
++++ b/src/modules/catalog/logic.ts
+@@ -95,7 +95,7 @@
+   return products.filter((p) => {
+     if (filters.category !== null && p.categorySlug !== filters.category) return false;
+     if (filters.minPriceCents !== null && p.priceCents < filters.minPriceCents) return false;
+-    if (filters.maxPriceCents !== null && p.priceCents > filters.maxPriceCents) return false;
++    if (filters.maxPriceCents !== null && p.priceCents >= filters.maxPriceCents) return false;
+     if (filters.inStockOnly && !isInStock(p)) return false;
+     return true;
+   });

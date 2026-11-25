@@ -1,0 +1,47 @@
+{
+  "experiment": "manual bugs (protocol p. 5.8), descriptive",
+  "range": [
+    432,
+    540
+  ],
+  "settings": {
+    "rf": "frozen RF, card tau (first, 0.90), 10 seeds",
+    "combined": "B = 0.34",
+    "covers": "B = 0.36"
+  },
+  "data_source": "per-defect view rebuilt from frozen predictions; per-commit sums equal 8B per_commit_policies_test.csv",
+  "rank": "1-based position of the first test failing because of the defect (RF: mean over seeds; heuristics: mean over 20 tie permutations)",
+  "manual_bugs": 10,
+  "detectable": 9,
+  "undetectable": [
+    "MAN-17"
+  ],
+  "rf_tau": {
+    "mean_caught_share": 0.5888888889,
+    "caught_all_seeds": 5,
+    "caught_no_seed": 3,
+    "mean_rank": 5.066666667,
+    "mean_time": 0.4079350219
+  },
+  "combined_B": {
+    "mean_caught_share": 0.8888888889,
+    "caught_all_seeds": 8,
+    "caught_no_seed": 1,
+    "mean_rank": 5.766666667,
+    "mean_time": 0.5594307
+  },
+  "covers_B": {
+    "mean_caught_share": 0.95,
+    "caught_all_seeds": 8,
+    "caught_no_seed": 0,
+    "mean_rank": 4.188888889,
+    "mean_time": 0.5750813303
+  },
+  "mutants_first_exposures": 30,
+  "mutants_rf_tau_mean_caught_share": 0.7466666667,
+  "mutants_rf_tau_mean_rank": 4.206666667,
+  "mutants_combined_B_mean_caught_share": 0.9266666667,
+  "mutants_combined_B_mean_rank": 4.58,
+  "mutants_covers_B_mean_caught_share": 0.9433333333,
+  "mutants_covers_B_mean_rank": 3.88
+}

@@ -1,0 +1,11 @@
+--- a/src/modules/product/logic.ts
++++ b/src/modules/product/logic.ts
+@@ -6,7 +6,7 @@
+ 
+ export function stockStatus(stock: number): StockStatus {
+   if (stock <= 0) return 'out_of_stock';
+-  if (stock <= LOW_STOCK_THRESHOLD) return 'low_stock';
++  if (stock < LOW_STOCK_THRESHOLD) return 'low_stock';
+   return 'in_stock';
+ }
+ 

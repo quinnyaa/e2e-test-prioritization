@@ -1,0 +1,282 @@
+{
+  "datasetVersion": 1,
+  "source": {
+    "history": "data/history-600",
+    "planSeed": 20261117,
+    "poolMode": "typed",
+    "defectRate": 0.45,
+    "baseSha": "1ea882e80a16b7805346718c9deb8ae1217d6b0e",
+    "headSha": "f379d1b62f835ae23959fd51643aaa56ffb82b9e",
+    "commitsInHistory": 600,
+    "maxCommits": 540,
+    "runEnvironment": {
+      "seed": 20261117,
+      "base": "1ea882e80a16b7805346718c9deb8ae1217d6b0e",
+      "node": "v22.18.0",
+      "platform": "darwin 27.0.0 arm64",
+      "cpus": 11,
+      "workers": 4,
+      "playwright": "1.63.0"
+    },
+    "runsSha256": "b271510d6c6e7cd22aeb773c75f4ed62682765afb807e1cc3823d0dd7e93d452",
+    "manifestSha256": "85302f6a9615169fd3261ca65d4d96e4f3b9dba9639e1a5ae320b21ba736821b"
+  },
+  "builder": {
+    "script": "ml/build_dataset.py",
+    "python": "3.13.2",
+    "pandas": "3.0.6",
+    "numpy": "2.5.4",
+    "git": "git version 2.54.0 (Apple Git-157)",
+    "deterministic": "no randomness in the build; the same inputs give byte-identical CSV files"
+  },
+  "parameters": {
+    "histWindows": [
+      1,
+      3,
+      5,
+      10,
+      20
+    ],
+    "peerWindows": [
+      1,
+      5
+    ],
+    "sinceFailCap": 100,
+    "splitFractions": [
+      0.6,
+      0.2,
+      0.2
+    ]
+  },
+  "label": "confirmedFail of the test in the commit's run (failed in the run and both re-runs; flaky -> 0)",
+  "columns": {
+    "id": [
+      "commit_index",
+      "sha",
+      "test_id",
+      "split"
+    ],
+    "label": "label",
+    "eval": [
+      "eval_duration_ms",
+      "eval_flaky"
+    ],
+    "featureGroups": {
+      "chg": [
+        "chg_files",
+        "chg_lines_added",
+        "chg_lines_deleted",
+        "chg_churn",
+        "chg_hunks",
+        "chg_hunks_modify",
+        "chg_hunks_add",
+        "chg_hunks_delete",
+        "chg_modules",
+        "chg_ts_files",
+        "chg_ejs_files",
+        "chg_css_files",
+        "chg_doc_files",
+        "chg_other_files",
+        "chg_shared_files",
+        "chg_infra_files",
+        "chg_cov_files",
+        "chg_cov_frac_test",
+        "chg_cov_frac_diff",
+        "chg_cov_churn",
+        "chg_cov_ts_files",
+        "chg_mod_files",
+        "chg_same_module"
+      ],
+      "hist": [
+        "hist_fail_last_1",
+        "hist_fail_last_3",
+        "hist_fail_last_5",
+        "hist_fail_last_10",
+        "hist_fail_last_20",
+        "hist_since_fail",
+        "hist_never_failed",
+        "hist_fail_rate",
+        "hist_peer_fail_rate_1",
+        "hist_peer_fail_rate_5",
+        "hist_prev_commit_fails",
+        "hist_file_fail_count",
+        "hist_file_fail_rate"
+      ],
+      "meta": [
+        "meta_duration_mean",
+        "meta_criticality",
+        "meta_module",
+        "meta_n_modules",
+        "meta_n_covers"
+      ],
+      "ci": [
+        "ci_typecheck_ok",
+        "ci_unit_ok"
+      ]
+    },
+    "mainFeatureSet": [
+      "chg_files",
+      "chg_lines_added",
+      "chg_lines_deleted",
+      "chg_churn",
+      "chg_hunks",
+      "chg_hunks_modify",
+      "chg_hunks_add",
+      "chg_hunks_delete",
+      "chg_modules",
+      "chg_ts_files",
+      "chg_ejs_files",
+      "chg_css_files",
+      "chg_doc_files",
+      "chg_other_files",
+      "chg_shared_files",
+      "chg_infra_files",
+      "chg_cov_files",
+      "chg_cov_frac_test",
+      "chg_cov_frac_diff",
+      "chg_cov_churn",
+      "chg_cov_ts_files",
+      "chg_mod_files",
+      "chg_same_module",
+      "hist_fail_last_1",
+      "hist_fail_last_3",
+      "hist_fail_last_5",
+      "hist_fail_last_10",
+      "hist_fail_last_20",
+      "hist_since_fail",
+      "hist_never_failed",
+      "hist_fail_rate",
+      "hist_peer_fail_rate_1",
+      "hist_peer_fail_rate_5",
+      "hist_prev_commit_fails",
+      "hist_file_fail_count",
+      "hist_file_fail_rate",
+      "meta_duration_mean",
+      "meta_criticality",
+      "meta_module",
+      "meta_n_modules",
+      "meta_n_covers"
+    ],
+    "ablationOnly": [
+      "ci_typecheck_ok",
+      "ci_unit_ok"
+    ],
+    "categorical": [
+      "meta_module"
+    ]
+  },
+  "forbiddenRunFields": [
+    "kind",
+    "message",
+    "introduced",
+    "fixed",
+    "openAfter",
+    "date",
+    "startedAt",
+    "exitCode",
+    "buildError",
+    "totalDurationMs",
+    "testWallMs",
+    "rerunWallMs",
+    "typecheckOk/unitOk outside ci_*"
+  ],
+  "forbiddenTestFields": [
+    "status",
+    "durationMs",
+    "flaky",
+    "confirmedFail",
+    "rerunStatuses",
+    "errorSnippet"
+  ],
+  "counts": {
+    "commits": 540,
+    "tests": 36,
+    "rows": 19440,
+    "features": 43
+  },
+  "splits": {
+    "train": {
+      "commits": 324,
+      "rows": 11664,
+      "positives": 806,
+      "positive_share": 0.0691,
+      "commits_with_fail": 165,
+      "commits_with_open_defect": 180,
+      "commits_with_open_defect_no_fail": 15,
+      "commits_unit_failed": 130,
+      "defects_introduced": 147,
+      "defects_manual": 0,
+      "defects_silent_in_isolation": 26,
+      "commits_with_manual_defect": 0,
+      "positives_new": 388,
+      "positives_by_cause": {
+        "mutant": 806
+      }
+    },
+    "val": {
+      "commits": 108,
+      "rows": 3888,
+      "positives": 194,
+      "positive_share": 0.0499,
+      "commits_with_fail": 43,
+      "commits_with_open_defect": 58,
+      "commits_with_open_defect_no_fail": 15,
+      "commits_unit_failed": 31,
+      "defects_introduced": 49,
+      "defects_manual": 0,
+      "defects_silent_in_isolation": 14,
+      "commits_with_manual_defect": 0,
+      "positives_new": 114,
+      "positives_by_cause": {
+        "mutant": 194
+      }
+    },
+    "test": {
+      "commits": 108,
+      "rows": 3888,
+      "positives": 310,
+      "positive_share": 0.0797,
+      "commits_with_fail": 61,
+      "commits_with_open_defect": 64,
+      "commits_with_open_defect_no_fail": 3,
+      "commits_unit_failed": 36,
+      "defects_introduced": 47,
+      "defects_manual": 10,
+      "defects_silent_in_isolation": 8,
+      "commits_with_manual_defect": 21,
+      "positives_new": 132,
+      "positives_by_cause": {
+        "manual": 47,
+        "manual+mutant": 1,
+        "mutant": 262
+      }
+    },
+    "all": {
+      "commits": 540,
+      "rows": 19440,
+      "positives": 1310,
+      "positive_share": 0.0674,
+      "commits_with_fail": 269,
+      "commits_with_open_defect": 302,
+      "commits_with_open_defect_no_fail": 33,
+      "commits_unit_failed": 197,
+      "defects_introduced": 243,
+      "defects_manual": 10,
+      "defects_silent_in_isolation": 48,
+      "commits_with_manual_defect": 21,
+      "positives_new": 634,
+      "positives_by_cause": {
+        "manual": 47,
+        "manual+mutant": 1,
+        "mutant": 1262
+      }
+    }
+  },
+  "files": {
+    "dataset.csv": "e8b125ef79db7b6c2fb5b4593e7766526f19bc8f87ef264f9bce8ff13b80e385",
+    "commits.csv": "ef654d9bcd272605604cd6034b0b1894ff849e20d7c305234cf8d0cd384faf2e",
+    "defects.csv": "c9418beb07a1be41dd5e3dbaec77425a368ab71a3b732d9669d50f46167a6efc",
+    "positives.csv": "e6d0d80226bbf0b065055bdd1e7bcfe916c08598a13a0e0df0a823340e3c2498",
+    "splits.json": "6371a06753b47e12458413b6674167c67881a42588c1b0bbba65a7153dd9722d"
+  }
+}

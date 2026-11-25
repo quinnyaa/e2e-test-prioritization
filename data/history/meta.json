@@ -1,0 +1,9 @@
+{
+  "seed": 20261103,
+  "base": "1ea882e80a16b7805346718c9deb8ae1217d6b0e",
+  "node": "v22.18.0",
+  "platform": "darwin 27.0.0 arm64",
+  "cpus": 11,
+  "workers": 4,
+  "playwright": "1.63.0"
+}

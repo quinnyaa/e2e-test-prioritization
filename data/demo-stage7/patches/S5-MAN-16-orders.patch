@@ -1,0 +1,13 @@
+diff --git a/src/modules/orders/logic.ts b/src/modules/orders/logic.ts
+index 6ed8b6f..4bf6ca5 100644
+--- a/src/modules/orders/logic.ts
++++ b/src/modules/orders/logic.ts
+@@ -57,7 +57,7 @@ export function formatOrderNumber(id: number): string {
+ 
+ /** Sort newest first. */
+ export function sortNewestFirst<T extends { id: number; createdAt: string }>(orders: T[]): T[] {
+-  return [...orders].sort((a, b) => b.createdAt.localeCompare(a.createdAt) || b.id - a.id);
++  return [...orders].sort((a, b) => b.createdAt.localeCompare(a.createdAt) || a.id - b.id);
+ }
+ 
+ /** Removes duplicates, keeping the first occurrence. */

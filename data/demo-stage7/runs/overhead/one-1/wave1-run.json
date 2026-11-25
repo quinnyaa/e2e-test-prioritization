@@ -1,0 +1,20 @@
+{
+  "runId": "wave1",
+  "sutCommit": "84ad11ee15fb4dc24c8660ef1013628ddbe43634",
+  "sutDir": "./data/cache/sut/84ad11ee15fb",
+  "startedAt": "2026-11-20T19:11:41.453Z",
+  "buildOk": true,
+  "buildError": null,
+  "totalDurationMs": 1062,
+  "tests": [
+    {
+      "id": "CHK-01",
+      "status": "passed",
+      "durationMs": 373,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    }
+  ]
+}

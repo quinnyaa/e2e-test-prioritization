@@ -1,0 +1,68 @@
+{
+  "runId": "wave1",
+  "sutCommit": "7be4bf9bd517feca7b8868444830e776aa79819e",
+  "sutDir": "./data/cache/sut/7be4bf9bd517",
+  "startedAt": "2026-11-20T19:09:00.327Z",
+  "buildOk": true,
+  "buildError": null,
+  "totalDurationMs": 4213,
+  "tests": [
+    {
+      "id": "ADM-04",
+      "status": "passed",
+      "durationMs": 400,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CHK-07",
+      "status": "passed",
+      "durationMs": 601,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "E2E-02",
+      "status": "passed",
+      "durationMs": 812,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "ORD-01",
+      "status": "failed",
+      "durationMs": 3288,
+      "errorSnippet": "Error: expect(locator).toHaveText(expected) failed\n\nLocator: getByTestId('order-link')\nTimeout: 3000ms\n- Expected  - 1\n+ Received  + 1\n\n  Array [\n-   \"ORD-00005\",\n    \"ORD-00004\",\n+   \"ORD-00005\",\n    \"ORD-00003\",\n    \"ORD-00002\",\n    \"ORD-00001\",\n  ]\n\nCall log:\n  - Expect \"toHaveText\" getByTestId('order-link') with timeout 3000ms\n  - waiting for getByTestId('order-link')\n    10 × locator resolved…",
+      "flaky": false,
+      "confirmedFail": true,
+      "rerunStatuses": [
+        "failed",
+        "failed"
+      ]
+    },
+    {
+      "id": "ORD-02",
+      "status": "passed",
+      "durationMs": 278,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "ORD-03",
+      "status": "passed",
+      "durationMs": 316,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    }
+  ]
+}

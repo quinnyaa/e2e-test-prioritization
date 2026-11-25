@@ -1,0 +1,17 @@
+<%- include('../../../shared/views/header', { searchQuery: result.query }) %>
+<h1>Search</h1>
+<% if (result.status === 'empty') { %>
+  <p data-testid="search-hint">Enter a product name to search.</p>
+<% } else if (result.status === 'too_short') { %>
+  <p class="error" data-testid="search-error">Enter at least <%= minLength %> characters.</p>
+<% } else if (result.items.length === 0) { %>
+  <p data-testid="search-empty">No products found for “<%= result.query %>”.</p>
+<% } else { %>
+  <p data-testid="search-summary"><%= result.items.length %> result<%= result.items.length === 1 ? '' : 's' %> for “<%= result.query %>”</p>
+  <div class="grid" data-testid="search-results">
+    <% result.items.forEach(function (p) { %>
+      <%- include('../../catalog/views/product-card', { product: p }) %>
+    <% }) %>
+  </div>
+<% } %>
+<%- include('../../../shared/views/footer') %>

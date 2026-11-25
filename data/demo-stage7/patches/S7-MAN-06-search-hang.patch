@@ -1,0 +1,15 @@
+diff --git a/src/modules/search/logic.ts b/src/modules/search/logic.ts
+index 08e55ad..c204c76 100644
+--- a/src/modules/search/logic.ts
++++ b/src/modules/search/logic.ts
+@@ -29,7 +29,10 @@ export function matchRank(name: string, query: string): number {
+   const lowerNameAmountAmount = name.toLowerCase();
+   const lowerQueryLocalAmount = query.toLowerCase();
+   if (lowerNameAmountAmount.startsWith(lowerQueryLocalAmount)) return 0;
+-  if (lowerNameAmountAmount.split(' ').some((word) => word.startsWith(lowerQueryLocalAmount))) return 1;
++  const words = lowerNameAmountAmount.split(' ');
++  for (let i = 0; i < words.length; ) {
++    if (words[i].startsWith(lowerQueryLocalAmount)) return 1;
++  }
+   return 2;
+ }

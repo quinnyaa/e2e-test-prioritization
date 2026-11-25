@@ -1,0 +1,47 @@
+{
+  "experiment": "overhead (protocol p. 5.9)",
+  "repeats": 30,
+  "commits": 108,
+  "rank_ms": {
+    "features": {
+      "median_over_commits_of_median": 1.30825,
+      "max_over_commits_of_median": 1.498104501,
+      "p95_over_commits_of_p95": 1.616343323
+    },
+    "score": {
+      "median_over_commits_of_median": 11.0704585,
+      "max_over_commits_of_median": 11.8128335,
+      "p95_over_commits_of_p95": 11.92587436
+    },
+    "rank_select": {
+      "median_over_commits_of_median": 0.0430417499,
+      "max_over_commits_of_median": 0.08631249966,
+      "p95_over_commits_of_p95": 0.1170902074
+    },
+    "total": {
+      "median_over_commits_of_median": 12.43857325,
+      "max_over_commits_of_median": 13.4959995,
+      "p95_over_commits_of_p95": 13.63807503
+    }
+  },
+  "model_load_ms": {
+    "median": 46.534167,
+    "p95": 47.15339725
+  },
+  "full_run_sequential_ms": {
+    "median": 16642.0,
+    "mean": 20664.37963
+  },
+  "full_run_4_workers_s": 7.5,
+  "rank_share_of_sequential_run_median": 0.0007518819016,
+  "rank_share_of_4_worker_run": 0.001658476433,
+  "platform": {
+    "system": "macOS-27.2.1-arm64-arm-64bit-Mach-O",
+    "processor": "arm",
+    "machine": "arm64",
+    "cpu_count": 11,
+    "rf_predict_n_jobs": 1,
+    "python": "3.13.2"
+  },
+  "note": "timings depend on the machine; not part of the byte-identical rerun check"
+}

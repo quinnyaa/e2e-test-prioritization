@@ -1,0 +1,23 @@
+<%- include('../../../shared/views/header') %>
+<h1>Create account</h1>
+<form method="post" action="/register" class="form" data-testid="register-form" novalidate>
+  <label>Name
+    <input type="text" name="name" value="<%= values.name %>" data-testid="register-name" autocomplete="name">
+    <% if (errors.name) { %><span class="field-error" data-testid="register-name-error"><%= errors.name %></span><% } %>
+  </label>
+  <label>Email
+    <input type="email" name="email" value="<%= values.email %>" data-testid="register-email" autocomplete="email">
+    <% if (errors.email) { %><span class="field-error" data-testid="register-email-error"><%= errors.email %></span><% } %>
+  </label>
+  <label>Password
+    <input type="password" name="password" data-testid="register-password" autocomplete="new-password">
+    <% if (errors.password) { %><span class="field-error" data-testid="register-password-error"><%= errors.password %></span><% } %>
+  </label>
+  <label>Confirm password
+    <input type="password" name="confirmPassword" data-testid="register-confirm-password" autocomplete="new-password">
+    <% if (errors.confirmPassword) { %><span class="field-error" data-testid="register-confirm-password-error"><%= errors.confirmPassword %></span><% } %>
+  </label>
+  <button type="submit" data-testid="register-submit">Create account</button>
+</form>
+<p>Already registered? <a href="/login" data-testid="register-login-link">Sign in</a></p>
+<%- include('../../../shared/views/footer') %>

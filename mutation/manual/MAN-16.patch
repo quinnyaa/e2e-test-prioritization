@@ -1,0 +1,9 @@
+--- a/src/modules/orders/logic.ts
++++ b/src/modules/orders/logic.ts
+@@ -51,5 +51,5 @@
+ }
+ 
+ export function sortNewestFirst<T extends { id: number; createdAt: string }>(orders: T[]): T[] {
+-  return [...orders].sort((a, b) => b.createdAt.localeCompare(a.createdAt) || b.id - a.id);
++  return [...orders].sort((a, b) => b.createdAt.localeCompare(a.createdAt) || a.id - b.id);
+ }

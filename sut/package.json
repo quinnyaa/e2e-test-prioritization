@@ -1,0 +1,31 @@
+{
+  "name": "shop-sut",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demo online shop used as the system under test for ML-based E2E test prioritization",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "npm run build && node dist/server.js",
+    "dev": "node scripts/dev.mjs",
+    "seed": "npm run build && node dist/seed.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "better-sqlite3": "12.11.1",
+    "ejs": "3.1.10",
+    "express": "5.1.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "7.6.13",
+    "@types/express": "5.0.3",
+    "@types/node": "22.18.0",
+    "esbuild": "0.25.12",
+    "typescript": "5.9.3",
+    "vitest": "3.2.7"
+  }
+}

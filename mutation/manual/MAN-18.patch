@@ -1,0 +1,11 @@
+--- a/src/modules/admin/logic.ts
++++ b/src/modules/admin/logic.ts
+@@ -47,7 +47,7 @@
+ 
+   const priceCents = parseMoney(input.price);
+   if (priceCents === null) errors.price = 'Price must be a valid amount';
+-  else if (priceCents <= 0) errors.price = 'Price must be greater than zero';
++  else if (priceCents < 0) errors.price = 'Price must be greater than zero';
+   else if (priceCents > MAX_PRICE_CENTS) errors.price = `Price must not exceed ${formatPrice(MAX_PRICE_CENTS)}`;
+ 
+   const stockRaw = input.stock.trim();

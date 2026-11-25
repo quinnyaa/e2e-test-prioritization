@@ -1,0 +1,17 @@
+<%- include('../../../shared/views/header') %>
+<h1>Sign in</h1>
+<form method="post" action="/login" class="form" data-testid="login-form" novalidate>
+  <input type="hidden" name="next" value="<%= next %>">
+  <% if (errors.form) { %><p class="error" data-testid="login-error"><%= errors.form %></p><% } %>
+  <label>Email
+    <input type="email" name="email" value="<%= values.email %>" data-testid="login-email" autocomplete="username">
+    <% if (errors.email) { %><span class="field-error" data-testid="login-email-error"><%= errors.email %></span><% } %>
+  </label>
+  <label>Password
+    <input type="password" name="password" data-testid="login-password" autocomplete="current-password">
+    <% if (errors.password) { %><span class="field-error" data-testid="login-password-error"><%= errors.password %></span><% } %>
+  </label>
+  <button type="submit" data-testid="login-submit">Sign in</button>
+</form>
+<p>No account yet? <a href="/register" data-testid="login-register-link">Create one</a></p>
+<%- include('../../../shared/views/footer') %>

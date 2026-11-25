@@ -1,0 +1,28 @@
+{
+  "name": "shop-mutation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mutant generation (Stryker) and defect runs of the E2E suite against the Demo Shop SUT",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "stryker": "tsx scripts/stryker.ts",
+    "sample": "tsx scripts/sample.ts",
+    "pilot": "tsx pilot-run.ts",
+    "typecheck": "tsc --noEmit",
+    "sim:plan": "tsx sim/plan.ts",
+    "sim:run": "tsx sim/execute.ts",
+    "sim:isolate": "tsx sim/isolate.ts",
+    "sim:tsc-check": "tsx sim/tsc-check.ts"
+  },
+  "devDependencies": {
+    "@stryker-mutator/core": "10.0.0",
+    "@stryker-mutator/vitest-runner": "10.0.0",
+    "@types/node": "22.18.0",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "3.2.7"
+  }
+}

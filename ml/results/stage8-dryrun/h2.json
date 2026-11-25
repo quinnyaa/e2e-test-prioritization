@@ -1,0 +1,21 @@
+{
+  "range": "val",
+  "in_sample": true,
+  "note": "val dry run: the combined variant and every model were chosen on this same val range; pipeline check only",
+  "rule": "H2 confirmed iff Wilcoxon p < 0.05 and median(RF - combined) > 0; APFD over red commits; RF = mean over 10 seeds",
+  "test": "scipy.stats.wilcoxon(rf, comb, zero_method='wilcox', alternative='two-sided', method='auto')",
+  "model": "rf",
+  "reference": "combined",
+  "metric": "apfd",
+  "n": 43,
+  "n_zero": 5,
+  "mean_diff": 0.017248004920001007,
+  "median_diff": 0.000694444444444442,
+  "statistic": 235.0,
+  "p": 0.0493447170015162,
+  "mean_model": 0.8847015862761987,
+  "mean_reference": 0.8674535813561977,
+  "delta": 0.10816657652785289,
+  "magnitude": "negligible",
+  "confirmed": true
+}

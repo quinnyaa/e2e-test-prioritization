@@ -1,0 +1,25 @@
+<%- include('../../../shared/views/header') %>
+<h1>Manage products</h1>
+<p><a href="/admin/products/new" class="button" data-testid="admin-new-product">New product</a>
+   <a href="/admin/orders" data-testid="admin-orders-link">Manage orders</a></p>
+<table data-testid="admin-products-table">
+  <thead><tr><th>#</th><th>Name</th><th>Category</th><th>Price</th><th>Stock</th><th></th></tr></thead>
+  <tbody>
+  <% products.forEach(function (p) { %>
+    <tr data-testid="admin-product-row-<%= p.id %>">
+      <td><%= p.id %></td>
+      <td data-testid="admin-product-name"><%= p.name %></td>
+      <td data-testid="admin-product-category"><%= p.categoryName %></td>
+      <td data-testid="admin-product-price"><%= formatPrice(p.priceCents) %></td>
+      <td data-testid="admin-product-stock"><%= p.stock %></td>
+      <td>
+        <a href="/admin/products/<%= p.id %>/edit" data-testid="admin-product-edit">Edit</a>
+        <form method="post" action="/admin/products/<%= p.id %>/delete" class="inline">
+          <button type="submit" class="secondary" data-testid="admin-product-delete">Delete</button>
+        </form>
+      </td>
+    </tr>
+  <% }) %>
+  </tbody>
+</table>
+<%- include('../../../shared/views/footer') %>

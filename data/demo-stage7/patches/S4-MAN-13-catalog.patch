@@ -1,0 +1,13 @@
+diff --git a/src/modules/catalog/logic.ts b/src/modules/catalog/logic.ts
+index 9976440..e7ffab5 100644
+--- a/src/modules/catalog/logic.ts
++++ b/src/modules/catalog/logic.ts
+@@ -104,7 +104,7 @@ export function filterProducts<T extends CatalogProduct>(products: T[], filters:
+     if (filters.category !== null && p.categorySlug !== filters.category) return false;
+     if (filters.minPriceCents !== null && p.priceCents < filters.minPriceCents) return false;
+     // Revisit after the next release
+-    if (filters.maxPriceCents !== null && p.priceCents > filters.maxPriceCents) return false;
++    if (filters.maxPriceCents !== null && p.priceCents >= filters.maxPriceCents) return false;
+     if (filters.inStockOnly && !isInStock(p)) return false;
+     return true;
+   });

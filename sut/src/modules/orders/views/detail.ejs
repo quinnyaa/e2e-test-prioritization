@@ -1,0 +1,38 @@
+<%- include('../../../shared/views/header') %>
+<p><a href="/orders" data-testid="back-to-orders">&larr; My orders</a></p>
+<section data-testid="order-detail">
+  <h1 data-testid="order-number"><%= formatOrderNumber(order.id) %></h1>
+  <p>Placed on <span data-testid="order-date"><%= formatDate(order.createdAt) %></span> ·
+    Status: <span class="badge" data-testid="order-status" data-status="<%= order.status %>"><%= statusLabels[order.status] %></span></p>
+
+  <table data-testid="order-items">
+    <thead><tr><th>Product</th><th>Price</th><th>Qty</th><th>Total</th></tr></thead>
+    <tbody>
+    <% order.items.forEach(function (item) { %>
+      <tr data-testid="order-item-<%= item.productId %>">
+        <td data-testid="order-item-name"><%= item.name %></td>
+        <td data-testid="order-item-price"><%= formatPrice(item.unitPriceCents) %></td>
+        <td data-testid="order-item-quantity"><%= item.quantity %></td>
+        <td data-testid="order-item-total"><%= formatPrice(item.unitPriceCents * item.quantity) %></td>
+      </tr>
+    <% }) %>
+    </tbody>
+  </table>
+
+  <div class="summary">
+    <div><span>Subtotal</span><span data-testid="order-subtotal"><%= formatPrice(order.subtotalCents) %></span></div>
+    <div><span>Discount<%= order.promoCode ? ' (' + order.promoCode + ')' : '' %></span><span data-testid="order-discount">-<%= formatPrice(order.discountCents) %></span></div>
+    <div><span>Shipping (<span data-testid="order-shipping-method"><%= order.shippingMethod %></span>)</span><span data-testid="order-shipping"><%= order.shippingCents === 0 ? 'Free' : formatPrice(order.shippingCents) %></span></div>
+    <div class="total"><span>Total</span><span data-testid="order-total"><%= formatPrice(order.totalCents) %></span></div>
+  </div>
+
+  <h2>Shipping address</h2>
+  <p data-testid="order-address"><%= order.fullName %>, <%= order.address %>, <%= order.city %> <%= order.postalCode %>, <%= order.phone %></p>
+
+  <% if (canCancel) { %>
+    <form method="post" action="/orders/<%= order.id %>/cancel">
+      <button type="submit" class="secondary" data-testid="order-cancel">Cancel order</button>
+    </form>
+  <% } %>
+</section>
+<%- include('../../../shared/views/footer') %>

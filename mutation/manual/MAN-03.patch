@@ -1,0 +1,13 @@
+--- a/src/modules/cart/logic.ts
++++ b/src/modules/cart/logic.ts
+@@ -37,10 +37,6 @@
+   const total = inCart + requested;
+   if (total > MAX_QUANTITY_PER_LINE) {
+     return { ok: false, error: `You can add at most ${MAX_QUANTITY_PER_LINE} items of one product` };
+-  }
+-  if (total > stock) {
+-    const note = inCart > 0 ? ` (${inCart} already in your cart)` : '';
+-    return { ok: false, error: `Only ${stock} item${stock === 1 ? '' : 's'} available${note}` };
+   }
+   return { ok: true, quantity: total };
+ }

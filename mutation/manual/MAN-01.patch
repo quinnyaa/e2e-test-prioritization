@@ -1,0 +1,11 @@
+--- a/src/modules/checkout/logic.ts
++++ b/src/modules/checkout/logic.ts
+@@ -103,7 +103,7 @@
+ export function calculateShipping(method: ShippingMethod, amountCents: number, freeShippingPromo: boolean): number {
+   if (freeShippingPromo && method === 'standard') return 0;
+   const rate = SHIPPING_RATES[method];
+-  if (rate.freeFromCents !== null && amountCents >= rate.freeFromCents) return 0;
++  if (rate.freeFromCents !== null && amountCents > rate.freeFromCents) return 0;
+   return rate.costCents;
+ }
+ 

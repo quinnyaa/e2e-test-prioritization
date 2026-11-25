@@ -1,0 +1,38 @@
+{
+  "runId": "wave1",
+  "sutCommit": "982ff238a6e792865c0ee06922dbc7a1b54849e3",
+  "sutDir": "./data/cache/sut/982ff238a6e7",
+  "startedAt": "2026-11-20T19:11:17.696Z",
+  "buildOk": true,
+  "buildError": null,
+  "totalDurationMs": 1217,
+  "tests": [
+    {
+      "id": "CAT-01",
+      "status": "passed",
+      "durationMs": 298,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CAT-03",
+      "status": "passed",
+      "durationMs": 282,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    },
+    {
+      "id": "CAT-05",
+      "status": "passed",
+      "durationMs": 409,
+      "errorSnippet": null,
+      "flaky": false,
+      "confirmedFail": false,
+      "rerunStatuses": []
+    }
+  ]
+}

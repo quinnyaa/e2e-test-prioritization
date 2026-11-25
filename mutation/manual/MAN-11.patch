@@ -1,0 +1,11 @@
+--- a/src/modules/checkout/logic.ts
++++ b/src/modules/checkout/logic.ts
+@@ -111,7 +111,7 @@
+   const applied = promo.ok ? promo : NO_PROMO;
+   const discountCents = Math.min(applied.ok ? applied.discountCents : 0, subtotalCents);
+   const afterDiscount = subtotalCents - discountCents;
+-  const shippingCents = calculateShipping(method, afterDiscount, applied.ok && applied.freeShipping);
++  const shippingCents = calculateShipping(method, subtotalCents, applied.ok && applied.freeShipping);
+   return { subtotalCents, discountCents, shippingCents, totalCents: afterDiscount + shippingCents };
+ }
+ 

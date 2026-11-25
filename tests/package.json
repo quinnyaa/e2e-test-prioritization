@@ -1,0 +1,25 @@
+{
+  "name": "shop-e2e-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frozen Playwright E2E suite for the Demo Shop SUT (ML-based test prioritization research)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed --workers=1",
+    "manifest": "tsx scripts/manifest.ts",
+    "normalize": "tsx scripts/normalize.ts",
+    "rerun-failed": "tsx scripts/rerun-failed.ts",
+    "stability": "tsx scripts/stability.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/node": "22.18.0",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3"
+  }
+}

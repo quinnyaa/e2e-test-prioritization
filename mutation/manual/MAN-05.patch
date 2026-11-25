@@ -1,0 +1,11 @@
+--- a/src/modules/orders/logic.ts
++++ b/src/modules/orders/logic.ts
+@@ -16,7 +16,7 @@
+ const TRANSITIONS: Record<OrderStatus, OrderStatus[]> = {
+   pending: ['paid', 'cancelled'],
+   paid: ['shipped', 'cancelled'],
+-  shipped: ['delivered'],
++  shipped: ['delivered', 'cancelled'],
+   delivered: [],
+   cancelled: [],
+ };
