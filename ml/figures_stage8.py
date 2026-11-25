@@ -32,8 +32,8 @@ OUT = R / "figures"
 WIDTH = 16 / 2.54
 N_BOOT, BOOT_SEED = 10_000, 20261117
 METHOD_UK = {"oracle": "оракул", "rf": "Random Forest", "lgbm": "LightGBM", "hgb": "HistGradientBoosting",
-             "lr": "логістична регресія", "combined": "комбінована евристика", "recent": "недавні падіння",
-             "kp": "Кім–Портер (α = 0,5)", "covers": "covers ∩ діф", "fail_rate": "історія падінь",
+             "lr": "логістична регресія", "combined": "комбінована евристика", "recent": "недавні невдалі виконання",
+             "kp": "Кім–Портер (α = 0,5)", "covers": "перетин змінених файлів", "fail_rate": "історія невдалих виконань",
              "criticality": "критичність", "random": "випадковий порядок", "shortest": "найкоротші першими"}
 POLICY_UK = {"threshold": "поріг τ", "budget": "бюджет B", "topk": "top-k"}
 SET_UK = {"main": "main (8B)", "hist": "hist", "chg": "chg", "meta": "meta", "main-hist": "main − hist",
@@ -154,7 +154,7 @@ def fig_apfd(ci: pd.DataFrame) -> list[str]:
     ax.set_yticks(y, [METHOD_UK[m] for m in ci["method"]], fontsize=8, color=INK)
     ax.set_xlim(0.38, 1.0)
     comma_ticks(ax, "x")
-    label(ax, "APFD на test (точка — середнє, відрізок — 95 % bootstrap-інтервал)", "")
+    label(ax, "APFD (точка – середнє, відрізок – 95 % бутстреп-інтервал за комітами)", "")
     ax.grid(axis="y", visible=False)
     return save(fig, "fig1_apfd_test")
 
@@ -162,7 +162,7 @@ def fig_apfd(ci: pd.DataFrame) -> list[str]:
 def fig_cost_curves() -> list[str]:
     mc = pd.read_csv(R / "cost_curve" / "mean_curves.csv")
     series = [("random_B", "випадковий порядок, B", NEUTRAL, "--"), ("kp_B", "Кім–Портер, B", SLOTS[1], "-"),
-              ("combined_B", "комбінована евристика, B", SLOTS[3], "-"), ("covers_B", "covers ∩ діф, B", SLOTS[2], "-"),
+              ("combined_B", "комбінована евристика, B", SLOTS[3], "-"), ("covers_B", "перетин змінених файлів, B", SLOTS[2], "-"),
               ("rf_B", "Random Forest, B", SLOTS[0], "--"), ("rf_tau", "Random Forest, τ", SLOTS[0], "-"),
               ("oracle_B", "оракул, B", INK, "--")]
     fig, (ax,) = axes(1, 9.0)
@@ -175,7 +175,7 @@ def fig_cost_curves() -> list[str]:
     ax.text(1.5, 91.5, "90 % перших появ", color=INK_2, fontsize=7)
     ax.set_xlim(0, 100)
     ax.set_ylim(0, 102)
-    label(ax, "середня частка фактичного часу повного прогону, %", "спіймані перші появи дефектів, %")
+    label(ax, "середня частка фактичного часу повного прогону, %", "виявлені перші появи дефектів, %")
     legend(ax)
     return save(fig, "fig2_recall_first_vs_time")
 
@@ -196,8 +196,8 @@ def fig_rolling() -> list[str]:
     a2.axhline(30, color=INK_2, linewidth=0.8, linestyle=":", zorder=0)
     for ax in (a1, a2):
         ax.set_xticks(range(5))
-    label(a1, "fold (expanding, вікна по 54 коміти)", "спіймані перші появи, %")
-    label(a2, "fold (expanding, вікна по 54 коміти)", "фактичний час, %")
+    label(a1, "часове вікно (expanding, по 54 коміти)", "виявлені перші появи, %")
+    label(a2, "часове вікно (expanding, по 54 коміти)", "фактичний час, %")
     a1.set_ylim(55, 102)
     h, l = a1.get_legend_handles_labels()
     leg = fig.legend(h, l, loc="lower center", ncol=2, frameon=False, fontsize=7.5)
@@ -219,7 +219,7 @@ def fig_ablation() -> list[str]:
     a1.set_yticks(y, [SET_UK[s] for s in ab["set"]], fontsize=8, color=INK)
     a1.grid(axis="y", visible=False)
     comma_ticks(a1, "x")
-    label(a1, "APFD на test (± std за seed)", "")
+    label(a1, "APFD на тестовій частині (± стандартне відхилення за запусками)", "")
     a2.fill_between([0, 30], 90, 100, color=GRID, alpha=0.6, linewidth=0, zorder=0)
     a2.text(16, 96.5, "ціль H1", color=INK_2, fontsize=7)
     for r in ab.itertuples(index=False):
@@ -229,7 +229,7 @@ def fig_ablation() -> list[str]:
                     textcoords="offset points", fontsize=6.5, color=INK_2)
     a2.set_xlim(15, 95)
     a2.set_ylim(55, 100)
-    label(a2, "фактичний час за τ, %", "спіймані перші появи за τ, %")
+    label(a2, "фактичний час за τ, %", "виявлені перші появи за τ, %")
     return save(fig, "fig4_ablation")
 
 
@@ -268,7 +268,7 @@ def fig_learning_curve() -> list[str]:
     a2.axhline(90, color=INK_2, linewidth=0.8, linestyle=":", zorder=0)
     a2.axhline(30, color=INK_2, linewidth=0.8, linestyle=":", zorder=0)
     a2.set_ylim(20, 102)
-    label(a1, "комітів у навчальній частині", "APFD на test")
+    label(a1, "комітів у навчальній частині", "APFD на тестовій частині")
     label(a2, "комітів у навчальній частині", "частка за τ, %")
     legend(a1, loc="lower right")
     h, l = a2.get_legend_handles_labels()

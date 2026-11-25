@@ -71,6 +71,12 @@ def hand_examples() -> None:
     es2 = toy_set([1, 0, 1, 0, 0], [4, 1, 1, 1, 1])
     m2 = perm_metrics(es2, order)
     check("APFDc hand example", math.isclose(m2["apfdc"][0], 0.53125), f"{m2['apfdc'][0]:.5f}")
+    # Supervisor's control case (review 2026-11-25): two tests of equal duration, one fault.
+    # APFDc = 1 - (C - t/2) / (m T): found by the first test -> 0.75, by the second -> 0.25.
+    es3 = toy_set([1, 0], [1, 1])
+    a = perm_metrics(es3, np.array([[0, 1]]))["apfdc"][0]
+    b = perm_metrics(es3, np.array([[1, 0]]))["apfdc"][0]
+    check("APFDc control case 0.75 / 0.25", math.isclose(a, 0.75) and math.isclose(b, 0.25), f"{a:.4f} / {b:.4f}")
     # Time to first failure: 4 / 8 = 0.5; recall@50% time = 1, @30% = 0.
     check("time to first failure", math.isclose(m2["ttd_share"][0], 0.5) and m2["rt50_hit"][0] == 1 and m2["rt30_hit"][0] == 0)
     # Top-10% of 5 tests = ceil(0.5) = 1 test -> hit; top-20% = 1 test.

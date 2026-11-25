@@ -1,0 +1,92 @@
+{
+  "note": "post-hoc, exploratory (supervisor's review 2026-11-25); H2 verdict unchanged",
+  "red_commits": "commits with at least one failing test (APFD defined)",
+  "apfd": {
+    "n": 61,
+    "wins": 27,
+    "losses": 23,
+    "ties": 11,
+    "mean_diff": 0.01371291302,
+    "median_diff": 0.0,
+    "wilcoxon_p": 0.02306707502,
+    "rank_biserial_paired": 0.368627451,
+    "cliffs_delta_unpaired": 0.05589895189,
+    "mean_model": 0.8855512762,
+    "mean_reference": 0.8718383631
+  },
+  "apfd_defect": {
+    "n": 61,
+    "wins": 29,
+    "losses": 12,
+    "ties": 20,
+    "mean_diff": 0.01457005161,
+    "median_diff": 0.0,
+    "wilcoxon_p": 0.00804689906,
+    "rank_biserial_paired": 0.475029036,
+    "cliffs_delta_unpaired": 0.1021230852,
+    "mean_model": 0.9453893443,
+    "mean_reference": 0.9308192927
+  },
+  "apfdc": {
+    "n": 61,
+    "wins": 29,
+    "losses": 31,
+    "ties": 1,
+    "mean_diff": -0.001547854253,
+    "median_diff": -4.162622014e-05,
+    "wilcoxon_p": 0.8482109055,
+    "rank_biserial_paired": 0.02841530055,
+    "cliffs_delta_unpaired": -0.01074979844,
+    "mean_model": 0.6847702654,
+    "mean_reference": 0.6863181196
+  },
+  "units": {
+    "failing_tests_per_red_commit_mean": 5.081967213,
+    "defects_per_red_commit_mean": 1.590163934,
+    "red_commits_with_more_failing_tests_than_defects": 51,
+    "red_commits": 61
+  },
+  "worked_example": {
+    "model": "rf seed 20261117",
+    "commit_index": 433,
+    "n_tests": 36,
+    "T_ms": 18370.0,
+    "m_failing_tests": 2,
+    "failing_tests": [
+      {
+        "position": 7,
+        "test": "CAT-02",
+        "t_ms": 3154.0,
+        "C_ms": 5498.0,
+        "defects": [
+          "MUT-784"
+        ]
+      },
+      {
+        "position": 12,
+        "test": "ORD-01",
+        "t_ms": 3180.0,
+        "C_ms": 10491.0,
+        "defects": [
+          "MUT-1273"
+        ]
+      }
+    ],
+    "apfdc": 0.6510070768,
+    "apfdc_library": 0.6510070768
+  },
+  "unit_example": {
+    "model": "rf seed 20261117",
+    "commit_index": 452,
+    "n_tests": 36,
+    "defects": 1,
+    "failing_test_positions": [
+      1,
+      4,
+      5
+    ],
+    "apfd_failing_test_unit": 0.9212962963,
+    "apfd_defect_unit": 0.9861111111,
+    "apfd_defect_library": 0.9861111111
+  }
+}
